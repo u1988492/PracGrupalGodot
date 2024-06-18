@@ -270,7 +270,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_lg4vr")
 }],
 "loop": false,
-"name": &"hitten",
+"name": &"hit",
 "speed": 6.0
 }, {
 "frames": [{
@@ -356,7 +356,15 @@ polygon = PackedVector2Array(-13, -1, -8, -5, 8, -5, 14, -1, 9, 3, -8, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -43)
 sprite_frames = SubResource("SpriteFrames_rf4ub")
-animation = &"hitten"
+animation = &"hit"
 autoplay = "idle"
 
+[node name="AttackTimer" type="Timer" parent="."]
+
+[node name="CooldownTimer" type="Timer" parent="."]
+
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
+[connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
+[connection signal="body_exited" from="AreaAtaque" to="." method="_on_area_ataque_body_exited"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
