@@ -1,7 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://61cjuaw010xj"]
 
 [ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-blue.png" id="1_4vmm0"]
-[ext_resource type="Script" path="res://SCRIPTS/llave.gd" id="1_xye8r"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/llave.gd" id="1_xye8r"]
 [ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-white.png" id="2_k00o8"]
 [ext_resource type="AudioStream" uid="uid://b50oukvbp1u2p" path="res://ASSETS/SFX/llaves.mp3" id="3_aq2fo"]
 

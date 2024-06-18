@@ -1,7 +1,7 @@
 [gd_scene load_steps=52 format=3 uid="uid://b1gtyfiojsvao"]
 
 [ext_resource type="Texture2D" uid="uid://cg14j2sim7hyl" path="res://ASSETS/PERSONAJES/detective.png" id="1_i2wod"]
-[ext_resource type="Script" path="res://SCRIPTS/detective.gd" id="1_x5qnp"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yh6u"]
 atlas = ExtResource("1_i2wod")
