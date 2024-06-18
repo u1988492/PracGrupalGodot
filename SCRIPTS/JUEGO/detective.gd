@@ -10,6 +10,8 @@ var dir = "S"
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
 
+@export var has_key = false #cambiar cuando recoge o usa llave
+
 signal healthChanged #emitir señal cuando cambia salud a barra de progreso
 
 #actualizar salud al tomar pocióm
