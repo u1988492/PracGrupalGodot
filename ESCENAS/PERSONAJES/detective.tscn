@@ -384,6 +384,7 @@ animations = [{
 }]
 
 [node name="Detective" type="CharacterBody2D"]
+position = Vector2(0, -20)
 script = ExtResource("1_x5qnp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
@@ -400,5 +401,5 @@ stream = ExtResource("3_8cb4r")
 attenuation = 1.07896e-05
 bus = &"SFX"
 
-[connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
 [connection signal="healthChanged" from="." to="." method="increaseHealth"]
+[connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
