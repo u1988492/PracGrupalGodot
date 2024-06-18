@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://br2ysbtdih81i"]
+[gd_scene load_steps=10 format=3 uid="uid://br2ysbtdih81i"]
 
+[ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_kjyjt"]
 [ext_resource type="Texture2D" uid="uid://ofxpomcmamqi" path="res://ESCENAS/UI/gato.jpeg" id="1_v55r2"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="2_7jaf6"]
+[ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="2_ee0dt"]
+[ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-white.png" id="2_fbo2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cneqe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -13,6 +17,10 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 corner_radius_bottom_right = 2
 corner_radius_bottom_left = 2
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1423j"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eek76"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12hft"]
 bg_color = Color(1, 1, 1, 1)
@@ -29,7 +37,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="avatar" type="Panel" parent="."]
+[node name="barra" type="Panel" parent="."]
 layout_mode = 0
 offset_left = 1.0
 offset_top = 475.0
@@ -37,7 +45,72 @@ offset_right = 730.0
 offset_bottom = 639.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cneqe")
 
-[node name="AvatarFrame" type="Panel" parent="avatar"]
+[node name="libreta" type="Panel" parent="barra"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 171.0
+offset_top = 18.0
+offset_right = 224.0
+offset_bottom = 69.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1423j")
+
+[node name="Sprite2D2" type="Sprite2D" parent="barra/libreta"]
+position = Vector2(26, 21)
+scale = Vector2(1.53846, 1.53846)
+texture = ExtResource("1_kjyjt")
+region_rect = Rect2(10, 4, 13, 28)
+
+[node name="llave" type="Panel" parent="barra"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 171.0
+offset_top = -48.0
+offset_right = 219.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eek76")
+
+[node name="Sprite2D" type="Sprite2D" parent="barra/llave"]
+position = Vector2(23, 24)
+scale = Vector2(1.53846, 1.53846)
+texture = ExtResource("2_fbo2o")
+region_enabled = true
+region_rect = Rect2(10, 4, 13, 28)
+
+[node name="linterna" type="Panel" parent="barra"]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 246.0
+offset_top = -48.0
+offset_right = 294.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_eek76")
+
+[node name="healthbar" type="ProgressBar" parent="barra"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -167.0
+offset_right = -571.0
+offset_bottom = -156.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_ee0dt")
+value = 50.0
+show_percentage = false
+script = ExtResource("2_7jaf6")
+
+[node name="detective" type="Panel" parent="barra"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -49,7 +122,7 @@ offset_bottom = 70.0
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_12hft")
 
-[node name="TextureRect" type="TextureRect" parent="avatar/AvatarFrame"]
+[node name="TextureRect" type="TextureRect" parent="barra/detective"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,26 +137,3 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_v55r2")
 expand_mode = 1
-
-[node name="llaves" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 972.0
-offset_top = 26.0
-offset_right = 1126.0
-offset_bottom = 112.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cneqe")
-
-[node name="llaveicon" type="TextureRect" parent="llaves"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="llaves" type="Label" parent="llaves"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
-[node name="n_llaves" type="Label" parent="llaves"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0

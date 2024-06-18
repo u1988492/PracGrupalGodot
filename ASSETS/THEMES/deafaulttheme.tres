@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bd5bdhqljmove"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bd5bdhqljmove"]
 
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://ASSETS/FUENTES/PixelOperator8-Bold.ttf" id="1_bin1k"]
 
@@ -12,6 +12,37 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i8o1m"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfpjg"]
+content_margin_left = 1.0
+content_margin_top = 1.0
+content_margin_right = 1.0
+content_margin_bottom = 1.0
+bg_color = Color(1, 1, 1, 0.0784314)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trx7d"]
+content_margin_left = 1.0
+bg_color = Color(0.384314, 0.105882, 0.156863, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+anti_aliasing = false
+anti_aliasing_size = 3.624
+
 [resource]
 default_font = ExtResource("1_bin1k")
 default_font_size = 16
@@ -23,3 +54,5 @@ Button/styles/focus = SubResource("StyleBoxEmpty_y3gjl")
 Button/styles/hover = SubResource("StyleBoxEmpty_r0qgi")
 Button/styles/normal = SubResource("StyleBoxEmpty_k4vph")
 Button/styles/pressed = SubResource("StyleBoxEmpty_i8o1m")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_jfpjg")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_trx7d")
