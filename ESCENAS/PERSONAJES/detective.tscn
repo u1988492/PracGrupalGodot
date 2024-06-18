@@ -383,10 +383,7 @@ animations = [{
 }]
 
 [node name="Detective" type="CharacterBody2D"]
-position = Vector2(158, 63)
 script = ExtResource("1_x5qnp")
-potionhealth = null
-maxHealth = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 1)
@@ -394,6 +391,5 @@ polygon = PackedVector2Array(-8, 24, -4, 25, 4, 25, 9, 24, 11, 21, 9, 18, 4, 17,
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sm2kb")
-animation = &"idle_W"
+animation = &"idle_S"
 autoplay = "idle_S"
-frame_progress = 0.673686
