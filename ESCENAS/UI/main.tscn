@@ -39,6 +39,23 @@ offset_right = 730.0
 offset_bottom = 639.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cneqe")
 
+[node name="Panel" type="Panel" parent="avatar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 172.0
+offset_top = -48.0
+offset_right = 220.0
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="avatar/Panel"]
+position = Vector2(23, 24)
+scale = Vector2(1.53846, 1.53846)
+texture = ExtResource("2_fbo2o")
+region_enabled = true
+region_rect = Rect2(10, 4, 13, 28)
+
 [node name="healthbar" type="ProgressBar" parent="avatar"]
 layout_mode = 1
 anchors_preset = 12
@@ -82,36 +99,3 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_v55r2")
 expand_mode = 1
-
-[node name="llaves" type="Panel" parent="."]
-layout_mode = 0
-offset_left = 951.0
-offset_top = 9.0
-offset_right = 1141.0
-offset_bottom = 95.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cneqe")
-
-[node name="n_llaves" type="Label" parent="llaves"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "?
-"
-
-[node name="Panel" type="Panel" parent="llaves"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 126.0
-offset_top = -26.0
-offset_right = 174.0
-offset_bottom = 22.0
-grow_vertical = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="llaves/Panel"]
-position = Vector2(23, 24)
-scale = Vector2(1.53846, 1.53846)
-texture = ExtResource("2_fbo2o")
-region_enabled = true
-region_rect = Rect2(10, 4, 13, 28)
