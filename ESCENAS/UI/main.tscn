@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://br2ysbtdih81i"]
+[gd_scene load_steps=6 format=3 uid="uid://br2ysbtdih81i"]
 
 [ext_resource type="Texture2D" uid="uid://ofxpomcmamqi" path="res://ESCENAS/UI/gato.jpeg" id="1_v55r2"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="2_7jaf6"]
+[ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-white.png" id="2_fbo2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cneqe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -65,25 +67,49 @@ grow_vertical = 2
 texture = ExtResource("1_v55r2")
 expand_mode = 1
 
+[node name="ProgressBar" type="ProgressBar" parent="avatar"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 171.0
+offset_top = -150.0
+offset_right = -410.0
+offset_bottom = -123.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("2_7jaf6")
+
 [node name="llaves" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 972.0
-offset_top = 26.0
-offset_right = 1126.0
-offset_bottom = 112.0
+offset_left = 951.0
+offset_top = 9.0
+offset_right = 1141.0
+offset_bottom = 95.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cneqe")
-
-[node name="llaveicon" type="TextureRect" parent="llaves"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="llaves" type="Label" parent="llaves"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
 
 [node name="n_llaves" type="Label" parent="llaves"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 23.0
+text = "?
+"
+
+[node name="Panel" type="Panel" parent="llaves"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 126.0
+offset_top = -26.0
+offset_right = 174.0
+offset_bottom = 22.0
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="llaves/Panel"]
+position = Vector2(23, 24)
+scale = Vector2(1.53846, 1.53846)
+texture = ExtResource("2_fbo2o")
+region_enabled = true
+region_rect = Rect2(10, 4, 13, 28)
