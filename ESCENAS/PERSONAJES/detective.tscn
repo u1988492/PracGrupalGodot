@@ -385,6 +385,8 @@ animations = [{
 [node name="Detective" type="CharacterBody2D"]
 position = Vector2(158, 63)
 script = ExtResource("1_x5qnp")
+potionhealth = null
+maxHealth = null
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, 1)
