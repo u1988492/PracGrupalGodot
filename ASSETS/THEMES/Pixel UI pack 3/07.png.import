@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://r8r2p5erwiep"
-path="res://.godot/imported/key-white.png-e0b3616d9bbff037647166826ed4735b.ctex"
+uid="uid://b7leird3e4w4s"
+path="res://.godot/imported/07.png-1767a68faee8a3d6e9707b1e6296ef07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/ITEMS/pixel-art-key/key-white.png"
-dest_files=["res://.godot/imported/key-white.png-e0b3616d9bbff037647166826ed4735b.ctex"]
+source_file="res://ASSETS/THEMES/Pixel UI pack 3/07.png"
+dest_files=["res://.godot/imported/07.png-1767a68faee8a3d6e9707b1e6296ef07.ctex"]
 
 [params]
 
