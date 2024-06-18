@@ -321,3 +321,6 @@ position = Vector2(0, -24)
 sprite_frames = SubResource("SpriteFrames_nvosb")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-14, 5, -10, 8, 5, 8, 9, 5, 9, 0, 5, -3, -10, -3, -14, 0)
