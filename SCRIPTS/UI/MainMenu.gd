@@ -4,20 +4,30 @@ extends Control
 
 signal start_game()
 
-
+func _ready():
+	focus_button()
 
 func _on_play_pressed():
-	pass # Replace with function body.
+	start_game.emit()
+	hide()
 
 
 func _on_load_pressed():
 	pass # Replace with function body.
 
 func _on_exit_pressed():
-	pass # Replace with function body.
+	get_tree().quit()
 
 func _on_visibility_changed():
-	pass
+	if  visible:
+		focus_button()
+		
+
+func focus_button():
+	if botones:
+		var button: Button = botones.get_child(0)
+		if button is Button:
+			button.grab_focus()
 
 
 

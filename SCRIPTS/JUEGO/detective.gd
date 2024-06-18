@@ -3,7 +3,6 @@ extends CharacterBody2D
 class_name Player
 
 const speed = 300.0
-var caminando = false
 var dir = "S"
 
 #ajustar valor de la salud que da una poción
@@ -28,36 +27,27 @@ func hurtbyenemy():
 
 func _physics_process(delta):
 	player_movement(delta)
-	if caminando:
-		$Caminar.playing = true
-	else:
-		$Caminar.playing = false
 
 func player_movement(_delta):
 	var direction := Input.get_vector("caminar_W", "caminar_E", "caminar_N", "caminar_S")
 	if Input.is_action_pressed("caminar_N"):
 		dir = "N"
 		play_animation(1)
-		caminando = true
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_S"):
 		dir = "S"
 		play_animation(1)
-		caminando = true
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_E"):
 		dir = "E"
 		play_animation(1)
-		caminando = true
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_W"):
 		dir = "W"
 		play_animation(1)
-		caminando = true
 		self.velocity = direction * speed
 	else:
 		play_animation(0)
-		caminando = false
 		self.velocity = Vector2.ZERO
 	
 	move_and_slide()
