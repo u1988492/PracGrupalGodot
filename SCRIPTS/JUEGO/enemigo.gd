@@ -2,24 +2,29 @@ extends CharacterBody2D
 
 const SPEED = 25.0
 var player = null
-var persiguiendo = false
+var chasing = false
 var dir = "E"
 
-var atacando = false
+var attacking = false
 
 func _physics_process(delta):
 	enemy_movement(delta)
 
+func enemy():
+	pass #funcion vacia para ser detectado por el player
+
 func enemy_movement(_delta):
-	if persiguiendo:
+	if chasing:
 		position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
 			dir = "W"
+			$AnimatedSprite2D.flip_h = true
 		else:
 			dir = "E"
+			$AnimatedSprite2D.flip_h = false
 				
-	if !atacando:  # Only play movement animations if not attacking
-		if persiguiendo:
+	if !attacking:
+		if chasing:
 			play_animation(1)
 		else:
 			play_animation(0)	
@@ -27,21 +32,13 @@ func enemy_movement(_delta):
 
 func play_animation(movement):
 	var animation = $AnimatedSprite2D
-	
-	if dir == "W":
-		if movement == 1:
-			if atacando == false:
-				animation.play("caminar")
-		elif movement == 0:
-			animation.play("idle")
-	elif dir == "E":
-		if movement == 1:
-			if atacando == false:
-				animation.play("caminar")
-		elif movement == 0:
-			animation.play("idle")
-
+	if movement == 1:
+		if attacking == false:
+			animation.play("walk")
+	elif movement == 0:
+		animation.play("idle")
 
 func _on_area_deteccion_body_entered(body):
-	player = body
-	persiguiendo = true
+	if body.has_method("player"):
+		player = body
+		chasing = true

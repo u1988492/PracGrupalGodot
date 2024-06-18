@@ -28,6 +28,9 @@ func hurtbyenemy():
 func _physics_process(delta):
 	player_movement(delta)
 
+func player():
+	pass #funcion vacia para ser detectado por el enemigo
+
 func player_movement(_delta):
 	var direction := Input.get_vector("caminar_W", "caminar_E", "caminar_N", "caminar_S")
 	if Input.is_action_pressed("caminar_N"):
@@ -51,7 +54,7 @@ func player_movement(_delta):
 		self.velocity = Vector2.ZERO
 	
 	move_and_slide()
-	
+
 func play_animation(movement):
 	var animation = $AnimatedSprite2D
 	if dir == "N":
