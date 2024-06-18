@@ -9,5 +9,5 @@ func _process(_delta):
 	pass
 
 func _on_body_entered(body):
-	print("Has recogido una poción")
-	$AnimationPlayer.play("Recoger")
+	print("Has recogido una carta")
+	$AnimationPlayer.play("recoger")
