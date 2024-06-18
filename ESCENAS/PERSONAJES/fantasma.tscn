@@ -385,11 +385,15 @@ animations = [{
 }]
 
 [node name="Fantasma" type="CharacterBody2D"]
+position = Vector2(0, -38)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -6)
 sprite_frames = SubResource("SpriteFrames_sldp0")
 animation = &"idle"
+autoplay = "idle"
 frame = 12
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(2, 14)
 polygon = PackedVector2Array(-20, 22, -13, 16, 10, 16, 17, 21, 11, 29, -12, 29)
