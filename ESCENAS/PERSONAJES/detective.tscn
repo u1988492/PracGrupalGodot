@@ -1,7 +1,8 @@
-[gd_scene load_steps=52 format=3 uid="uid://b1gtyfiojsvao"]
+[gd_scene load_steps=53 format=3 uid="uid://b1gtyfiojsvao"]
 
 [ext_resource type="Texture2D" uid="uid://cg14j2sim7hyl" path="res://ASSETS/PERSONAJES/detective.png" id="1_i2wod"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
+[ext_resource type="AudioStream" uid="uid://dao2xku2sx5cj" path="res://ASSETS/SFX/caminar.mp3" id="3_8cb4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7yh6u"]
 atlas = ExtResource("1_i2wod")
@@ -393,3 +394,6 @@ polygon = PackedVector2Array(-8, 24, -4, 25, 4, 25, 9, 24, 11, 21, 9, 18, 4, 17,
 sprite_frames = SubResource("SpriteFrames_sm2kb")
 animation = &"idle_S"
 autoplay = "idle_S"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8cb4r")
