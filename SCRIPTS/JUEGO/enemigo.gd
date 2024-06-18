@@ -2,10 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 25.0
 var player = null
-var chasing = false
 var dir = "E"
 
-var attacking = false
+var chasing = false #true if the player is close enough to be detected by the enemy
+var attacking = false #true if the enemy is attacking
+var on_reach = false #true if the player is close enough to be hit
+var cooldown = false #true if the enemy is on cooldown right after attacking
 
 func _physics_process(delta):
 	enemy_movement(delta)
@@ -42,3 +44,30 @@ func _on_area_deteccion_body_entered(body):
 	if body.has_method("player"):
 		player = body
 		chasing = true
+
+func _on_area_ataque_body_entered(body):
+	if body.has_method("player"):
+		on_reach = true
+
+func _on_area_ataque_body_exited(body):
+	if body.has_method("player"):
+		on_reach = false
+
+func attack():
+	if on_reach and not attacking and not cooldown:
+		attacking = true
+		$AttackTimer.start()
+		$AnimatedSprite2D.play("attack")
+
+func _on_attack_timer_timeout():
+	$AttackTimer.stop()
+	attacking = false
+	cooldown = true
+	$CooldownTimer.start()
+
+func _on_cooldown_timer_timeout():
+	$CooldownTimer.stop()
+	cooldown = false
+
+func take_damage():
+	pass
