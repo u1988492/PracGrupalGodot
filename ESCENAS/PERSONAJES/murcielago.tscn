@@ -1,10 +1,17 @@
-[gd_scene load_steps=49 format=3 uid="uid://timy8dluulhj"]
+[gd_scene load_steps=52 format=3 uid="uid://timy8dluulhj"]
 
 [ext_resource type="Texture2D" uid="uid://cfv0rqxnm6ciu" path="res://ASSETS/PERSONAJES/Enemy/Bat/Bat-Attack1.png" id="1_42j5s"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/enemigo.gd" id="1_75kjg"]
 [ext_resource type="Texture2D" uid="uid://coih5h6qkc01x" path="res://ASSETS/PERSONAJES/Enemy/Bat/Bat-Run.png" id="2_degek"]
 [ext_resource type="Texture2D" uid="uid://cbhlmgfp3x7fa" path="res://ASSETS/PERSONAJES/Enemy/Bat/Bat-Hurt.png" id="3_7fu6f"]
 [ext_resource type="Texture2D" uid="uid://dcdns8v85vjkq" path="res://ASSETS/PERSONAJES/Enemy/Bat/Bat-IdleFly.png" id="4_dagnm"]
 [ext_resource type="Texture2D" uid="uid://5ahbyxbld8xj" path="res://ASSETS/PERSONAJES/Enemy/Bat/Bat-Die.png" id="5_d6dse"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1bcam"]
+radius = 95.021
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6ceuq"]
+radius = 16.0312
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ajfnt"]
 atlas = ExtResource("1_42j5s")
@@ -329,6 +336,22 @@ animations = [{
 }]
 
 [node name="Murcielago" type="CharacterBody2D"]
+script = ExtResource("1_75kjg")
+
+[node name="AreaDeteccion" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
+position = Vector2(0, -45)
+shape = SubResource("CircleShape2D_1bcam")
+
+[node name="AreaAtaque" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
+position = Vector2(0, -44)
+shape = SubResource("CircleShape2D_6ceuq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13, -1, -8, -5, 8, -5, 14, -1, 9, 3, -8, 3)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -43)
@@ -336,5 +359,4 @@ sprite_frames = SubResource("SpriteFrames_rf4ub")
 animation = &"ataque"
 autoplay = "idle"
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-13, -1, -8, -5, 8, -5, 14, -1, 9, 3, -8, 3)
+[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
