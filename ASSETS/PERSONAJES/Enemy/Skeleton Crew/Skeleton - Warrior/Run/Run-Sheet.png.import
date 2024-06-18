@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ippgdxy1ajv8"
-path="res://.godot/imported/Run-Sheet.png-601caa50ee23c2d3ee18e625322d9c96.ctex"
+path="res://.godot/imported/Run-Sheet.png-6523b5f7c5f7f2c585126ae1907e22a1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Warrior/Run/Run-Sheet.png"
-dest_files=["res://.godot/imported/Run-Sheet.png-601caa50ee23c2d3ee18e625322d9c96.ctex"]
+source_file="res://ASSETS/PERSONAJES/Enemy/Skeleton Crew/Skeleton - Warrior/Run/Run-Sheet.png"
+dest_files=["res://.godot/imported/Run-Sheet.png-6523b5f7c5f7f2c585126ae1907e22a1.ctex"]
 
 [params]
 

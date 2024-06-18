@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvyx6f1ipqr08"
-path="res://.godot/imported/Props.png-e07120d74aa5fedbac6c5b2e69405e13.ctex"
+path="res://.godot/imported/Props.png-9ab27bbe7fefd0935900e795f12b7af2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Environment/Dungeon Prison/Assets/Props.png"
-dest_files=["res://.godot/imported/Props.png-e07120d74aa5fedbac6c5b2e69405e13.ctex"]
+source_file="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png"
+dest_files=["res://.godot/imported/Props.png-9ab27bbe7fefd0935900e795f12b7af2.ctex"]
 
 [params]
 

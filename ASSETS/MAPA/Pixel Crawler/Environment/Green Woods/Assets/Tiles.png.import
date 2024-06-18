@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://p2c244cgma7p"
-path="res://.godot/imported/Tiles.png-8511b998c9903450acf49bc7b634ca38.ctex"
+path="res://.godot/imported/Tiles.png-f7cbc8861205d43b4d37aa3c1d24bf02.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/Tiles.png"
-dest_files=["res://.godot/imported/Tiles.png-8511b998c9903450acf49bc7b634ca38.ctex"]
+source_file="res://ASSETS/MAPA/Pixel Crawler/Environment/Green Woods/Assets/Tiles.png"
+dest_files=["res://.godot/imported/Tiles.png-f7cbc8861205d43b4d37aa3c1d24bf02.ctex"]
 
 [params]
 

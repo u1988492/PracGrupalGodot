@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://btisls06gfny4"
-path="res://.godot/imported/Idle-Sheet.png-84e9deb7b76f7e71bd105bc783dbbbfa.ctex"
+path="res://.godot/imported/Idle-Sheet.png-75ae926df1b5dbf3d12dcbee9a5fb8d5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc - Shaman/Idle/Idle-Sheet.png"
-dest_files=["res://.godot/imported/Idle-Sheet.png-84e9deb7b76f7e71bd105bc783dbbbfa.ctex"]
+source_file="res://ASSETS/PERSONAJES/Enemy/Orc Crew/Orc - Shaman/Idle/Idle-Sheet.png"
+dest_files=["res://.godot/imported/Idle-Sheet.png-75ae926df1b5dbf3d12dcbee9a5fb8d5.ctex"]
 
 [params]
 

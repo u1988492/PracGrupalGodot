@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d33tkwkhuqpqy"
-path="res://.godot/imported/Death-Sheet.png-a8259a25fd793b92b1f366fb2b6c8730.ctex"
+path="res://.godot/imported/Death-Sheet.png-d4c2a69e72d416b796d698a271cda096.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png"
-dest_files=["res://.godot/imported/Death-Sheet.png-a8259a25fd793b92b1f366fb2b6c8730.ctex"]
+source_file="res://ASSETS/PERSONAJES/Enemy/Skeleton Crew/Skeleton - Base/Death/Death-Sheet.png"
+dest_files=["res://.godot/imported/Death-Sheet.png-d4c2a69e72d416b796d698a271cda096.ctex"]
 
 [params]
 
