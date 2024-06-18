@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://br2ysbtdih81i"]
+[gd_scene load_steps=7 format=3 uid="uid://br2ysbtdih81i"]
 
 [ext_resource type="Texture2D" uid="uid://ofxpomcmamqi" path="res://ESCENAS/UI/gato.jpeg" id="1_v55r2"]
 [ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="2_7jaf6"]
+[ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="2_ee0dt"]
 [ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-white.png" id="2_fbo2o"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cneqe"]
@@ -68,6 +69,7 @@ offset_right = -434.0
 offset_bottom = -140.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("2_ee0dt")
 value = 50.0
 show_percentage = false
 script = ExtResource("2_7jaf6")

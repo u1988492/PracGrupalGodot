@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bd5bdhqljmove"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://bd5bdhqljmove"]
 
 [ext_resource type="FontFile" uid="uid://c53kogtyjwsss" path="res://ASSETS/FUENTES/PixelOperator8-Bold.ttf" id="1_bin1k"]
 
@@ -12,6 +12,20 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i8o1m"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jfpjg"]
+bg_color = Color(1, 1, 1, 0.443137)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_trx7d"]
+bg_color = Color(0.384314, 0.105882, 0.156863, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [resource]
 default_font = ExtResource("1_bin1k")
 default_font_size = 16
@@ -23,3 +37,5 @@ Button/styles/focus = SubResource("StyleBoxEmpty_y3gjl")
 Button/styles/hover = SubResource("StyleBoxEmpty_r0qgi")
 Button/styles/normal = SubResource("StyleBoxEmpty_k4vph")
 Button/styles/pressed = SubResource("StyleBoxEmpty_i8o1m")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_jfpjg")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_trx7d")
