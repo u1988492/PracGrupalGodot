@@ -15,9 +15,7 @@
 [resource]
 default_font = ExtResource("1_bin1k")
 default_font_size = 16
-Button/colors/font_focus_color = Color(0.352941, 0.101961, 0.301961, 1)
-Button/colors/font_hover_color = Color(0.352941, 0.101961, 0.301961, 1)
-Button/colors/font_pressed_color = Color(0.352941, 0.101961, 0.301961, 1)
+Button/colors/font_focus_color = Color(0.354535, 0.100517, 0.301659, 1)
 Button/styles/disabled = SubResource("StyleBoxEmpty_a45kj")
 Button/styles/focus = SubResource("StyleBoxEmpty_y3gjl")
 Button/styles/hover = SubResource("StyleBoxEmpty_r0qgi")
