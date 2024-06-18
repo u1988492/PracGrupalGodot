@@ -71,7 +71,3 @@ func play_animation(movement):
 			animation.play("caminar_W")
 		elif movement == 0:
 			animation.play("idle_W")
-
-#NO USAMOS LA TRANSFORMACIÓN SIGUIENTE PUESTO QUE EL SPRITE QUE QUEREMOS USAR CONSTA DE SOLO 4 DIRECCIONES. LA GUARDAMOS POR SI ACABAMOS CAMBIANDO EL SCRIPT
-#static func cart_to_iso(direction:Vector2) -> Vector2:
-#	return Vector2(direction.x-direction.y, (direction.x+direction.y)/2)
