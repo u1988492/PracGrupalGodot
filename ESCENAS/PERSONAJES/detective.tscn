@@ -399,7 +399,6 @@ autoplay = "idle_S"
 [node name="Caminar" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8cb4r")
 attenuation = 1.07896e-05
-bus = &"SFX"
 
 [connection signal="healthChanged" from="." to="." method="increaseHealth"]
 [connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
