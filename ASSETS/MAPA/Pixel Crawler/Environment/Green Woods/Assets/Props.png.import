@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://kuny0ixan2ds"
-path="res://.godot/imported/Props.png-9e58f5cb802819a5da17b131afe6fb8a.ctex"
+path="res://.godot/imported/Props.png-01d1a5d73ab36eed941b329c7067adec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/Props.png"
-dest_files=["res://.godot/imported/Props.png-9e58f5cb802819a5da17b131afe6fb8a.ctex"]
+source_file="res://ASSETS/MAPA/Pixel Crawler/Environment/Green Woods/Assets/Props.png"
+dest_files=["res://.godot/imported/Props.png-01d1a5d73ab36eed941b329c7067adec.ctex"]
 
 [params]
 

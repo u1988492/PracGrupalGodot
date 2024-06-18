@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://fdeovnbfqmq6"
-path="res://.godot/imported/Run-Sheet.png-5255bc6bd3d7065954e1f65fd702805d.ctex"
+path="res://.godot/imported/Run-Sheet.png-cc4e828d1b5b416942cba49c2d36275b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Enemy/Orc Crew/Orc/Run/Run-Sheet.png"
-dest_files=["res://.godot/imported/Run-Sheet.png-5255bc6bd3d7065954e1f65fd702805d.ctex"]
+source_file="res://ASSETS/PERSONAJES/Enemy/Orc Crew/Orc/Run/Run-Sheet.png"
+dest_files=["res://.godot/imported/Run-Sheet.png-cc4e828d1b5b416942cba49c2d36275b.ctex"]
 
 [params]
 

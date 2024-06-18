@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://o5aep76vsrs4"
-path="res://.godot/imported/Idle-Sheet.png-06db2ab09d626ec1f4fa05ed25722ca5.ctex"
+path="res://.godot/imported/Idle-Sheet.png-409fda22bf3c3858349a2facd02aa02a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ASSETS/MAPA/Pixel Crawler - FREE - 1.8/Enemy/Skeleton Crew/Skeleton - Mage/Idle/Idle-Sheet.png"
-dest_files=["res://.godot/imported/Idle-Sheet.png-06db2ab09d626ec1f4fa05ed25722ca5.ctex"]
+source_file="res://ASSETS/PERSONAJES/Enemy/Skeleton Crew/Skeleton - Mage/Idle/Idle-Sheet.png"
+dest_files=["res://.godot/imported/Idle-Sheet.png-409fda22bf3c3858349a2facd02aa02a.ctex"]
 
 [params]
 
