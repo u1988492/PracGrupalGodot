@@ -399,3 +399,6 @@ autoplay = "idle_S"
 stream = ExtResource("3_8cb4r")
 attenuation = 1.07896e-05
 bus = &"SFX"
+
+[connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
+[connection signal="healthChanged" from="." to="." method="increaseHealth"]

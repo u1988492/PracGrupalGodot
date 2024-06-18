@@ -88,6 +88,7 @@ focus_next = NodePath("../Play")
 focus_previous = NodePath("../Load")
 text = "SALIR"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/botones/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/botones/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/botones/Exit" to="." method="_on_exit_pressed"]

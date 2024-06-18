@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://br2ysbtdih81i"]
+[gd_scene load_steps=10 format=3 uid="uid://8gogt4q6mif3"]
 
-[ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_kjyjt"]
-[ext_resource type="Texture2D" uid="uid://ofxpomcmamqi" path="res://ESCENAS/UI/gato.jpeg" id="1_v55r2"]
-[ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="2_7jaf6"]
-[ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="2_ee0dt"]
-[ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-white.png" id="2_fbo2o"]
+[ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_ymexq"]
+[ext_resource type="Texture2D" path="res://ASSETS/ITEMS/pixel-art-key/key-white.png" id="2_4uq3a"]
+[ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="3_6x18i"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="4_r2fir"]
+[ext_resource type="Texture2D" uid="uid://ofxpomcmamqi" path="res://ESCENAS/UI/gato.jpeg" id="5_342hs"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cneqe"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -60,7 +60,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1423j")
 [node name="Sprite2D2" type="Sprite2D" parent="barra/libreta"]
 position = Vector2(26, 21)
 scale = Vector2(1.53846, 1.53846)
-texture = ExtResource("1_kjyjt")
+texture = ExtResource("1_ymexq")
 region_rect = Rect2(10, 4, 13, 28)
 
 [node name="llave" type="Panel" parent="barra"]
@@ -77,7 +77,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_eek76")
 [node name="Sprite2D" type="Sprite2D" parent="barra/llave"]
 position = Vector2(23, 24)
 scale = Vector2(1.53846, 1.53846)
-texture = ExtResource("2_fbo2o")
+texture = ExtResource("2_4uq3a")
 region_enabled = true
 region_rect = Rect2(10, 4, 13, 28)
 
@@ -105,10 +105,10 @@ offset_right = -571.0
 offset_bottom = -156.0
 grow_horizontal = 2
 grow_vertical = 0
-theme = ExtResource("2_ee0dt")
+theme = ExtResource("3_6x18i")
 value = 50.0
 show_percentage = false
-script = ExtResource("2_7jaf6")
+script = ExtResource("4_r2fir")
 
 [node name="detective" type="Panel" parent="barra"]
 layout_mode = 1
@@ -135,5 +135,5 @@ offset_right = 67.0
 offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_v55r2")
+texture = ExtResource("5_342hs")
 expand_mode = 1
