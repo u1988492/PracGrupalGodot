@@ -216,6 +216,8 @@ position = Vector2(-0.928573, 8.64285)
 shape = SubResource("RectangleShape2D_6ep88")
 
 [node name="Recoger" type="AudioStreamPlayer2D" parent="."]
+z_index = 2
+y_sort_enabled = true
 stream = ExtResource("2_lyew7")
 attenuation = 7.25837e-05
 bus = &"SFX"

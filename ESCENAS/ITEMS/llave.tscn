@@ -289,6 +289,8 @@ _data = {
 }
 
 [node name="Llave" type="Area2D"]
+z_index = 2
+y_sort_enabled = true
 position = Vector2(0, -10)
 scale = Vector2(0.35, 0.35)
 collision_layer = 4

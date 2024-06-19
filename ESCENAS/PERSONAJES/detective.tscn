@@ -467,6 +467,8 @@ position = Vector2(-0.623078, -1.53846)
 polygon = PackedVector2Array(-8, 24, -4, 25, 4, 25, 9, 24, 11, 21, 9, 18, 4, 17, -4, 17, -8, 18, -10, 21)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
 position = Vector2(-0.623078, -2.53846)
 sprite_frames = SubResource("SpriteFrames_sm2kb")
 animation = &"idle_S"
