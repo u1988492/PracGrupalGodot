@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
-const speed = 300.0
-var dir = "S"
+const speed = 300.0 #speed of the player's movement
+var dir = "S" #direction in which the player moves and looks
+var on_range = false #true when an enemy is close enough to hit the player
 
 #ajustar valor de la salud que da una poción
 @export var potionhealth = 1
@@ -19,14 +20,10 @@ func increaseHealth():
 	if currentHealth>=maxHealth: return
 	currentHealth += potionhealth
 	healthChanged.emit()
-	
-
-func hurtbyenemy():
-	healthChanged.emit()
-	
 
 func _physics_process(delta):
 	player_movement(delta)
+	take_damage()
 
 func player():
 	pass #funcion vacia para ser detectado por el enemigo
@@ -34,26 +31,46 @@ func player():
 func player_movement(_delta):
 	var direction := Input.get_vector("caminar_W", "caminar_E", "caminar_N", "caminar_S")
 	if Input.is_action_pressed("caminar_N"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "N"
 		play_animation(1)
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_S"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "S"
 		play_animation(1)
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_E"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "E"
 		play_animation(1)
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_W"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "W"
 		play_animation(1)
 		self.velocity = direction * speed
 	else:
+		$Caminar.stop()
 		play_animation(0)
 		self.velocity = Vector2.ZERO
 	
 	move_and_slide()
+	rotate_lantern()
+
+func rotate_lantern():
+	if dir == "S":
+		$Linterna.set_rotation_degrees(90)
+	elif dir == "W":
+		$Linterna.set_rotation_degrees(180)
+	elif dir == "N":
+		$Linterna.set_rotation_degrees(270)
+	elif dir == "E":
+		$Linterna.set_rotation_degrees(0)
 
 func play_animation(movement):
 	var animation = $AnimatedSprite2D
@@ -77,3 +94,19 @@ func play_animation(movement):
 			animation.play("caminar_W")
 		elif movement == 0:
 			animation.play("idle_W")
+
+func _on_area_ataque_body_entered(body):
+	if body.has_method("enemy"):
+		on_range = true
+
+func _on_area_ataque_body_exited(body):
+	if body.has_method("enemy"):
+		on_range = false
+
+func take_damage():
+	if on_range and global.enemy_attacking:
+		currentHealth -= 1
+		$AnimationPlayer.play("hit")
+		healthChanged.emit()
+		global.enemy_attacking = false
+	

@@ -11,8 +11,8 @@
 radius = 103.586
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sub1v"]
-radius = 21.0
-height = 64.0
+radius = 25.0
+height = 76.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ceg4h"]
 atlas = ExtResource("1_k2s0o")
@@ -323,25 +323,33 @@ animations = [{
 }]
 
 [node name="Esqueleto" type="CharacterBody2D"]
+position = Vector2(0, -20)
+collision_layer = 3
+collision_mask = 2
 script = ExtResource("1_xalkv")
 
 [node name="AreaDeteccion" type="Area2D" parent="."]
+position = Vector2(0, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
 position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_wktdw")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
+position = Vector2(0, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
+z_index = 2
+y_sort_enabled = true
 position = Vector2(0, -23)
 shape = SubResource("CapsuleShape2D_sub1v")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, 23)
 polygon = PackedVector2Array(-14, 5, -10, 8, 5, 8, 9, 5, 9, 0, 5, -3, -10, -3, -14, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -24)
+position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_nvosb")
 animation = &"hit"
 autoplay = "idle"
@@ -349,6 +357,7 @@ autoplay = "idle"
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="CooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
 
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]

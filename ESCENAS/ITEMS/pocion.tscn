@@ -198,17 +198,24 @@ _data = {
 }
 
 [node name="Pocion" type="Area2D"]
-scale = Vector2(0.5, 0.5)
+z_index = 2
+y_sort_enabled = true
+position = Vector2(0, -10)
+scale = Vector2(0.25, 0.25)
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_wogl6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, 17)
 sprite_frames = SubResource("SpriteFrames_xuddi")
 animation = &"idle"
 autoplay = "idle"
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
+visible = false
+position = Vector2(0, 26)
 shape = SubResource("CircleShape2D_tyuit")
 
 [node name="Recoger" type="AudioStreamPlayer2D" parent="."]

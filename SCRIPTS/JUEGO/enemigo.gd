@@ -1,31 +1,33 @@
 extends CharacterBody2D
 
-const SPEED = 25.0
+const SPEED = 50.0
 var player = null
 var dir = "E"
 
 var chasing = false #true if the player is close enough to be detected by the enemy
-var attacking = false #true if the enemy is attacking
 var on_reach = false #true if the player is close enough to be hit
 var cooldown = false #true if the enemy is on cooldown right after attacking
 
 func _physics_process(delta):
 	enemy_movement(delta)
+	attack()
 
 func enemy():
 	pass #funcion vacia para ser detectado por el player
 
 func enemy_movement(_delta):
 	if chasing:
-		position += (player.position - position)/SPEED
+		#position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
+			position += ((player.position + Vector2(29,0)) - position)/SPEED
 			dir = "W"
 			$AnimatedSprite2D.flip_h = true
 		else:
+			position += ((player.position - Vector2(29,0)) - position)/SPEED
 			dir = "E"
 			$AnimatedSprite2D.flip_h = false
 				
-	if !attacking:
+	if !global.enemy_attacking:
 		if chasing:
 			play_animation(1)
 		else:
@@ -35,7 +37,7 @@ func enemy_movement(_delta):
 func play_animation(movement):
 	var animation = $AnimatedSprite2D
 	if movement == 1:
-		if attacking == false:
+		if global.enemy_attacking == false:
 			animation.play("walk")
 	elif movement == 0:
 		animation.play("idle")
@@ -54,14 +56,14 @@ func _on_area_ataque_body_exited(body):
 		on_reach = false
 
 func attack():
-	if on_reach and not attacking and not cooldown:
-		attacking = true
+	if on_reach and not global.enemy_attacking and not cooldown:
+		global.enemy_attacking = true
 		$AttackTimer.start()
 		$AnimatedSprite2D.play("attack")
 
 func _on_attack_timer_timeout():
 	$AttackTimer.stop()
-	attacking = false
+	global.enemy_attacking = false
 	cooldown = true
 	$CooldownTimer.start()
 
