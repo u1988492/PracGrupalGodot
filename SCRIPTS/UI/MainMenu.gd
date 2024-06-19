@@ -24,10 +24,10 @@ func _on_visibility_changed():
 		
 
 func focus_button():
-	if botones:
-		var button: Button = botones.get_child(0)
-		if button is Button:
-			button.grab_focus()
+	#if botones:
+	#	var button: Button = botones.get_child(0)
+	#	if button is Button:
+	#		button.grab_focus()
 
 
 
