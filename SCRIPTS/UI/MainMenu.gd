@@ -28,6 +28,7 @@ func focus_button():
 	#	var button: Button = botones.get_child(0)
 	#	if button is Button:
 	#		button.grab_focus()
+	pass
 
 
 
