@@ -2,8 +2,9 @@ extends CharacterBody2D
 
 class_name Player
 
-const speed = 300.0
-var dir = "S"
+const speed = 300.0 #speed of the player's movement
+var dir = "S" #direction in which the player moves and looks
+var on_range = false #true when an enemy is close enough to hit the player
 
 #ajustar valor de la salud que da una poción
 @export var potionhealth = 1
@@ -19,14 +20,10 @@ func increaseHealth():
 	if currentHealth>=maxHealth: return
 	currentHealth += potionhealth
 	healthChanged.emit()
-	
-
-func hurtbyenemy():
-	healthChanged.emit()
-	
 
 func _physics_process(delta):
 	player_movement(delta)
+	take_damage()
 
 func player():
 	pass #funcion vacia para ser detectado por el enemigo
@@ -77,3 +74,19 @@ func play_animation(movement):
 			animation.play("caminar_W")
 		elif movement == 0:
 			animation.play("idle_W")
+
+func _on_area_ataque_body_entered(body):
+	if body.has_method("enemy"):
+		on_range = true
+
+func _on_area_ataque_body_exited(body):
+	if body.has_method("enemy"):
+		on_range = false
+
+func take_damage():
+	if on_range and global.enemy_attacking:
+		currentHealth -= 1
+		print("Ouch!: ")
+		print(currentHealth)
+		healthChanged.emit()
+		global.enemy_attacking = false

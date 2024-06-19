@@ -15,6 +15,10 @@ run/main_scene="res://ESCENAS/JUEGO/juego.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+global="*res://SCRIPTS/JUEGO/juego.gd"
+
 [input]
 
 caminar_N={
