@@ -96,7 +96,6 @@ func take_damage():
 	if on_range and global.enemy_attacking:
 		currentHealth -= 1
 		$AnimationPlayer.play("hit")
-		print("Ouch!: ")
-		print(currentHealth)
 		healthChanged.emit()
 		global.enemy_attacking = false
+	
