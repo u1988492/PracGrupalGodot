@@ -467,6 +467,9 @@ shape = SubResource("CapsuleShape2D_7t2pt")
 position = Vector2(-0.623078, -1.53846)
 polygon = PackedVector2Array(-8, 24, -4, 25, 4, 25, 9, 24, 11, 21, 9, 18, 4, 17, -4, 17, -8, 18, -10, 21)
 
+[node name="Linterna" parent="." instance=ExtResource("5_hby86")]
+position = Vector2(0, -2.30769)
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 y_sort_enabled = true
@@ -486,9 +489,6 @@ stream = ExtResource("4_kb7mj")
 libraries = {
 "": SubResource("AnimationLibrary_nvi0p")
 }
-
-[node name="Linterna" parent="." instance=ExtResource("5_hby86")]
-position = Vector2(-1.53846, 23.0769)
 
 [connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
 [connection signal="healthChanged" from="." to="." method="increaseHealth"]

@@ -60,6 +60,17 @@ func player_movement(_delta):
 		self.velocity = Vector2.ZERO
 	
 	move_and_slide()
+	rotate_lantern()
+
+func rotate_lantern():
+	if dir == "S":
+		$Linterna.set_rotation_degrees(90)
+	elif dir == "W":
+		$Linterna.set_rotation_degrees(180)
+	elif dir == "N":
+		$Linterna.set_rotation_degrees(270)
+	elif dir == "E":
+		$Linterna.set_rotation_degrees(0)
 
 func play_animation(movement):
 	var animation = $AnimatedSprite2D
