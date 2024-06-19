@@ -289,16 +289,20 @@ _data = {
 }
 
 [node name="Llave" type="Area2D"]
+position = Vector2(0, -10)
+scale = Vector2(0.35, 0.35)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_xye8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1.14286, 13.1429)
 sprite_frames = SubResource("SpriteFrames_yjfi0")
 animation = &"idle_blanco"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
+visible = false
+position = Vector2(-1.14286, 14.1429)
 shape = SubResource("CapsuleShape2D_n55fg")
 
 [node name="Recoger" type="AudioStreamPlayer2D" parent="."]

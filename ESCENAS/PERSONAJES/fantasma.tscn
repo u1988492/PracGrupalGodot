@@ -399,12 +399,14 @@ collision_mask = 2
 script = ExtResource("1_mkdab")
 
 [node name="AreaDeteccion" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
 shape = SubResource("CircleShape2D_ornr7")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
@@ -418,6 +420,7 @@ animation = &"hit"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(2, 4)
 polygon = PackedVector2Array(-20, 22, -13, 16, 10, 16, 17, 21, 11, 29, -12, 29)
 

@@ -166,7 +166,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "value"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath(".:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -198,17 +198,21 @@ _data = {
 }
 
 [node name="Carta" type="Area2D"]
+position = Vector2(0, -10)
+scale = Vector2(0.35, 0.35)
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_f1rnq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.571427, 9.14285)
 sprite_frames = SubResource("SpriteFrames_kvigs")
 animation = &"idle"
 frame_progress = 0.577731
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -0.5)
+visible = false
+position = Vector2(-0.928573, 8.64285)
 shape = SubResource("RectangleShape2D_6ep88")
 
 [node name="Recoger" type="AudioStreamPlayer2D" parent="."]

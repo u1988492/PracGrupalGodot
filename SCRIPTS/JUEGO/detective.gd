@@ -31,22 +31,31 @@ func player():
 func player_movement(_delta):
 	var direction := Input.get_vector("caminar_W", "caminar_E", "caminar_N", "caminar_S")
 	if Input.is_action_pressed("caminar_N"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "N"
 		play_animation(1)
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_S"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "S"
 		play_animation(1)
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_E"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "E"
 		play_animation(1)
 		self.velocity = direction * speed
 	elif Input.is_action_pressed("caminar_W"):
+		if not $Caminar.playing:
+			$Caminar.play(0)
 		dir = "W"
 		play_animation(1)
 		self.velocity = direction * speed
 	else:
+		$Caminar.stop()
 		play_animation(0)
 		self.velocity = Vector2.ZERO
 	
@@ -86,6 +95,7 @@ func _on_area_ataque_body_exited(body):
 func take_damage():
 	if on_range and global.enemy_attacking:
 		currentHealth -= 1
+		$AnimationPlayer.play("hit")
 		print("Ouch!: ")
 		print(currentHealth)
 		healthChanged.emit()

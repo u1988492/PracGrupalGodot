@@ -329,6 +329,7 @@ collision_mask = 2
 script = ExtResource("1_xalkv")
 
 [node name="AreaDeteccion" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
@@ -336,6 +337,7 @@ position = Vector2(0, -22)
 shape = SubResource("CircleShape2D_wktdw")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, 23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
@@ -343,6 +345,7 @@ position = Vector2(0, -23)
 shape = SubResource("CapsuleShape2D_sub1v")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 position = Vector2(0, 23)
 polygon = PackedVector2Array(-14, 5, -10, 8, 5, 8, 9, 5, 9, 0, 5, -3, -10, -3, -14, 0)
 
