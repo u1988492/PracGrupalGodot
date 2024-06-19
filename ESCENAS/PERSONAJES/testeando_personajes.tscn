@@ -1,0 +1,32 @@
+[gd_scene load_steps=8 format=3 uid="uid://d4an3gle5jlrf"]
+
+[ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="1_37mgi"]
+[ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="2_ko1hh"]
+[ext_resource type="PackedScene" uid="uid://bcwpqcyjiody5" path="res://ESCENAS/PERSONAJES/fantasma.tscn" id="3_gxrg1"]
+[ext_resource type="PackedScene" uid="uid://timy8dluulhj" path="res://ESCENAS/PERSONAJES/murcielago.tscn" id="4_wf6lb"]
+[ext_resource type="PackedScene" uid="uid://ds2ae5vnwbelw" path="res://ESCENAS/ITEMS/carta.tscn" id="5_c1t7o"]
+[ext_resource type="PackedScene" uid="uid://61cjuaw010xj" path="res://ESCENAS/ITEMS/llave.tscn" id="6_5ia8l"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="7_q5ign"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Detective" parent="." instance=ExtResource("1_37mgi")]
+position = Vector2(512, 273)
+
+[node name="Esqueleto" parent="." instance=ExtResource("2_ko1hh")]
+position = Vector2(778, 218)
+
+[node name="Fantasma" parent="." instance=ExtResource("3_gxrg1")]
+position = Vector2(784, 403)
+
+[node name="Murcielago" parent="." instance=ExtResource("4_wf6lb")]
+position = Vector2(616, 542)
+
+[node name="Carta" parent="." instance=ExtResource("5_c1t7o")]
+position = Vector2(187, 169)
+
+[node name="Llave" parent="." instance=ExtResource("6_5ia8l")]
+position = Vector2(114, 310)
+
+[node name="Pocion" parent="." instance=ExtResource("7_q5ign")]
+position = Vector2(206, 475)

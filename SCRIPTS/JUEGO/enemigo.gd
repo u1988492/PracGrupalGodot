@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 25.0
+const SPEED = 50.0
 var player = null
 var dir = "E"
 
@@ -11,17 +11,20 @@ var cooldown = false #true if the enemy is on cooldown right after attacking
 
 func _physics_process(delta):
 	enemy_movement(delta)
+	attack()
 
 func enemy():
 	pass #funcion vacia para ser detectado por el player
 
 func enemy_movement(_delta):
 	if chasing:
-		position += (player.position - position)/SPEED
+		#position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
+			position += ((player.position + Vector2(29,0)) - position)/SPEED
 			dir = "W"
 			$AnimatedSprite2D.flip_h = true
 		else:
+			position += ((player.position - Vector2(29,0)) - position)/SPEED
 			dir = "E"
 			$AnimatedSprite2D.flip_h = false
 				
