@@ -1,9 +1,10 @@
-[gd_scene load_steps=58 format=3 uid="uid://b1gtyfiojsvao"]
+[gd_scene load_steps=59 format=3 uid="uid://b1gtyfiojsvao"]
 
 [ext_resource type="Texture2D" uid="uid://cg14j2sim7hyl" path="res://ASSETS/PERSONAJES/detective.png" id="1_i2wod"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
 [ext_resource type="AudioStream" uid="uid://dao2xku2sx5cj" path="res://ASSETS/SFX/caminar.mp3" id="3_8cb4r"]
 [ext_resource type="AudioStream" uid="uid://lehj7nn2w7x0" path="res://ASSETS/SFX/daño.mp3" id="4_kb7mj"]
+[ext_resource type="PackedScene" uid="uid://p4wdnrq75djh" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t2pt"]
 radius = 18.4615
@@ -471,7 +472,7 @@ z_index = 2
 y_sort_enabled = true
 position = Vector2(-0.623078, -2.53846)
 sprite_frames = SubResource("SpriteFrames_sm2kb")
-animation = &"idle_S"
+animation = &"idle_E"
 autoplay = "idle_S"
 
 [node name="Caminar" type="AudioStreamPlayer2D" parent="."]
@@ -485,6 +486,9 @@ stream = ExtResource("4_kb7mj")
 libraries = {
 "": SubResource("AnimationLibrary_nvi0p")
 }
+
+[node name="Linterna" parent="." instance=ExtResource("5_hby86")]
+position = Vector2(-1.53846, 23.0769)
 
 [connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
 [connection signal="healthChanged" from="." to="." method="increaseHealth"]
