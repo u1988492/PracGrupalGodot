@@ -19,15 +19,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.564706, 0.368627, 0.490196, 0.133333)
+color = Color(0.564706, 0.368627, 0.490196, 0.580392)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -328.0
+offset_top = -132.0
+offset_right = 136.0
+offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.4, 1.28)
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -36,16 +43,49 @@ theme_override_constants/margin_bottom = 32
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme = ExtResource("1_uv0it")
+theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 theme = ExtResource("1_uv0it")
 theme_override_font_sizes/font_size = 32
 text = "JUEGO PAUSADO"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 20
+columns = 2
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "MUSICA
+"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
+
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+text = "SFX
+"
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -58,9 +98,6 @@ focus_neighbor_bottom = NodePath("../Save")
 focus_next = NodePath("../Save")
 focus_previous = NodePath("../Exit")
 text = "VOLVER A JUEGO"
-
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
-layout_mode = 2
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -86,6 +123,8 @@ focus_next = NodePath("../Play")
 focus_previous = NodePath("../Save")
 text = "VOLVER A MENU"
 
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

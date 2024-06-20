@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnt7gelc1p1j0"]
+[gd_scene load_steps=10 format=3 uid="uid://bnt7gelc1p1j0"]
 
 [ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="1_omqao"]
 [ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="2_jwb72"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="4_xbkob"]
 [ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="6_gcg42"]
 [ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="7_8rfxk"]
+[ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="9_7xtin"]
+[ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="9_m3t46"]
 
 [node name="Juego" type="Node2D"]
 
@@ -53,6 +55,16 @@ text = "Current position: 9999"
 [node name="Murcielago" parent="." instance=ExtResource("3_okv1g")]
 position = Vector2(866, 467)
 
+[node name="bgmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gcg42")
+autoplay = true
+bus = &"MUSIC"
+
+[node name="tormenta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8rfxk")
+autoplay = true
+bus = &"SFX"
+
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("4_xbkob")
 
@@ -67,14 +79,14 @@ grow_vertical = 2
 [node name="gameui" parent="UI/Control" instance=ExtResource("2_jwb72")]
 layout_mode = 1
 
-[node name="bgmusic" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("6_gcg42")
-autoplay = true
-bus = &"MUSIC"
+[node name="MainMenu" parent="UI/Control" instance=ExtResource("9_m3t46")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
 
-[node name="bgmusic2" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_8rfxk")
-autoplay = true
-bus = &"MUSIC"
+[node name="pausemenu" parent="UI/Control" instance=ExtResource("9_7xtin")]
+visible = false
+layout_mode = 1
 
 [connection signal="update_ui" from="Detective" to="Control" method="_on_detective_update_ui"]
+[connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]
