@@ -12,8 +12,7 @@ offset = Vector2(-7, 33)
 polygon = PackedVector2Array(7, -33, 133, -76, 139, -71, 147, -61, 153, -48, 154, -34, 153, -20, 148, -9, 141, 1, 134, 7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-position = Vector2(-3, 0)
+position = Vector2(-7, 33)
 polygon = PackedVector2Array(133, -76, 139, -71, 147, -61, 153, -48, 154, -34, 153, -20, 148, -9, 141, 1, 134, 7, 7, -33)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

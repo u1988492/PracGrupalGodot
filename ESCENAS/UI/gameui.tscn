@@ -1,22 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://8gogt4q6mif3"]
+[gd_scene load_steps=11 format=3 uid="uid://8gogt4q6mif3"]
 
+[ext_resource type="Script" path="res://SCRIPTS/UI/gameui.gd" id="1_nrpoj"]
 [ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_ymexq"]
 [ext_resource type="Texture2D" uid="uid://r8r2p5erwiep" path="res://ASSETS/ITEMS/key-white.png" id="2_rfn3c"]
 [ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="3_6x18i"]
 [ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="4_r2fir"]
-[ext_resource type="Texture2D" uid="uid://ofxpomcmamqi" path="res://ESCENAS/UI/gato.jpeg" id="5_342hs"]
+[ext_resource type="Texture2D" uid="uid://b1jimsyqeu3l0" path="res://ESCENAS/UI/gato.jpeg" id="5_342hs"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cneqe"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.839216, 0, 0.592157, 1)
-corner_radius_top_left = 2
-corner_radius_top_right = 2
-corner_radius_bottom_right = 2
-corner_radius_bottom_left = 2
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnjta"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1423j"]
 
@@ -36,14 +27,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_nrpoj")
 
 [node name="barra" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 475.0
-offset_right = 730.0
-offset_bottom = 639.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cneqe")
+offset_left = 25.0
+offset_top = 468.0
+offset_right = 754.0
+offset_bottom = 632.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fnjta")
 
 [node name="libreta" type="Panel" parent="barra"]
 layout_mode = 1
@@ -94,6 +86,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_eek76")
 
 [node name="healthbar" type="ProgressBar" parent="barra"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -106,7 +99,7 @@ offset_bottom = -156.0
 grow_horizontal = 2
 grow_vertical = 0
 theme = ExtResource("3_6x18i")
-value = 50.0
+rounded = true
 show_percentage = false
 script = ExtResource("4_r2fir")
 

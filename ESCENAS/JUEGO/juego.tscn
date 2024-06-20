@@ -1,3 +1,97 @@
-[gd_scene format=3 uid="uid://bnt7gelc1p1j0"]
+[gd_scene load_steps=12 format=3 uid="uid://bnt7gelc1p1j0"]
+
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_fr3gi"]
+[ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="1_omqao"]
+[ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="2_jwb72"]
+[ext_resource type="Script" path="res://ESCENAS/JUEGO/playertext.gd" id="2_rw2kj"]
+[ext_resource type="PackedScene" uid="uid://timy8dluulhj" path="res://ESCENAS/PERSONAJES/murcielago.tscn" id="3_okv1g"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="4_xbkob"]
+[ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="6_gcg42"]
+[ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="7_8rfxk"]
+[ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="9_7xtin"]
+[ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="9_m3t46"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="11_muop6"]
 
 [node name="Juego" type="Node2D"]
+script = ExtResource("1_fr3gi")
+
+[node name="transicion" parent="." instance=ExtResource("11_muop6")]
+
+[node name="Detective" parent="." instance=ExtResource("1_omqao")]
+position = Vector2(116, 144)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -3, 1175, -10, 1160, 664, -6, 661, -10, 29, -60, 33, -69, 758, 1251, 715, 1199, -78, -27, -30, -33, 20, -4, 25)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 510.0
+offset_top = 9.0
+offset_right = 739.0
+offset_bottom = 83.0
+script = ExtResource("2_rw2kj")
+
+[node name="CurrentHealth" type="RichTextLabel" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -20.0
+offset_right = 155.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Salud actual: 999"
+
+[node name="CurrentPos" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 55.0
+offset_right = 492.0
+offset_bottom = 95.0
+text = "Current position: 9999"
+
+[node name="Murcielago" parent="." instance=ExtResource("3_okv1g")]
+position = Vector2(866, 467)
+
+[node name="bgmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gcg42")
+autoplay = true
+bus = &"MUSIC"
+
+[node name="tormenta" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8rfxk")
+autoplay = true
+bus = &"SFX"
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("4_xbkob")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameui" parent="UI/Control" instance=ExtResource("2_jwb72")]
+layout_mode = 1
+
+[node name="MainMenu" parent="UI/Control" instance=ExtResource("9_m3t46")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="pausemenu" parent="UI/Control" instance=ExtResource("9_7xtin")]
+visible = false
+layout_mode = 1
+
+[connection signal="update_ui" from="Detective" to="Control" method="_on_detective_update_ui"]
+[connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]

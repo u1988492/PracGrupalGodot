@@ -47,6 +47,11 @@ func _on_area_deteccion_body_entered(body):
 		player = body
 		chasing = true
 
+func _on_area_deteccion_body_exited(body):
+	if body.has_method("player"):
+		player = null
+		chasing = true
+
 func _on_area_ataque_body_entered(body):
 	if body.has_method("player"):
 		on_reach = true
@@ -73,3 +78,5 @@ func _on_cooldown_timer_timeout():
 
 func take_damage():
 	pass
+
+

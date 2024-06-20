@@ -1,15 +1,17 @@
 extends Control
 
 @onready var botones = %botones
+@onready var transicion = $transicion/fadeanim
+
 
 signal start_game()
 
 func _ready():
-	focus_button()
+	transicion.play("fadein")
 
 func _on_play_pressed():
-	start_game.emit()
-	hide()
+	await get_tree().create_timer(0.5).timeout
+	get_tree().change_scene_to_file("res://ESCENAS/JUEGO/juego.tscn")
 
 
 func _on_load_pressed():
@@ -29,6 +31,5 @@ func focus_button():
 	#	if button is Button:
 	#		button.grab_focus()
 	pass
-
 
 
