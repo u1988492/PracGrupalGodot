@@ -19,6 +19,10 @@ config/icon="res://icon.svg"
 
 global="*res://SCRIPTS/JUEGO/juego.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 caminar_N={
