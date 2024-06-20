@@ -2,28 +2,34 @@ extends CharacterBody2D
 
 class_name Player
 
+signal update_ui
+
 const speed = 300.0 #speed of the player's movement
 var dir = "S" #direction in which the player moves and looks
 var on_range = false #true when an enemy is close enough to hit the player
 
 #ajustar valor de la salud que da una poción
+var health = 100
+
 @export var potionhealth = 1
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
 
 @export var has_key = false #cambiar cuando recoge o usa llave
 
-signal healthChanged #emitir señal cuando cambia salud a barra de progreso
-
 #actualizar salud al tomar pocióm
 func increaseHealth():
-	if currentHealth>=maxHealth: return
-	currentHealth += potionhealth
-	healthChanged.emit()
+	pass
+	
+func _ready():
+	global.playerHealth = currentHealth
+	global.playerPositon = self.position
 
 func _physics_process(delta):
 	player_movement(delta)
+	global.playerPositon = self.position
 	take_damage()
+	emit_signal("update_ui")
 
 func player():
 	pass #funcion vacia para ser detectado por el enemigo
@@ -107,6 +113,6 @@ func take_damage():
 	if on_range and global.enemy_attacking:
 		currentHealth -= 1
 		$AnimationPlayer.play("hit")
-		healthChanged.emit()
+		global.playerHealth = currentHealth
 		global.enemy_attacking = false
 	

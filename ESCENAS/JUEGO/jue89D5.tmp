@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnt7gelc1p1j0"]
+
+[ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="1_omqao"]
+[ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="2_jwb72"]
+
+[node name="Juego" type="Node2D"]
+
+[node name="Detective" parent="." instance=ExtResource("1_omqao")]
+position = Vector2(116, 144)
+
+[node name="Main" parent="." instance=ExtResource("2_jwb72")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, -3, 1175, -10, 1160, 664, -6, 661, -10, 29, -60, 33, -69, 758, 1251, 715, 1199, -78, -27, -30, -33, 20, -4, 25)
