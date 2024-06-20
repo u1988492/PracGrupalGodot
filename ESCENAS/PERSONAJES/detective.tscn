@@ -458,7 +458,7 @@ collision_mask = 3
 script = ExtResource("1_x5qnp")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
-position = Vector2(1.53846, 3.43323e-05)
+position = Vector2(1.53846, -3.07689)
 collision_layer = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaAtaque"]
@@ -466,18 +466,18 @@ position = Vector2(-0.769231, -1.53846)
 shape = SubResource("CapsuleShape2D_7t2pt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0.915384, -1.53847)
+position = Vector2(0.915384, -4.61539)
 polygon = PackedVector2Array(-8, 24, -4, 25, 4, 25, 9, 24, 11, 21, 9, 18, 4, 17, -4, 17, -8, 18, -10, 21)
 
 [node name="Linterna" parent="." instance=ExtResource("5_hby86")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(1.53846, -2.30767)
+position = Vector2(1.53846, -5.38459)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(0.915384, -2.53847)
+position = Vector2(0.915384, -5.61539)
 sprite_frames = SubResource("SpriteFrames_sm2kb")
 animation = &"idle_E"
 autoplay = "idle_S"
@@ -497,8 +497,6 @@ libraries = {
 "": SubResource("AnimationLibrary_nvi0p")
 }
 
-[connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
-[connection signal="healthChanged" from="." to="." method="increaseHealth"]
 [node name="DamageCooldown" type="Timer" parent="."]
 
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]

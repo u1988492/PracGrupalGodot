@@ -14,6 +14,7 @@ func _process(delta):
 
 func on_and_off(_delta):
 	if Input.is_action_just_pressed("linterna"):
+		$AudioStreamPlayer2D.play(0)
 		if lantern_on:
 			hide()
 			lantern_on = false

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://p4wdnrq75djh"]
+[gd_scene load_steps=3 format=3 uid="uid://p4wdnrq75djh"]
 
 [ext_resource type="Script" path="res://SCRIPTS/ITEMS/linterna.gd" id="1_egnd4"]
+[ext_resource type="AudioStream" uid="uid://bw6rpqapgaben" path="res://ASSETS/SFX/linterna.mp3" id="2_jts5c"]
 
 [node name="Linterna" type="Area2D"]
 z_index = 2
@@ -14,6 +15,10 @@ polygon = PackedVector2Array(7, -33, 133, -76, 139, -71, 147, -61, 153, -48, 154
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-7, 33)
 polygon = PackedVector2Array(133, -76, 139, -71, 147, -61, 153, -48, 154, -34, 153, -20, 148, -9, 141, 1, 134, 7, 7, -33)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_jts5c")
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

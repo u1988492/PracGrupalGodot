@@ -4,7 +4,7 @@ class_name Juego
 #global script, call variables as "global"
 
 var enemy_attacking = false #true if an enemy is attacking the player
-var enemy_damage = false 
+var player_attacking = false #trye 
 
 
 var playerHealth 
