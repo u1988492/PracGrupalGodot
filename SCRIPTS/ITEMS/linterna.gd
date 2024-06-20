@@ -31,12 +31,10 @@ func on_and_off(_delta):
 func _on_body_entered(body):
 	if body.has_method("enemy"):
 		lantern_range = true
-		print("enemy on range")
 
 func _on_body_exited(body):
 	if body.has_method("enemy"):
 		lantern_range = false
-		print("enemy out of range")
 
 func attack():
 	if lantern_range and not global.player_attacking and not cooldown:

@@ -545,6 +545,8 @@ libraries = {
 stream = ExtResource("7_rb04c")
 bus = &"VOICES"
 
+[node name="attack" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
 [connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
 [connection signal="area_entered" from="AreaAtaque" to="." method="_on_area_ataque_area_entered"]

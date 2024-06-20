@@ -74,6 +74,7 @@ func attack():
 		global.enemy_attacking = true
 		$Timers/AttackTimer.start()
 		$AnimatedSprite2D.play("attack")
+		$attack.play(0)
 
 func _on_attack_timer_timeout():
 	$Timers/AttackTimer.stop()
