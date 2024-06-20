@@ -364,7 +364,7 @@ polygon = PackedVector2Array(-13, -1, -8, -5, 8, -5, 14, -1, 9, 3, -8, 3)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -18)
 sprite_frames = SubResource("SpriteFrames_rf4ub")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="Timers" type="Node" parent="."]

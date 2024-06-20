@@ -32,7 +32,7 @@ func enemy_movement(_delta):
 			dir = "E"
 			$AnimatedSprite2D.flip_h = false
 				
-	if !global.enemy_attacking:
+	if not global.enemy_attacking and not global.player_attacking:
 		if chasing:
 			play_animation(1)
 		else:
@@ -42,7 +42,7 @@ func enemy_movement(_delta):
 func play_animation(movement):
 	var animation = $AnimatedSprite2D
 	if movement == 1:
-		if global.enemy_attacking == false:
+		if not global.enemy_attacking and not global.player_attacking:
 			animation.play("walk")
 	elif movement == 0:
 		animation.play("idle")
@@ -90,12 +90,13 @@ func _on_area_ataque_area_exited(area):
 		on_light = false
 
 func take_damage():
-	if global.player_attacking and not damage_cooldown:
+	if on_light and global.player_attacking and not damage_cooldown:
 		health -= 1
 		print ("Enemy health: ", health)
 		damage_cooldown = true
 		$Timers/DamageCooldown.start()
 		$AnimatedSprite2D.play("hit")
+		global.player_attacking = false
 
 func _on_damage_cooldown_timeout():
 	$Timers/DamageCooldown.stop()
