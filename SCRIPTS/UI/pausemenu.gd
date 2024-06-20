@@ -4,6 +4,8 @@ extends Control
 
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("MUSIC")
+@onready var transicion = $transicion/fadeanim
+
 
 signal start_game()
 
@@ -33,6 +35,9 @@ func _on_save_pressed():
 
 
 func _on_exit_pressed():
+	transicion.get_parent().get_node("ColorRect").color.a = 255
+	transicion.play("fadeoutlong")
+	await get_tree().create_timer(1.1).timeout
 	get_tree().change_scene_to_file("res://ESCENAS/UI/MainMenu.tscn")
 
 

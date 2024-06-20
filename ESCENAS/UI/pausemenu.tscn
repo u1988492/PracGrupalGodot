@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b770udfckm26p"]
+[gd_scene load_steps=4 format=3 uid="uid://b770udfckm26p"]
 
 [ext_resource type="Script" path="res://SCRIPTS/UI/pausemenu.gd" id="1_re7nk"]
 [ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="1_uv0it"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="3_lvavx"]
 
 [node name="pausemenu" type="Control"]
 layout_mode = 3
@@ -12,7 +13,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_re7nk")
 
+[node name="transicion" parent="." instance=ExtResource("3_lvavx")]
+y_sort_enabled = true
+
 [node name="ColorRect" type="ColorRect" parent="."]
+y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +27,7 @@ grow_vertical = 2
 color = Color(0.564706, 0.368627, 0.490196, 0.580392)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
+y_sort_enabled = true
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

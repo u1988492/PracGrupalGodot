@@ -25,6 +25,7 @@ visible = false
 layout_mode = 1
 
 [node name="pausemenu" parent="Control" instance=ExtResource("4_j8fnm")]
+visible = false
 layout_mode = 1
 
 [connection signal="start_game" from="Control/MainMenu" to="." method="_on_main_menu_start_game"]

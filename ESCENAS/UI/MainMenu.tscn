@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ctodhsp4jsjxo"]
+[gd_scene load_steps=4 format=3 uid="uid://ctodhsp4jsjxo"]
 
 [ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="1_xw8h3"]
 [ext_resource type="Script" path="res://SCRIPTS/UI/MainMenu.gd" id="2_k3i6c"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="3_vpbrb"]
 
 [node name="MainMenu" type="Control"]
 custom_minimum_size = Vector2(320, 64)
@@ -14,7 +15,18 @@ grow_vertical = 2
 theme = ExtResource("1_xw8h3")
 script = ExtResource("2_k3i6c")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="transicion" parent="." instance=ExtResource("3_vpbrb")]
+scale = Vector2(21.88, 1)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,11 +35,17 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.545098, 0.352941, 0.509804, 1)
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -117.0
+offset_right = 340.0
+offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 32
@@ -35,13 +53,13 @@ theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
 theme_override_constants/margin_bottom = 32
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 32
@@ -49,14 +67,14 @@ text = "SOMBRAS DE HEARTWOOD"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="botones" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+[node name="botones" type="VBoxContainer" parent="Control/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_constants/separation = 20
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/botones"]
+[node name="Play" type="Button" parent="Control/MarginContainer/VBoxContainer/botones"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -68,7 +86,7 @@ focus_next = NodePath("../Load")
 focus_previous = NodePath("../Exit")
 text = "JUGAR"
 
-[node name="Load" type="Button" parent="MarginContainer/VBoxContainer/botones"]
+[node name="Load" type="Button" parent="Control/MarginContainer/VBoxContainer/botones"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -80,7 +98,7 @@ focus_next = NodePath("../Exit")
 focus_previous = NodePath("../Play")
 text = "CARGAR PARTIDA"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/botones"]
+[node name="Exit" type="Button" parent="Control/MarginContainer/VBoxContainer/botones"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -93,6 +111,6 @@ focus_previous = NodePath("../Load")
 text = "SALIR"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/botones/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/botones/Load" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/botones/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/botones/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/botones/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/botones/Exit" to="." method="_on_exit_pressed"]
