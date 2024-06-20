@@ -111,7 +111,7 @@ func _on_area_ataque_body_exited(body):
 
 func take_damage():
 	if on_range and global.enemy_attacking and not damage_cooldown:
-		currentHealth -= damage		
+		currentHealth -= damage
 		damage_cooldown = true
 		$DamageCooldown.start()
 		$AnimationPlayer.play("hit")
