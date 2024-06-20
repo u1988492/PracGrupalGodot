@@ -421,9 +421,8 @@ polygon = PackedVector2Array(-20, 22, -13, 16, 10, 16, 17, 21.9, 11, 29, -12, 29
 position = Vector2(0, -11.9)
 scale = Vector2(0.9, 0.9)
 sprite_frames = SubResource("SpriteFrames_sldp0")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame = 1
 
 [node name="Timers" type="Node" parent="."]
 

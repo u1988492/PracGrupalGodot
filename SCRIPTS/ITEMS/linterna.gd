@@ -11,7 +11,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	on_and_off(delta)
-	attack()
+	if lantern_on:
+		attack()
 
 func lantern():
 	pass
@@ -34,9 +35,10 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.has_method("enemy"):
 		lantern_range = false
+		print("enemy out of range")
 
 func attack():
-	if lantern_on and lantern_range:
+	if lantern_range and not global.player_attacking:
 		global.player_attacking = true
 	else:
 		global.player_attacking = false
