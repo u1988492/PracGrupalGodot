@@ -2,6 +2,7 @@ extends Area2D
 
 var lantern_on = false #true when the lantern is on
 var lantern_range = false #true when there is an enemy within the lantern's light
+var cooldown = false #true when the damage caused by the light is on cooldown
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,7 +39,16 @@ func _on_body_exited(body):
 		print("enemy out of range")
 
 func attack():
-	if lantern_range and not global.player_attacking:
+	if lantern_range and not global.player_attacking and not cooldown:
 		global.player_attacking = true
-	else:
-		global.player_attacking = false
+		$LightDamage.start()
+
+func _on_light_damage_timeout():
+	$LightDamage.stop()
+	global.player_attacking = false
+	cooldown = true
+	$Cooldown.start()
+
+func _on_cooldown_timeout():
+	$Cooldown.stop()
+	cooldown = false

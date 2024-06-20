@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://bcwpqcyjiody5"]
+[gd_scene load_steps=64 format=3 uid="uid://bcwpqcyjiody5"]
 
 [ext_resource type="Texture2D" uid="uid://c8mfcr5sfvy0o" path="res://ASSETS/PERSONAJES/Enemy/fantasma/Sprite-fantasma2.png" id="1_06pat"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/enemigo.gd" id="1_mkdab"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bxyjl84jv1dgh" path="res://ASSETS/PERSONAJES/Enemy/fantasma/Sprite-fantasma3.png" id="3_vq7dq"]
 [ext_resource type="Texture2D" uid="uid://b04aeagex3uc8" path="res://ASSETS/PERSONAJES/Enemy/fantasma/Sprite-fantasma5.png" id="4_x6pni"]
 [ext_resource type="Texture2D" uid="uid://4qit0rhuenqn" path="res://ASSETS/PERSONAJES/Enemy/fantasma/Sprite-fantasma4.png" id="5_2ytu6"]
+[ext_resource type="AudioStream" uid="uid://d21f6cm4l3ins" path="res://ASSETS/SFX/fantasma_2.mp3" id="7_jqgns"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ornr7"]
 radius = 103.586
@@ -392,10 +393,181 @@ animations = [{
 "speed": 8.0
 }]
 
+[sub_resource type="Animation" id="Animation_03cb0"]
+resource_name = "death"
+length = 2.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"death"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AreaDeteccion/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AreaAtaque/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionPolygon2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2.8),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("death:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_s11nf"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AreaDeteccion/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AreaAtaque/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionPolygon2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("death:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5b5qo"]
+_data = {
+"RESET": SubResource("Animation_s11nf"),
+"death": SubResource("Animation_03cb0")
+}
+
 [node name="Fantasma" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -20)
-collision_layer = 2
+collision_layer = 3
 collision_mask = 2
 script = ExtResource("1_mkdab")
 
@@ -414,7 +586,8 @@ position = Vector2(0, -4.9)
 shape = SubResource("CapsuleShape2D_0ub8n")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(2, -1.9)
+position = Vector2(1.16554, -1.9)
+scale = Vector2(0.777027, 1)
 polygon = PackedVector2Array(-20, 22, -13, 16, 10, 16, 17, 21.9, 11, 29, -12, 29)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -434,7 +607,17 @@ wait_time = 0.5
 [node name="DamageCooldown" type="Timer" parent="Timers"]
 wait_time = 1.5
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_5b5qo")
+}
+
+[node name="death" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_jqgns")
+bus = &"VOICES"
+
 [connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
+[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
 [connection signal="area_entered" from="AreaAtaque" to="." method="_on_area_ataque_area_entered"]
 [connection signal="area_exited" from="AreaAtaque" to="." method="_on_area_ataque_area_exited"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]

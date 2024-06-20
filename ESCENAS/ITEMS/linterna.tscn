@@ -20,5 +20,12 @@ polygon = PackedVector2Array(133, -76, 139, -71, 147, -61, 153, -48, 154, -34, 1
 stream = ExtResource("2_jts5c")
 bus = &"SFX"
 
+[node name="LightDamage" type="Timer" parent="."]
+
+[node name="Cooldown" type="Timer" parent="."]
+wait_time = 0.75
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="LightDamage" to="." method="_on_light_damage_timeout"]
+[connection signal="timeout" from="Cooldown" to="." method="_on_cooldown_timeout"]
