@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bnt7gelc1p1j0"]
+[gd_scene load_steps=8 format=3 uid="uid://bnt7gelc1p1j0"]
 
 [ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="1_omqao"]
 [ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="2_jwb72"]
 [ext_resource type="Script" path="res://ESCENAS/JUEGO/playertext.gd" id="2_rw2kj"]
 [ext_resource type="PackedScene" uid="uid://timy8dluulhj" path="res://ESCENAS/PERSONAJES/murcielago.tscn" id="3_okv1g"]
 [ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="4_xbkob"]
-[ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="9_m3t46"]
+[ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="6_gcg42"]
+[ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="7_8rfxk"]
 
 [node name="Juego" type="Node2D"]
 
@@ -66,10 +67,14 @@ grow_vertical = 2
 [node name="gameui" parent="UI/Control" instance=ExtResource("2_jwb72")]
 layout_mode = 1
 
-[node name="MainMenu" parent="UI/Control" instance=ExtResource("9_m3t46")]
-unique_name_in_owner = true
-visible = false
-layout_mode = 1
+[node name="bgmusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_gcg42")
+autoplay = true
+bus = &"MUSIC"
+
+[node name="bgmusic2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_8rfxk")
+autoplay = true
+bus = &"MUSIC"
 
 [connection signal="update_ui" from="Detective" to="Control" method="_on_detective_update_ui"]
-[connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]

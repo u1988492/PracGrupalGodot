@@ -483,17 +483,17 @@ autoplay = "idle_S"
 [node name="Caminar" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1.53846, -15.3846)
 stream = ExtResource("3_8cb4r")
+bus = &"SFX"
 
 [node name="Daño" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1.53846, -15.3846)
 stream = ExtResource("4_kb7mj")
+bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_nvi0p")
 }
 
-[connection signal="healthChanged" from="." to="." method="increaseHealth"]
-[connection signal="healthChanged" from="." to="." method="hurtbyenemy"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
 [connection signal="body_exited" from="AreaAtaque" to="." method="_on_area_ataque_body_exited"]

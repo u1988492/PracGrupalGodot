@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://b770udfckm26p"]
+[gd_scene load_steps=3 format=3 uid="uid://b770udfckm26p"]
+
+[ext_resource type="Script" path="res://SCRIPTS/UI/pausemenu.gd" id="1_re7nk"]
+[ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="1_uv0it"]
 
 [node name="pausemenu" type="Control"]
 layout_mode = 3
@@ -7,3 +10,82 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_re7nk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.564706, 0.368627, 0.490196, 0.133333)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_uv0it")
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_uv0it")
+theme_override_font_sizes/font_size = 32
+text = "JUEGO PAUSADO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Exit")
+focus_neighbor_top = NodePath("../Exit")
+focus_neighbor_right = NodePath("../Save")
+focus_neighbor_bottom = NodePath("../Save")
+focus_next = NodePath("../Save")
+focus_previous = NodePath("../Exit")
+text = "VOLVER A JUEGO"
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Exit")
+focus_neighbor_top = NodePath("../Play")
+focus_neighbor_right = NodePath("../Exit")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Play")
+text = "GUARDAR PARTIDA"
+
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_left = NodePath("../Save")
+focus_neighbor_top = NodePath("../Save")
+focus_neighbor_right = NodePath("../Play")
+focus_neighbor_bottom = NodePath("../Play")
+focus_next = NodePath("../Play")
+focus_previous = NodePath("../Save")
+text = "VOLVER A MENU"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

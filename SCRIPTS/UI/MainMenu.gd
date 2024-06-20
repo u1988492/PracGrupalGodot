@@ -8,8 +8,7 @@ func _ready():
 	focus_button()
 
 func _on_play_pressed():
-	start_game.emit()
-	hide()
+	get_tree().change_scene_to_file("res://ESCENAS/JUEGO/juego.tscn")
 
 
 func _on_load_pressed():
