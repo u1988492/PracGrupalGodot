@@ -9,8 +9,7 @@ var dir = "S" #direction in which the player moves and looks
 var on_range = false #true when an enemy is close enough to hit the player
 
 #ajustar valor de la salud que da una poción
-var health = 100
-
+@export var damage = 1
 @export var potionhealth = 1
 @export var maxHealth = 30
 @onready var currentHealth: int = maxHealth
@@ -111,7 +110,7 @@ func _on_area_ataque_body_exited(body):
 
 func take_damage():
 	if on_range and global.enemy_attacking:
-		currentHealth -= 1
+		currentHealth -= damage
 		$AnimationPlayer.play("hit")
 		global.playerHealth = currentHealth
 		global.enemy_attacking = false
