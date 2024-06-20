@@ -103,7 +103,7 @@ focus_neighbor_right = NodePath("../Save")
 focus_neighbor_bottom = NodePath("../Save")
 focus_next = NodePath("../Save")
 focus_previous = NodePath("../Exit")
-text = "VOLVER A JUEGO"
+text = "REANUDAR PARTIDA"
 
 [node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -127,7 +127,7 @@ focus_neighbor_right = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Play")
 focus_next = NodePath("../Play")
 focus_previous = NodePath("../Save")
-text = "VOLVER A MENU"
+text = "VOLVER AL MENU"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
