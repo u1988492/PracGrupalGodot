@@ -7,6 +7,7 @@ signal update_ui
 const speed = 300.0 #speed of the player's movement
 var dir = "S" #direction in which the player moves and looks
 var on_range = false #true when an enemy is close enough to hit the player
+var damage_cooldown = false
 
 #ajustar valor de la salud que da una poción
 @export var damage = 1
@@ -109,9 +110,14 @@ func _on_area_ataque_body_exited(body):
 		on_range = false
 
 func take_damage():
-	if on_range and global.enemy_attacking:
-		currentHealth -= damage
+	if on_range and global.enemy_attacking and not damage_cooldown:
+		currentHealth -= damage		
+		damage_cooldown = true
+		$DamageCooldown.start()
 		$AnimationPlayer.play("hit")
 		global.playerHealth = currentHealth
 		global.enemy_attacking = false
-	
+
+func _on_damage_cooldown_timeout():
+	$DamageCooldown.stop()
+	damage_cooldown = false
