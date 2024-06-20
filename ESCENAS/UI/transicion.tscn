@@ -1,5 +1,20 @@
 [gd_scene load_steps=9 format=3 uid="uid://dcefhpdqp3klm"]
 
+[sub_resource type="Animation" id="Animation_x2qo7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_tgcta"]
 resource_name = "fadein"
 length = 0.5
@@ -17,8 +32,9 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_x2qo7"]
-length = 0.001
+[sub_resource type="Animation" id="Animation_3wyww"]
+resource_name = "fadeinlong"
+length = 1.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -26,11 +42,14 @@ tracks/0/path = NodePath("ColorRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Color(0, 0, 0, 0)]
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
 }
+
+[sub_resource type="Animation" id="Animation_c84vo"]
+resource_name = "fadeinout"
 
 [sub_resource type="Animation" id="Animation_6fe3l"]
 resource_name = "fadeout"
@@ -49,27 +68,8 @@ tracks/0/keys = {
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_c84vo"]
-resource_name = "fadeinout"
-
 [sub_resource type="Animation" id="Animation_vse2c"]
 resource_name = "fadeoutin"
-
-[sub_resource type="Animation" id="Animation_3wyww"]
-resource_name = "fadeinlong"
-length = 1.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
 
 [sub_resource type="Animation" id="Animation_b6os0"]
 resource_name = "fadeoutlong"

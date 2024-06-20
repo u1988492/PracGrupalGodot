@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://8gogt4q6mif3"]
+[gd_scene load_steps=10 format=3 uid="uid://8gogt4q6mif3"]
 
 [ext_resource type="Script" path="res://SCRIPTS/UI/gameui.gd" id="1_nrpoj"]
 [ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_ymexq"]
 [ext_resource type="Texture2D" uid="uid://r8r2p5erwiep" path="res://ASSETS/ITEMS/key-white.png" id="2_rfn3c"]
 [ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="3_6x18i"]
-[ext_resource type="Script" path="res://SCRIPTS/UI/health.gd" id="4_r2fir"]
 [ext_resource type="Texture2D" uid="uid://b1jimsyqeu3l0" path="res://ESCENAS/UI/gato.jpeg" id="5_342hs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnjta"]
@@ -101,7 +100,6 @@ grow_vertical = 0
 theme = ExtResource("3_6x18i")
 rounded = true
 show_percentage = false
-script = ExtResource("4_r2fir")
 
 [node name="detective" type="Panel" parent="barra"]
 layout_mode = 1

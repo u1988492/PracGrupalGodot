@@ -49,7 +49,7 @@ theme_override_constants/margin_bottom = 32
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 theme = ExtResource("1_uv0it")
-theme_override_constants/separation = 20
+theme_override_constants/separation = 50
 alignment = 1
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
@@ -61,18 +61,18 @@ text = "JUEGO PAUSADO"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+[node name="sliders" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_constants/h_separation = 20
 columns = 2
 
-[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer/sliders"]
 layout_mode = 2
 text = "MUSICA
 "
 
-[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -80,12 +80,12 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="SFXLabel" type="Label" parent="MarginContainer/VBoxContainer/sliders"]
 layout_mode = 2
 text = "SFX
 "
 
-[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer/sliders"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -93,7 +93,13 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="buttons" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/v_separation = 15
+
+[node name="Play" type="Button" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -105,7 +111,7 @@ focus_next = NodePath("../Save")
 focus_previous = NodePath("../Exit")
 text = "REANUDAR PARTIDA"
 
-[node name="Save" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Save" type="Button" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -117,7 +123,7 @@ focus_next = NodePath("../Exit")
 focus_previous = NodePath("../Play")
 text = "GUARDAR PARTIDA"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -129,8 +135,8 @@ focus_next = NodePath("../Play")
 focus_previous = NodePath("../Save")
 text = "VOLVER AL MENU"
 
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="MarginContainer/VBoxContainer/GridContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Save" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/sliders/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/sliders/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/Exit" to="." method="_on_exit_pressed"]
