@@ -808,6 +808,7 @@ texture = ExtResource("1_7n0dy")
 8:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:16/0/physics_layer_0/angular_velocity = 0.0
 9:16/0 = 0
+9:16/0/y_sort_origin = -40
 9:16/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 9:16/0/physics_layer_0/angular_velocity = 0.0
 0:17/0 = 0
@@ -4060,7 +4061,7 @@ position = Vector2(3, 1.5)
 shape = SubResource("RectangleShape2D_kl62f")
 
 [node name="detection_to_sala2" type="Area2D" parent="."]
-position = Vector2(327, 429)
+position = Vector2(326, 404)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala2"]
 position = Vector2(2, 0)

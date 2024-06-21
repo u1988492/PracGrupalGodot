@@ -122,39 +122,39 @@ var camera_limits = {
 	},
 	"sala7": {
 		"left": 0,
-		"top": 0,
-		"right": 800,
-		"bottom": 600
+		"top": -32,
+		"right": 704,
+		"bottom": 336
 	},
 	"sala8": {
-		"left": 0,
-		"top": 0,
-		"right": 800,
-		"bottom": 600
+		"left": -16,
+		"top": -175,
+		"right": 336,
+		"bottom": 367
 	},
 	"sala9": {
-		"left": 0,
-		"top": 0,
-		"right": 800,
-		"bottom": 600
+		"left": -15,
+		"top": -112,
+		"right": 496,
+		"bottom": 432
 	},
 	"sala10": {
-		"left": 0,
-		"top": 0,
-		"right": 800,
-		"bottom": 600
+		"left": 17,
+		"top": -112,
+		"right": 672,
+		"bottom": 240
 	},
 	"sala11": {
-		"left": 0,
-		"top": 0,
-		"right": 800,
-		"bottom": 600
+		"left": -16,
+		"top": -32,
+		"right": 528,
+		"bottom": 319
 	},
 	"final": {
-		"left": 0,
-		"top": 0,
-		"right": 800,
-		"bottom": 600
+		"left": 112,
+		"top": 128,
+		"right": 608,
+		"bottom": 512
 	},
 }
 
