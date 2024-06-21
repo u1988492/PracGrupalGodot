@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqcgautdwywb1"]
+
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_85u26"]
+[ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="2_8k013"]
+
+[node name="juego_1" type="Node2D"]
+script = ExtResource("1_85u26")
+
+[node name="Detective" parent="." instance=ExtResource("2_8k013")]
+position = Vector2(101, 108)
+scale = Vector2(0.6, 0.6)
+
+[node name="Camera2D" type="Camera2D" parent="Detective"]
+zoom = Vector2(4, 4)
