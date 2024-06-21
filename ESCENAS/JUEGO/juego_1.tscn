@@ -1,10 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqcgautdwywb1"]
+[gd_scene load_steps=9 format=3 uid="uid://borafmrq1kcnp"]
 
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_85u26"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_6acry"]
 [ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="2_8k013"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="4_pv2mj"]
+[ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="5_xvw2c"]
+[ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="6_ir2na"]
+[ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="7_3wgul"]
+[ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="8_eradh"]
 
 [node name="juego_1" type="Node2D"]
 script = ExtResource("1_85u26")
+
+[node name="transicion" parent="." instance=ExtResource("2_6acry")]
 
 [node name="Detective" parent="." instance=ExtResource("2_8k013")]
 position = Vector2(101, 108)
@@ -12,3 +20,32 @@ scale = Vector2(0.6, 0.6)
 
 [node name="Camera2D" type="Camera2D" parent="Detective"]
 zoom = Vector2(4, 4)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("4_pv2mj")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameui" parent="UI/Control" instance=ExtResource("5_xvw2c")]
+layout_mode = 1
+
+[node name="MainMenu" parent="UI/Control" instance=ExtResource("6_ir2na")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="pausemenu" parent="UI/Control" instance=ExtResource("7_3wgul")]
+visible = false
+layout_mode = 1
+
+[node name="InventoryUi" parent="UI/Control" instance=ExtResource("8_eradh")]
+visible = false
+layout_mode = 1
+
+[connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]
