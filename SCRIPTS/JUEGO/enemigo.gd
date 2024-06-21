@@ -1,17 +1,28 @@
 extends CharacterBody2D
 
-const SPEED = 50.0
+var SPEED = 35.0
+var health = 50
+var damage = 10
+
 var player = null
 var dir = "E"
-var health = 10
-var damage = 1
-
 var chasing = false #true if the player is close enough to be detected by the enemy
 var on_reach = false #true if the player is close enough to be hit
 var cooldown = false #true if the enemy is on cooldown right after attacking
 var on_light = false #true if the enemy is on the lantern's light.
 var damage_cooldown = false #true if the enemy is on cooldown after receiving damage
-var dead = false
+var dead = false #true if the enemy's health drops down to 0
+
+func _ready():
+	if name == "Murcielago":
+		health = 50
+		SPEED = 35.0
+	elif name == "Esqueleto":
+		health = 70
+		SPEED = 75.0
+	elif name == "Fantasma":
+		health = 100
+		SPEED = 35.0
 
 func _physics_process(delta):
 	if not dead:
@@ -96,7 +107,7 @@ func _on_area_ataque_area_exited(area):
 
 func take_damage():
 	if on_light and global.player_attacking and not damage_cooldown:
-		health -= 1
+		health -= damage
 		damage_cooldown = true
 		$Timers/DamageCooldown.start()
 		$AnimatedSprite2D.play("hit")

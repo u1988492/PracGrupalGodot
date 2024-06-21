@@ -9,11 +9,11 @@
 [ext_resource type="AudioStream" uid="uid://hsk1t7ks7ehl" path="res://ASSETS/SFX/murcielago.mp3" id="7_e60kg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1bcam"]
-radius = 95.021
+radius = 166.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_saogs"]
-radius = 25.0
-height = 76.0
+radius = 19.0
+height = 38.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a5lu"]
 atlas = ExtResource("1_42j5s")
@@ -526,7 +526,7 @@ shape = SubResource("CircleShape2D_1bcam")
 position = Vector2(0, 25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
-position = Vector2(0, -30)
+position = Vector2(0, -44)
 shape = SubResource("CapsuleShape2D_saogs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

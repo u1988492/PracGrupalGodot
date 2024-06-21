@@ -6,8 +6,8 @@ class_name Juego
 var enemy_attacking = false #true if an enemy is attacking the player
 var player_attacking = false #trye 
 
-
 var playerHealth 
+var maxHealth = 100
 var playerPositon
 
 # Called when the node enters the scene tree for the first time.

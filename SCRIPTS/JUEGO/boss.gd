@@ -3,8 +3,8 @@ extends CharacterBody2D
 const SPEED = 50.0
 var player = null
 var dir = "E"
-var health = 5
-var damage = 0
+var health = 150
+var damage = 10
 
 var chasing = false #true if the player is close enough to be detected by the enemy
 var on_reach = false #true if the player is close enough to be hit
@@ -88,12 +88,10 @@ func _on_cooldown_timer_timeout():
 func _on_area_ataque_area_entered(area):
 	if area.has_method("lantern"):
 		on_light = true
-		print("Enemy on light")
 
 func _on_area_ataque_area_exited(area):
 	if area.has_method("lantern"):
 		on_light = false
-		print("Enemy out of light")
 
 func take_damage():
 	if on_light and global.player_attacking and not damage_cooldown:

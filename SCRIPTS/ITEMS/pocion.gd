@@ -9,5 +9,9 @@ func _process(_delta):
 	pass
 
 func _on_body_entered(_body):
-	print("Has recogido una poción")
-	$AnimationPlayer.play("Recoger")
+	if global.playerHealth < global.maxHealth:
+		print("Has recogido una poción")
+		$AnimationPlayer.play("Recoger")
+
+func potion():
+	pass

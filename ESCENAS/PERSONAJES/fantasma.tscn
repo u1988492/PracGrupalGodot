@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://d21f6cm4l3ins" path="res://ASSETS/SFX/fantasma_2.mp3" id="7_jqgns"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ornr7"]
-radius = 103.586
+radius = 178.073
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0ub8n"]
 radius = 30.0

@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://1lnnjyqykra7" path="res://ASSETS/SFX/esqueleto_muerte.mp3" id="7_rb04c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wktdw"]
-radius = 103.586
+radius = 172.186
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sub1v"]
 radius = 25.0
