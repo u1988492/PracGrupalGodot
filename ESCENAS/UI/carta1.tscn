@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6c7ci7047tof"]
+[gd_scene load_steps=5 format=3 uid="uid://c6c7ci7047tof"]
 
 [ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="1_akafp"]
 [ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="2_5ai2n"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/exitletter.gd" id="3_x377t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcxka"]
 size = Vector2(4.55043, 6.28935)
@@ -79,6 +80,7 @@ autowrap_mode = 2
 [node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]
 position = Vector2(467, 12)
 scale = Vector2(-5.41709, 3.9941)
+script = ExtResource("3_x377t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
 shape = SubResource("RectangleShape2D_lcxka")
@@ -88,3 +90,5 @@ scale = Vector2(0.352496, 0.508021)
 texture = ExtResource("1_akafp")
 region_enabled = true
 region_rect = Rect2(786, 211, 12, 11)
+
+[connection signal="input_event" from="Control/MarginContainer/MarginContainer/Area2D" to="Control/MarginContainer/MarginContainer/Area2D" method="_on_input_event"]

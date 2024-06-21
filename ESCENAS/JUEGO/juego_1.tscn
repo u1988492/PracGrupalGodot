@@ -1,13 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bqcgautdwywb1"]
+[gd_scene load_steps=11 format=3 uid="uid://borafmrq1kcnp"]
 
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_85u26"]
-[ext_resource type="PackedScene" path="res://ESCENAS/UI/transicion.tscn" id="2_6acry"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_6acry"]
 [ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="2_8k013"]
 [ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="4_pv2mj"]
 [ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="5_xvw2c"]
 [ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="6_ir2na"]
 [ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="7_3wgul"]
-[ext_resource type="PackedScene" path="res://ESCENAS/UI/inventoryUI.tscn" id="8_eradh"]
+[ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="8_eradh"]
 [ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="9_2nh0p"]
 [ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="10_g64ji"]
 

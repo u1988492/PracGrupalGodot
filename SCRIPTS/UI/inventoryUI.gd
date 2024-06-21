@@ -6,6 +6,12 @@ var n_letters = 4
 var letters_array = []
 
 
+@export var c1 := preload("res://ESCENAS/UI/carta1.tscn")
+@export var c2:= preload("res://ESCENAS/UI/carta2.tscn")
+@export var c3:= preload("res://ESCENAS/UI/carta3.tscn")
+@export var c4:= preload("res://ESCENAS/UI/carta4.tscn")
+
+
 func create_inventory():
 	pass
 
@@ -41,22 +47,22 @@ func update_inventory_display():
 
 
 func _on_photo_1_pressed():
-	pass # Replace with function body.
+	pass
 
 func _on_photo_2_pressed():
-	pass # Replace with function body.
+	pass
 
 func _on_letter_1_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_packed(c1)
 
 
 func _on_letter_2_pressed():
-	pass # Replace with function body.	
+	get_tree().change_scene_to_packed(c2)
 
 
 func _on_letter_3_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_packed(c3)
 
 
 func _on_letter_4_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_packed(c4)
