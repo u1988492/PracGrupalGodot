@@ -13,11 +13,13 @@
 [ext_resource type="PackedScene" path="res://ESCENAS/UI/transicion.tscn" id="11_muop6"]
 
 [node name="Juego" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_fr3gi")
 
 [node name="transicion" parent="." instance=ExtResource("11_muop6")]
 
 [node name="juegoMain" type="Node2D" parent="."]
+y_sort_enabled = true
 
 [node name="textoplayer" type="Control" parent="juegoMain"]
 layout_mode = 3
@@ -59,14 +61,6 @@ polygon = PackedVector2Array(0, -3, 1175, -10, 1160, 664, -6, 661, -10, 29, -60,
 [node name="Murcielago" parent="juegoMain" instance=ExtResource("3_okv1g")]
 position = Vector2(866, 467)
 
-[node name="Detective" parent="juegoMain" instance=ExtResource("1_omqao")]
-z_index = -1
-position = Vector2(158, 272)
-scale = Vector2(0.6, 0.6)
-
-[node name="Camera2D" type="Camera2D" parent="juegoMain/Detective"]
-zoom = Vector2(4, 4)
-
 [node name="UI" type="CanvasLayer" parent="juegoMain"]
 script = ExtResource("4_xbkob")
 
@@ -100,5 +94,13 @@ stream = ExtResource("6_gcg42")
 autoplay = true
 bus = &"MUSIC"
 
-[connection signal="update_ui" from="juegoMain/Detective" to="juegoMain/textoplayer" method="_on_detective_update_ui"]
+[node name="Detective" parent="juegoMain" instance=ExtResource("1_omqao")]
+z_index = -1
+position = Vector2(158, 272)
+scale = Vector2(0.6, 0.6)
+
+[node name="Camera2D" type="Camera2D" parent="juegoMain/Detective"]
+zoom = Vector2(4, 4)
+
 [connection signal="start_game" from="juegoMain/UI/Control/MainMenu" to="juegoMain/UI" method="_on_main_menu_start_game"]
+[connection signal="update_ui" from="juegoMain/Detective" to="juegoMain/textoplayer" method="_on_detective_update_ui"]
