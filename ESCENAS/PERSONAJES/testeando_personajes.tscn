@@ -7,6 +7,10 @@
 
 [node name="Detective" parent="." instance=ExtResource("1_37mgi")]
 position = Vector2(485, 287)
+damage = 10
+potionhealth = 15
+maxHealth = 100
+has_key = false
 
 [node name="Boss" parent="." instance=ExtResource("5_a8wbl")]
 position = Vector2(914, 288)

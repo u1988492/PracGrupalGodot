@@ -455,10 +455,6 @@ position = Vector2(0, -20)
 collision_layer = 7
 collision_mask = 3
 script = ExtResource("1_x5qnp")
-damage = null
-potionhealth = null
-maxHealth = null
-has_key = null
 
 [node name="AreaAtaque" type="Area2D" parent="."]
 position = Vector2(0.769229, -15.3846)

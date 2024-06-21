@@ -13,8 +13,6 @@ var inventory := preload("res://SCRIPTS/UI/inventorymanager.gd").new() #crear in
 #ajustar valor de la salud que da una poción
 @export var damage = 10
 @export var potionhealth = 15
-@export var maxHealth = global.maxHealth
-@onready var currentHealth: int = global.maxHealth
 
 @export var has_key = false
 
@@ -27,11 +25,9 @@ func add_letter(letter_name: String):
 
 #actualizar salud al tomar poción
 func increaseHealth():
-	currentHealth += potionhealth
-	global.playerHealth = currentHealth
+	global.playerHealth += potionhealth
 	
 func _ready():
-	global.playerHealth = currentHealth
 	global.playerPositon = self.position
 
 func _physics_process(delta):
@@ -113,8 +109,20 @@ func play_animation(movement):
 func _on_area_ataque_body_entered(body):
 	if body.has_method("enemy"):
 		on_range = true
-	if body.has_method("potion") and currentHealth != maxHealth:
+		if body.name == "Murcielago":
+			damage = 5
+		elif body.name == "Esqueleto":
+			damage = 7
+		elif body.name == "Fantasma":
+			damage = 10
+		elif body.name == "Boss":
+			damage = 15
+	
+	elif body.has_method("potion") and global.playerHealth < global.maxHealth:
 		increaseHealth()
+	
+	elif body.has_method("key") and not global.has_key:
+		global.has_key = true
 
 func _on_area_ataque_body_exited(body):
 	if body.has_method("enemy"):
@@ -122,11 +130,10 @@ func _on_area_ataque_body_exited(body):
 
 func take_damage():
 	if on_range and global.enemy_attacking and not damage_cooldown:
-		currentHealth -= damage
+		global.playerHealth -= damage
 		damage_cooldown = true
 		$DamageCooldown.start()
 		$AnimationPlayer.play("hit")
-		global.playerHealth = currentHealth
 		global.enemy_attacking = false
 
 func _on_damage_cooldown_timeout():
