@@ -25,7 +25,7 @@ var start_position = ""
 
 var player_start_positions = {
 	"entrada": {
-		"door_to_sala1": Vector2(395.927, 151.192)
+		"door_to_sala1": Vector2(247, 102)
 	},
 	"sala1": {
 		"door_to_entrada": Vector2(18.903, 117), # Ajusta las posiciones según las necesidades
