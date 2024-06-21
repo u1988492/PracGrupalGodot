@@ -40,19 +40,16 @@ var player_start_positions = {
 		"door_to_sala1": Vector2(86, 230)
 	},
 	"sala4": {
-		"door_to_sala2": Vector2(318, 369), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(318, 369),
 		"door_to_sala5": Vector2(448, 88),
 		"door_to_sala6": Vector2(483, 261)
 	},
 	"sala5": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala4": Vector2(462, 440),
+		"door_to_sala7": Vector2(343, 65)
 	},
 	"sala6": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala4": Vector2(44, 192)
 	},
 	"sala7": {
 		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades

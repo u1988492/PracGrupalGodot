@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3sri1undfi58"]
+[gd_scene load_steps=10 format=3 uid="uid://d3sri1undfi58"]
 
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="1_wfk8s"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_gp1i3"]
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="3_emgix"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_6.gd" id="4_lma0y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2d0v2"]
 texture = ExtResource("1_wfk8s")
@@ -2339,6 +2340,9 @@ sources/0 = SubResource("TileSetAtlasSource_2d0v2")
 sources/1 = SubResource("TileSetAtlasSource_iwy7o")
 sources/2 = SubResource("TileSetAtlasSource_30bvl")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dgq3a"]
+size = Vector2(20, 30)
+
 [node name="sala6" type="TileMap"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_nir21")
@@ -2353,3 +2357,12 @@ layer_1/tile_data = PackedInt32Array(65550, 0, 12, 131086, 0, 13, 196622, 196609
 layer_2/name = "level2"
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array()
+script = ExtResource("4_lma0y")
+
+[node name="detection_to_sala4" type="Area2D" parent="."]
+position = Vector2(16, 192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala4"]
+shape = SubResource("RectangleShape2D_dgq3a")
+
+[connection signal="body_entered" from="detection_to_sala4" to="." method="_on_detection_to_sala_4_body_entered"]
