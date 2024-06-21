@@ -1,28 +1,18 @@
 extends CharacterBody2D
 
-var SPEED = 35.0
-var health = 50
-var damage = 10
-
+const SPEED = 50.0
 var player = null
 var dir = "E"
+var health = 100
+var damage = 5
+var random
+
 var chasing = false #true if the player is close enough to be detected by the enemy
 var on_reach = false #true if the player is close enough to be hit
 var cooldown = false #true if the enemy is on cooldown right after attacking
 var on_light = false #true if the enemy is on the lantern's light.
 var damage_cooldown = false #true if the enemy is on cooldown after receiving damage
-var dead = false #true if the enemy's health drops down to 0
-
-func _ready():
-	if name == "Murcielago":
-		health = 50
-		SPEED = 35.0
-	elif name == "Esqueleto":
-		health = 70
-		SPEED = 75.0
-	elif name == "Fantasma":
-		health = 100
-		SPEED = 35.0
+var dead = false
 
 func _physics_process(delta):
 	if not dead:
@@ -37,7 +27,6 @@ func enemy():
 
 func enemy_movement(_delta):
 	if chasing:
-		#position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
 			position += ((player.position + Vector2(29,0)) - position)/SPEED
 			dir = "W"
@@ -83,8 +72,12 @@ func _on_area_ataque_body_exited(body):
 func attack():
 	if on_reach and not global.enemy_attacking and not cooldown:
 		global.enemy_attacking = true
+		random = randi_range(1,2)
 		$Timers/AttackTimer.start()
-		$AnimatedSprite2D.play("attack")
+		if random == 1:
+			$AnimatedSprite2D.play("attack_1")
+		else:
+			$AnimatedSprite2D.play("attack_2")
 		$attack.play(0)
 
 func _on_attack_timer_timeout():
@@ -107,10 +100,10 @@ func _on_area_ataque_area_exited(area):
 
 func take_damage():
 	if on_light and global.player_attacking and not damage_cooldown:
-		health -= damage
+		health -= 1
 		damage_cooldown = true
 		$Timers/DamageCooldown.start()
-		$AnimatedSprite2D.play("hit")
+		$AnimatedSprite2D.play("hurt")
 		global.player_attacking = false
 		if health <= 0:
 			dead = true

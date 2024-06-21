@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var transicion = $transicion/fadeanim
+@onready var player = $Detective
 
 @export var room_scenes = {
 	"entrada": preload("res://ESCENAS/JUEGO/entrada.tscn"),
@@ -19,6 +20,61 @@ extends Node2D
 }
 
 var current_room = ""
+
+var start_position = ""
+
+var player_start_positions = {
+	"entrada": {
+		"door_to_sala1": Vector2(247, 102)
+	},
+	"sala1": {
+		"door_to_entrada": Vector2(18.903, 117), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(199.974, 39),
+		"door_to_sala3": Vector2(328.316, 184)
+	},
+	"sala2": {
+		"door_to_sala1": Vector2(295, 398),
+		"door_to_sala4": Vector2(281, 124)
+	},
+	"sala3": {
+		"door_to_sala1": Vector2(86, 230)
+	},
+	"sala4": {
+		"door_to_sala2": Vector2(318, 369),
+		"door_to_sala5": Vector2(448, 88),
+		"door_to_sala6": Vector2(483, 261)
+	},
+	"sala5": {
+		"door_to_sala4": Vector2(462, 440),
+		"door_to_sala7": Vector2(343, 65)
+	},
+	"sala6": {
+		"door_to_sala4": Vector2(44, 192)
+	},
+	"sala7": {
+		"door_to_sala5": Vector2(423, 294),
+		"door_to_sala8": Vector2(662, 190),
+		"door_to_sala9": Vector2(81, 56)
+	},
+	"sala8": {
+		"door_to_sala7": Vector2(42, 199),
+		"door_to_sala11": Vector2(168, -33)
+	},
+	"sala9": {
+		"door_to_sala7": Vector2(128, 379),
+		"door_to_sala10": Vector2(446, 88)
+	},
+	"sala10": {
+		"door_to_sala9": Vector2(33, 150),
+		"door_to_final": Vector2(552, -60)
+	},
+	"sala11": {
+		"door_to_sala8": Vector2(39, 111)
+	},
+	"final": {
+		"door_to_sala10": Vector2(361, 474)
+	},
+}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,10 +95,23 @@ func load_room(room_name):
 	var room_scene = room_scenes[room_name].instantiate()
 	room_scene.name = "CurrentRoom"
 	add_child(room_scene)
+	
+# Mover al jugador a la posición adecuada
+	move_player_to_start(room_name, start_position)
 
-func change_room(next_room):
+func change_room(next_room, door):
 	if room_scenes.has(next_room):
 		current_room = next_room
+		start_position = door
 		load_room(current_room)
 	else:
 		print("La sala no existe: ", next_room)
+
+func move_player_to_start(room_name, door):
+	if player_start_positions.has(room_name):
+		if player_start_positions[room_name].has(door):
+			player.position = player_start_positions[room_name][door]
+		else:
+			print("No hay una posición de inicio definida para la puerta: ", door)
+	else:
+		print("No hay una posición de inicio definida para: ", room_name)

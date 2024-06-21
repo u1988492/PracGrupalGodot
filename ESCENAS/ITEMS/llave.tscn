@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=3 uid="uid://61cjuaw010xj"]
 
-[ext_resource type="Script" path="res://SCRIPTS/JUEGO/llave.gd" id="1_xye8r"]
+[ext_resource type="Script" path="res://SCRIPTS/ITEMS/llave.gd" id="1_bby3t"]
 [ext_resource type="Texture2D" uid="uid://cagloujer5k6d" path="res://ASSETS/ITEMS/key-blue.png" id="2_lety7"]
 [ext_resource type="AudioStream" uid="uid://b50oukvbp1u2p" path="res://ASSETS/SFX/llaves.mp3" id="3_aq2fo"]
 [ext_resource type="Texture2D" uid="uid://r8r2p5erwiep" path="res://ASSETS/ITEMS/key-white.png" id="3_id5x3"]
@@ -295,7 +295,7 @@ position = Vector2(0, -10)
 scale = Vector2(0.35, 0.35)
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_xye8r")
+script = ExtResource("1_bby3t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1.14286, 13.1429)
