@@ -66,12 +66,16 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_78prr")
 theme_override_font_sizes/font_size = 20
-text = "Samuel,
+text = "Jonathan,
 
-He recibido tu última misiva y estoy angustiado. La desaparición de Eleanor y los demás, junto con tus visiones de tentáculos y esa monstruosa figura en el ático, indican que la situación es desesperada. La criatura que describes es reminiscentes de los mitos antiguos, entidades como Cthulhu, que habitan más allá de nuestra comprensión y buscan devorar nuestra realidad. No puedo imaginar el terror que debes estar sintiendo. Te ruego, Samuel, escapa mientras puedas. La casa Heartwood debe ser abandonada y sellada para siempre.
+Esto no puede seguir así. La desaparición de tu hijo William y los espejos que se rompen sin razón aparente son signos de que la casa está intentando comunicar algo, o quizás advertirnos. La mansión Heartwood parece estar cobrando vida propia, y no de una manera benevolente. 
 
-Con urgencia,
-Edward"
+He contactado con un experto en lo oculto, pero me temo que podría ser demasiado tarde. La criatura que describes es reminiscentes de los mitos antiguos, parece más antigua y oscura que cualquier cosa que haya imaginado. 
+
+Huye, Jonathan. La casa Heartwood debe ser abandonada y sellada para siempre.
+
+Con desesperación,
+Henry"
 autowrap_mode = 2
 
 [node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]

@@ -66,14 +66,16 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_jtwos")
 theme_override_font_sizes/font_size = 20
-text = "Querido Samuel,
+text = "Jonathan,
 
-Estoy horrorizado por tu relato sobre los niños desaparecidos y esa horripilante figura que viste en la torre. Esos fenómenos son más que simples fantasmas. La figura que describes se asemeja a una entidad de las profundidades del abismo, algo que no debería existir en nuestro mundo. 
+Tu última carta me dejó helado. Ver a figuras espectrales en los jardines y oír voces que parecen llamarte por tu nombre... es algo sacado de una pesadilla. 
 
-He hablado con un colega que se especializa en lo paranormal, y me ha confirmado mis peores temores: podrías estar enfrentándote a un ser antiguo, quizá una deidad olvidada. Debes actuar con rapidez y llevar a tu familia lejos de ahí. Tememos que lo peor está por venir.
+Me temo que los rumores sobre la casa Heartwood pueden tener algo de verdad. La construcción de la mansión en 1852 y los posteriores avistamientos de fenómenos paranormales nunca me parecieron más que supersticiones, pero ahora dudo. 
 
-Con preocupación,
-Edward"
+Algo maligno ha despertado, estoy seguro de ello. Debes sacar a tu familia de allí cuanto antes.
+
+Afectuosamente,
+Henry"
 autowrap_mode = 2
 
 [node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]

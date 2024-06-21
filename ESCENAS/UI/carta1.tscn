@@ -66,14 +66,14 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_5ai2n")
 theme_override_font_sizes/font_size = 20
-text = "Querido Samuel,
+text = "Querido Jonathan,
 
-Tu última carta me ha llenado de inquietud. Los rumores sobre la casa Heartwood siempre me parecieron supercherías de aldeanos, pero tus descripciones de extrañas sombras y susurros en la noche son alarmantes. La situación que describes, con los niños hablando de amigos invisibles y la constante sensación de ser observado, sugiere algo más siniestro. 
+Recibí tu carta y confieso que me dejó inquieto. Las luces parpadeantes y los susurros en los pasillos que mencionas no son algo que pueda explicarse fácilmente. Los relatos de Abigail sobre las sombras que se deslizan por su habitación me perturban profundamente. 
 
-¿Recuerdas a la anciana Ruth? Contaba que la tierra sobre la que se erige la mansión fue un antiguo lugar de ritos paganos. Tal vez esos ecos del pasado aún resuenan. Mantén a tu familia a salvo y escríbeme de inmediato si las cosas empeoran.
+¿Estás seguro de que no hay intrusos en la casa? La mansión Heartwood ha visto muchas cosas a lo largo de los años, pero esto parece diferente, casi malévolo. Por favor, revisa las cerraduras y no dejes que los niños se queden solos.
 
-Con aprecio,
-Edward"
+Con preocupación,
+Henry"
 autowrap_mode = 2
 
 [node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]

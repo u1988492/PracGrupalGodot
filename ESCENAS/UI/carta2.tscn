@@ -66,15 +66,14 @@ layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_r7fpt")
 theme_override_font_sizes/font_size = 20
-text = "Estimado Samuel,
+text = "Estimado Jonathan,
 
-Tus palabras me han hecho perder el sueño. Lo que cuentas sobre los objetos moviéndose solos y esos ruidos incesantes provenientes del sótano me eriza la piel. Esos signos indican una presencia que no pertenece a este mundo. La historia que contaste sobre la mujer de cabello largo en el espejo me recuerda a los relatos de apariciones en los textos antiguos que he estudiado. 
+Lamento saber que los sucesos extraños persisten. La aparición del retrato de tu bisabuelo en el salón, después de haber sido destruido en el incendio de 1875, es particularmente desconcertante. He consultado a un historiador local y no hay registro de que el retrato haya sobrevivido. 
 
-Hace poco, leí sobre un culto que practicaba rituales oscuros en la región, durante la Guerra de Independencia. No puedo evitar preguntarme si algo de eso persiste. Por favor, Samuel, si puedes, abandona esa casa. La seguridad de tu familia es lo más importante.
+Esto, junto con los ruidos provenientes del ático, sugiere que algo fuera de nuestro entendimiento está ocurriendo. Te ruego que consideres salir de la mansión por un tiempo. La seguridad de tu familia debe ser tu prioridad.
 
-Tu amigo,
-Edward
-"
+Con urgencia,
+Henry"
 autowrap_mode = 2
 
 [node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]
