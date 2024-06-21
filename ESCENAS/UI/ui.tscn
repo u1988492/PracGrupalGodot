@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6531eket3d7r"]
+[gd_scene load_steps=6 format=3 uid="uid://c6531eket3d7r"]
 
 [ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="1_dopdr"]
 [ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="2_17klb"]
 [ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="4_j8fnm"]
+[ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="5_piwwm"]
 [ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="7_vuv1k"]
 
 [node name="UI" type="CanvasLayer"]
@@ -25,6 +26,10 @@ visible = false
 layout_mode = 1
 
 [node name="pausemenu" parent="Control" instance=ExtResource("4_j8fnm")]
+visible = false
+layout_mode = 1
+
+[node name="InventoryUi" parent="Control" instance=ExtResource("5_piwwm")]
 visible = false
 layout_mode = 1
 

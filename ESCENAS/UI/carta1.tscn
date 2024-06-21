@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6c7ci7047tof"]
+
+[ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="1_akafp"]
+[ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="2_5ai2n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcxka"]
+size = Vector2(4.55043, 6.28935)
+
+[node name="Carta1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 50
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer"]
+position = Vector2(563.5, 323)
+scale = Vector2(12.3864, 10.0678)
+texture = ExtResource("1_akafp")
+region_enabled = true
+region_rect = Rect2(562, 82, 44, 59)
+
+[node name="ColorRect" type="ColorRect" parent="Control/MarginContainer"]
+visible = false
+layout_mode = 2
+color = Color(0.533333, 0.396078, 0.321569, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="Label" type="Label" parent="Control/MarginContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "CARTA 1"
+
+[node name="Label2" type="Label" parent="Control/MarginContainer/MarginContainer"]
+y_sort_enabled = true
+custom_minimum_size = Vector2(180, 300)
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_5ai2n")
+theme_override_font_sizes/font_size = 14
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed tincidunt augue. Pellentesque id felis ut erat molestie posuere et at justo. Fusce sollicitudin eu velit id lacinia. Cras ut odio sollicitudin, semper nibh vel, tincidunt lacus. Etiam vulputate velit in arcu finibus, eu vehicula nisi semper. Sed vitae nunc eget justo tristique laoreet et a diam. Suspendisse condimentum ante nec purus congue vehicula. Pellentesque malesuada maximus magna, a consectetur purus ullamcorper id. Nunc auctor, justo sit amet hendrerit sagittis, tortor sapien mollis tortor, at interdum augue enim pharetra odio. Proin id hendrerit erat. Nam vel nisi non quam varius lacinia. Etiam mollis enim eu diam faucibus, a pretium ex interdum. Quisque vel gravida justo. Mauris lacinia rutrum mattis.
+
+Proin ac nulla eu nunc sagittis cursus sit amet vitae ligula. Maecenas ac viverra arcu, vel tempor diam. Donec lobortis eros vel velit ultricies, id euismod tortor sollicitudin. Etiam et efficitur metus. Pellentesque imperdiet sem scelerisque malesuada auctor. Cras nec eleifend lectus. Nullam id dui pulvinar, scelerisque lectus vitae, congue arcu.
+"
+autowrap_mode = 2
+
+[node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]
+position = Vector2(467, 12)
+scale = Vector2(-5.41709, 3.9941)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_lcxka")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
+scale = Vector2(0.352496, 0.508021)
+texture = ExtResource("1_akafp")
+region_enabled = true
+region_rect = Rect2(786, 211, 12, 11)

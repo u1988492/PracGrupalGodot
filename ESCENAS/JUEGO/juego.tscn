@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bnt7gelc1p1j0"]
+[gd_scene load_steps=13 format=3 uid="uid://bnt7gelc1p1j0"]
 
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_fr3gi"]
 [ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="1_omqao"]
@@ -10,7 +10,12 @@
 [ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="7_8rfxk"]
 [ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="9_7xtin"]
 [ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="9_m3t46"]
+<<<<<<< HEAD
+[ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="10_7u61n"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="11_muop6"]
+=======
 [ext_resource type="PackedScene" path="res://ESCENAS/UI/transicion.tscn" id="11_muop6"]
+>>>>>>> 18a1f3f1830f0873b8993d07304e26bd4da14b27
 
 [node name="Juego" type="Node2D"]
 y_sort_enabled = true
@@ -81,6 +86,10 @@ visible = false
 layout_mode = 1
 
 [node name="pausemenu" parent="juegoMain/UI/Control" instance=ExtResource("9_7xtin")]
+visible = false
+layout_mode = 1
+
+[node name="InventoryUi" parent="juegoMain/UI/Control" instance=ExtResource("10_7u61n")]
 visible = false
 layout_mode = 1
 
