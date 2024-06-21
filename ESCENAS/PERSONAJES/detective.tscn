@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
 [ext_resource type="AudioStream" uid="uid://dao2xku2sx5cj" path="res://ASSETS/SFX/caminar.mp3" id="3_8cb4r"]
 [ext_resource type="AudioStream" uid="uid://lehj7nn2w7x0" path="res://ASSETS/SFX/daño.mp3" id="4_kb7mj"]
-[ext_resource type="PackedScene" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
+[ext_resource type="PackedScene" uid="uid://p4wdnrq75djh" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t2pt"]
 radius = 18.4615

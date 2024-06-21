@@ -1,6 +1,7 @@
-[gd_scene load_steps=75 format=3 uid="uid://btsuq8ebwykst"]
+[gd_scene load_steps=76 format=3 uid="uid://btsuq8ebwykst"]
 
 [ext_resource type="Texture2D" uid="uid://da3jik8if5ee3" path="res://ASSETS/PERSONAJES/boss/cthulu_192x112_SpriteSheet.png" id="1_0ca8d"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/boss.gd" id="1_c5il3"]
 [ext_resource type="AudioStream" uid="uid://da2by1d1rq13a" path="res://ASSETS/SFX/monster attack.mp3" id="2_xsptd"]
 [ext_resource type="AudioStream" uid="uid://by7ytd1t3xy57" path="res://ASSETS/SFX/monster_death.mp3" id="3_xa1k6"]
 
@@ -678,15 +679,19 @@ _data = {
 [node name="Boss" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -20)
+scale = Vector2(2, 2)
 collision_layer = 3
 collision_mask = 2
+script = ExtResource("1_c5il3")
 
 [node name="AreaDeteccion" type="Area2D" parent="."]
+position = Vector2(0, -11.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
 shape = SubResource("CircleShape2D_3r32l")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
+position = Vector2(0, -11.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
 position = Vector2(0, -5)
@@ -694,10 +699,11 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_21u31")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(0, -11.5)
 polygon = PackedVector2Array(-24, 24, -18, 17, 16, 17, 22, 23, 17, 31, -17, 31)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -14)
+position = Vector2(0, -25.5)
 sprite_frames = SubResource("SpriteFrames_cg8wu")
 animation = &"idle"
 autoplay = "idle"
@@ -705,18 +711,32 @@ autoplay = "idle"
 [node name="Timers" type="Node" parent="."]
 
 [node name="AttackTimer" type="Timer" parent="Timers"]
+wait_time = 0.7
 
 [node name="CooldownTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
 
 [node name="DamageCooldown" type="Timer" parent="Timers"]
+wait_time = 1.5
 
 [node name="attack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_xsptd")
 
 [node name="death" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -11.5)
 stream = ExtResource("3_xa1k6")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_wpsux")
 }
+
+[connection signal="body_entered" from="AreaDeteccion" to="." method="_on_area_deteccion_body_entered"]
+[connection signal="body_exited" from="AreaDeteccion" to="." method="_on_area_deteccion_body_exited"]
+[connection signal="area_entered" from="AreaAtaque" to="." method="_on_area_ataque_area_entered"]
+[connection signal="area_exited" from="AreaAtaque" to="." method="_on_area_ataque_area_exited"]
+[connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
+[connection signal="body_exited" from="AreaAtaque" to="." method="_on_area_ataque_body_exited"]
+[connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timers/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Timers/DamageCooldown" to="." method="_on_damage_cooldown_timeout"]
