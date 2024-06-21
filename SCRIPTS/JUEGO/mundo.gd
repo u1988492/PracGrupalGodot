@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var transicion = $transicion/fadeanim
 @onready var player = $Detective
+@onready var camera = player.get_node("Camera2D")
 
 @export var room_scenes = {
 	"entrada": preload("res://ESCENAS/JUEGO/entrada.tscn"),
@@ -76,6 +77,87 @@ var player_start_positions = {
 	},
 }
 
+var camera_limits = {
+	"entrada": {
+		"left": -64,
+		"top": -112,
+		"right": 528,
+		"bottom": 352
+	},
+	"sala1": {
+		"left": -79.592,
+		"top": -63,
+		"right": 415.867,
+		"bottom": 304
+	},
+	"sala2": {
+		"left": 31,
+		"top": 33,
+		"right": 512,
+		"bottom": 448
+	},
+	"sala3": {
+		"left": 17,
+		"top": -32,
+		"right": 432,
+		"bottom": 415
+	},
+	"sala4": {
+		"left": 17,
+		"top": -16,
+		"right": 608,
+		"bottom": 447
+	},
+	"sala5": {
+		"left": 16,
+		"top": 0,
+		"right": 624,
+		"bottom": 496
+	},
+	"sala6": {
+		"left": -16,
+		"top": -31,
+		"right": 496,
+		"bottom": 368
+	},
+	"sala7": {
+		"left": 0,
+		"top": 0,
+		"right": 800,
+		"bottom": 600
+	},
+	"sala8": {
+		"left": 0,
+		"top": 0,
+		"right": 800,
+		"bottom": 600
+	},
+	"sala9": {
+		"left": 0,
+		"top": 0,
+		"right": 800,
+		"bottom": 600
+	},
+	"sala10": {
+		"left": 0,
+		"top": 0,
+		"right": 800,
+		"bottom": 600
+	},
+	"sala11": {
+		"left": 0,
+		"top": 0,
+		"right": 800,
+		"bottom": 600
+	},
+	"final": {
+		"left": 0,
+		"top": 0,
+		"right": 800,
+		"bottom": 600
+	},
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	transicion.get_parent().get_node("ColorRect").color.a = 255
@@ -98,6 +180,9 @@ func load_room(room_name):
 	
 # Mover al jugador a la posición adecuada
 	move_player_to_start(room_name, start_position)
+	
+	# Ajustar los límites de la cámara
+	set_camera_limits(room_name)
 
 func change_room(next_room, door):
 	if room_scenes.has(next_room):
@@ -115,3 +200,13 @@ func move_player_to_start(room_name, door):
 			print("No hay una posición de inicio definida para la puerta: ", door)
 	else:
 		print("No hay una posición de inicio definida para: ", room_name)
+
+func set_camera_limits(room_name):
+	if camera_limits.has(room_name):
+		var limits = camera_limits[room_name]
+		camera.limit_left = limits.left
+		camera.limit_top = limits.top
+		camera.limit_right = limits.right
+		camera.limit_bottom = limits.bottom
+	else:
+		print("No hay límites de cámara definidos para: ", room_name)

@@ -1492,4 +1492,7 @@ position = Vector2(244, 77)
 position = Vector2(4.00003, 0.00193369)
 shape = SubResource("RectangleShape2D_7gwcy")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(528, 125)
+
 [connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]
