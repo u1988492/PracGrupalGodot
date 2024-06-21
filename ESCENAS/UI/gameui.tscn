@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_ymexq"]
 [ext_resource type="Texture2D" uid="uid://r8r2p5erwiep" path="res://ASSETS/ITEMS/key-white.png" id="2_rfn3c"]
 [ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="3_6x18i"]
-[ext_resource type="Texture2D" uid="uid://b1jimsyqeu3l0" path="res://ESCENAS/UI/gato.jpeg" id="5_342hs"]
+[ext_resource type="Texture2D" uid="uid://cj23n5gduko5" path="res://ASSETS/THEMES/avatar detective.jpeg" id="5_eglyp"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fnjta"]
 
@@ -126,5 +126,5 @@ offset_right = 67.0
 offset_bottom = 67.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("5_342hs")
+texture = ExtResource("5_eglyp")
 expand_mode = 1
