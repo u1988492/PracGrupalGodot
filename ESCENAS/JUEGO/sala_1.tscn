@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cmi4tk6n0047u"]
+[gd_scene load_steps=10 format=3 uid="uid://cmi4tk6n0047u"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_65fh3"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_y4cvs"]
@@ -1303,6 +1303,9 @@ size = Vector2(22.9337, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0bpxp"]
 size = Vector2(29.8979, 51)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3ycb"]
+size = Vector2(20, 45)
+
 [node name="sala1" type="TileMap"]
 y_sort_enabled = true
 position = Vector2(0, -1)
@@ -1332,5 +1335,13 @@ position = Vector2(342.244, 174)
 position = Vector2(16.9132, 7)
 shape = SubResource("RectangleShape2D_0bpxp")
 
+[node name="detection_to_entrada" type="Area2D" parent="."]
+position = Vector2(-16.9132, 117)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_entrada"]
+position = Vector2(0, 3.5)
+shape = SubResource("RectangleShape2D_o3ycb")
+
 [connection signal="body_entered" from="detection_to_sala2" to="." method="_on_detection_to_sala_2_body_entered"]
 [connection signal="body_entered" from="detection_to_sala3" to="." method="_on_detection_to_sala_3_body_entered"]
+[connection signal="body_entered" from="detection_to_entrada" to="." method="_on_detection_to_entrada_body_entered"]

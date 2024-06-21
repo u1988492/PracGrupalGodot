@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var transicion = $transicion/fadeanim
+@onready var player = $Detective
 
 @export var room_scenes = {
 	"entrada": preload("res://ESCENAS/JUEGO/entrada.tscn"),
@@ -32,16 +33,16 @@ var player_start_positions = {
 		"door_to_sala3": Vector2(328.316, 184)
 	},
 	"sala2": {
-		"door_to_sala1": Vector2(50, 100),
-		"door_to_sala4": Vector2(150, 400)
+		"door_to_sala1": Vector2(295, 398),
+		"door_to_sala4": Vector2(281, 124)
 	},
 	"sala3": {
-		"door_to_sala1": Vector2(200, 200)
+		"door_to_sala1": Vector2(86, 230)
 	},
 	"sala4": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala2": Vector2(318, 369), # Ajusta las posiciones según las necesidades
+		"door_to_sala5": Vector2(448, 88),
+		"door_to_sala6": Vector2(483, 261)
 	},
 	"sala5": {
 		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
@@ -104,10 +105,23 @@ func load_room(room_name):
 	var room_scene = room_scenes[room_name].instantiate()
 	room_scene.name = "CurrentRoom"
 	add_child(room_scene)
+	
+# Mover al jugador a la posición adecuada
+	move_player_to_start(room_name, start_position)
 
-func change_room(next_room):
+func change_room(next_room, door):
 	if room_scenes.has(next_room):
 		current_room = next_room
+		start_position = door
 		load_room(current_room)
 	else:
 		print("La sala no existe: ", next_room)
+
+func move_player_to_start(room_name, door):
+	if player_start_positions.has(room_name):
+		if player_start_positions[room_name].has(door):
+			player.position = player_start_positions[room_name][door]
+		else:
+			print("No hay una posición de inicio definida para la puerta: ", door)
+	else:
+		print("No hay una posición de inicio definida para: ", room_name)
