@@ -15,7 +15,7 @@ func _on_play_pressed():
 
 
 func _on_load_pressed():
-	SaveLoader.load_game()
+	Saveloader.load_game()
 
 func _on_exit_pressed():
 	get_tree().quit()
