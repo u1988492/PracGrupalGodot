@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="8_eradh"]
 
 [node name="juego_1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_85u26")
 
 [node name="transicion" parent="." instance=ExtResource("2_6acry")]
