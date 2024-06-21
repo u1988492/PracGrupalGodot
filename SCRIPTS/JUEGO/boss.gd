@@ -3,8 +3,9 @@ extends CharacterBody2D
 const SPEED = 50.0
 var player = null
 var dir = "E"
-var health = 150
-var damage = 10
+var health = 100
+var damage = 5
+var random
 
 var chasing = false #true if the player is close enough to be detected by the enemy
 var on_reach = false #true if the player is close enough to be hit
@@ -71,8 +72,12 @@ func _on_area_ataque_body_exited(body):
 func attack():
 	if on_reach and not global.enemy_attacking and not cooldown:
 		global.enemy_attacking = true
+		random = randi_range(1,2)
 		$Timers/AttackTimer.start()
-		$AnimatedSprite2D.play("attack_1")
+		if random == 1:
+			$AnimatedSprite2D.play("attack_1")
+		else:
+			$AnimatedSprite2D.play("attack_2")
 		$attack.play(0)
 
 func _on_attack_timer_timeout():

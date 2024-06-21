@@ -703,6 +703,8 @@ position = Vector2(0, -11.5)
 polygon = PackedVector2Array(-24, 24, -18, 17, 16, 17, 22, 23, 17, 31, -17, 31)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
 position = Vector2(0, -25.5)
 sprite_frames = SubResource("SpriteFrames_cg8wu")
 animation = &"idle"
@@ -714,7 +716,7 @@ autoplay = "idle"
 wait_time = 0.7
 
 [node name="CooldownTimer" type="Timer" parent="Timers"]
-wait_time = 0.5
+wait_time = 1.5
 
 [node name="DamageCooldown" type="Timer" parent="Timers"]
 wait_time = 1.5

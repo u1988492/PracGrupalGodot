@@ -13,10 +13,10 @@ var inventory := preload("res://SCRIPTS/UI/inventorymanager.gd").new() #crear in
 #ajustar valor de la salud que da una poción
 @export var damage = 10
 @export var potionhealth = 15
-@export var maxHealth = 100
+@export var maxHealth = global.maxHealth
 @onready var currentHealth: int = global.maxHealth
 
-@export var has_key = false #cambiar cuando recoge o usa llave
+@export var has_key = false
 
 #añadir items al inventario cuando se hayan recogido
 func add_photo(photo_name: String):

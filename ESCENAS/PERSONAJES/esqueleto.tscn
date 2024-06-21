@@ -520,6 +520,8 @@ position = Vector2(0, 18)
 polygon = PackedVector2Array(-14, 5, -10, 8, 5, 8, 9, 5, 9, 0, 5, -3, -10, -3, -14, 0)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 2
+y_sort_enabled = true
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_nvosb")
 animation = &"idle"
