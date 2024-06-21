@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://borafmrq1kcnp"]
+[gd_scene load_steps=11 format=3 uid="uid://borafmrq1kcnp"]
 
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_85u26"]
 [ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_6acry"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="6_ir2na"]
 [ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="7_3wgul"]
 [ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="8_eradh"]
+[ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="9_2nh0p"]
+[ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="10_g64ji"]
 
 [node name="juego_1" type="Node2D"]
 y_sort_enabled = true
@@ -48,5 +50,13 @@ layout_mode = 1
 [node name="InventoryUi" parent="UI/Control" instance=ExtResource("8_eradh")]
 visible = false
 layout_mode = 1
+
+[node name="bgmusic" type="AudioStreamPlayer2D" parent="UI/Control"]
+stream = ExtResource("9_2nh0p")
+bus = &"MUSIC"
+
+[node name="tormenta" type="AudioStreamPlayer2D" parent="UI/Control"]
+stream = ExtResource("10_g64ji")
+bus = &"SFX"
 
 [connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]
