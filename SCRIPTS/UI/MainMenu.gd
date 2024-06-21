@@ -2,7 +2,7 @@ extends Control
 
 @onready var botones = %botones
 @onready var transicion = $transicion/fadeanim
-
+#@onready var game_manager = %SaveLoad
 
 signal start_game()
 
@@ -15,7 +15,7 @@ func _on_play_pressed():
 
 
 func _on_load_pressed():
-	pass # Replace with function body.
+	SaveLoader.load_game()
 
 func _on_exit_pressed():
 	get_tree().quit()

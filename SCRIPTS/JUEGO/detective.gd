@@ -8,7 +8,7 @@ const speed = 150.0 #speed of the player's movement
 var dir = "S" #direction in which the player moves and looks
 var on_range = false #true when an enemy is close enough to hit the player
 var damage_cooldown = false
-var inventory := preload("res://SCRIPTS/UI/inventorymanager.gd").new() #crear inventario
+#var inventory := preload("res://SCRIPTS/GAMEMANAGER/inventorymanager.gd").new() #crear inventario
 
 #ajustar valor de la salud que da una poción
 @export var damage = 10
@@ -20,10 +20,12 @@ var inventory := preload("res://SCRIPTS/UI/inventorymanager.gd").new() #crear in
 
 #añadir items al inventario cuando se hayan recogido
 func add_photo(photo_name: String):
-	inventory.add_photo(photo_name)
+	#inventory.add_photo(photo_name)
+	pass
 
 func add_letter(letter_name: String):
-	inventory.add_letter(letter_name)
+	#inventory.add_letter(letter_name)
+	pass
 
 #actualizar salud al tomar poción
 func increaseHealth():

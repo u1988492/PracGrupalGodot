@@ -1,7 +1,7 @@
 extends Control
 
 @onready var botones = %botones
-
+@onready var savemanager = %SaveLoad
 @onready var SFX_BUS_ID = AudioServer.get_bus_index("SFX")
 @onready var MUSIC_BUS_ID = AudioServer.get_bus_index("MUSIC")
 @onready var transicion = $transicion/fadeanim
@@ -30,8 +30,7 @@ func _on_play_pressed():
 	visible = !visible
 
 func _on_save_pressed():
-	pass # Replace with function body.
-	
+	savemanager.save_game()
 
 
 func _on_exit_pressed():
