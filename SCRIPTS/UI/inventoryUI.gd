@@ -2,6 +2,13 @@ extends Control
 
 var player: Node
 
+var n_letters = 4
+var letters_array = []
+
+
+func create_inventory():
+	pass
+
 func _ready():
 	pass
 
@@ -31,19 +38,6 @@ func update_inventory_display():
 			#letter_label.visible = true
 		#else:
 			#letter_label.visible = false
-
-
-
-
-func _on_photo_label_pressed(label: Label):
-	$InventoryWindow/ItemContent.text = get_item_content(label.text)
-
-func _on_letter_label_pressed(label: Label):
-	$InventoryWindow/ItemContent.text = get_item_content(label.text)
-
-func get_item_content(item_name: String) -> String:
-	# Replace with actual content retrieval logic
-	return "Contents of %s" % item_name
 
 
 func _on_photo_1_pressed():
