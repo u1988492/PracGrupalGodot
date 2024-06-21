@@ -109,13 +109,13 @@ func play_animation(movement):
 func _on_area_ataque_body_entered(body):
 	if body.has_method("enemy"):
 		on_range = true
-		if body.name == "Murcielago":
+		if body.has_node("Murcielago"):
 			damage = 5
-		elif body.name == "Esqueleto":
+		elif body.has_node("Esqueleto"):
 			damage = 7
-		elif body.name == "Fantasma":
+		elif body.has_node("Fantasma"):
 			damage = 10
-		elif body.name == "Boss":
+		elif body.has_node("Boss"):
 			damage = 15
 	
 	elif body.has_method("potion") and global.playerHealth < global.maxHealth:
