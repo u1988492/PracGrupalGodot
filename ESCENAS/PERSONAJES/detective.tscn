@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
 [ext_resource type="AudioStream" uid="uid://dao2xku2sx5cj" path="res://ASSETS/SFX/caminar.mp3" id="3_8cb4r"]
 [ext_resource type="AudioStream" uid="uid://lehj7nn2w7x0" path="res://ASSETS/SFX/daño.mp3" id="4_kb7mj"]
-[ext_resource type="PackedScene" uid="uid://p4wdnrq75djh" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
+[ext_resource type="PackedScene" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t2pt"]
 radius = 18.4615
@@ -458,7 +458,7 @@ collision_mask = 3
 script = ExtResource("1_x5qnp")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
-position = Vector2(1.53846, -3.07689)
+position = Vector2(0.769229, -15.3846)
 collision_layer = 7
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaAtaque"]
@@ -466,31 +466,30 @@ position = Vector2(-0.769231, -1.53846)
 shape = SubResource("CapsuleShape2D_7t2pt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(0.915384, -4.61539)
+position = Vector2(0.146153, -16.9231)
 polygon = PackedVector2Array(-8, 24, -4, 25, 4, 25, 9, 24, 11, 21, 9, 18, 4, 17, -4, 17, -8, 18, -10, 21)
 
 [node name="Linterna" parent="." instance=ExtResource("5_hby86")]
 z_index = 0
 y_sort_enabled = true
-position = Vector2(1.53846, -5.38459)
+position = Vector2(0.769229, -17.6923)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(0.915384, -5.61539)
+position = Vector2(0.146153, -17.9231)
 sprite_frames = SubResource("SpriteFrames_sm2kb")
 animation = &"idle_E"
 autoplay = "idle_S"
 
 [node name="Caminar" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1.53846, -15.3846)
+position = Vector2(0.769229, -27.6923)
 stream = ExtResource("3_8cb4r")
 bus = &"SFX"
 
 [node name="Daño" type="AudioStreamPlayer2D" parent="."]
-position = Vector2(1.53846, -15.3846)
+position = Vector2(0.769229, -27.6923)
 stream = ExtResource("4_kb7mj")
-bus = &"VOICES"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
