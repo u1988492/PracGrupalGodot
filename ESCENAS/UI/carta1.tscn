@@ -48,6 +48,7 @@ color = Color(0.533333, 0.396078, 0.321569, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer"]
 layout_mode = 2
+theme = ExtResource("2_5ai2n")
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -64,7 +65,7 @@ custom_minimum_size = Vector2(180, 300)
 layout_mode = 2
 size_flags_vertical = 8
 theme = ExtResource("2_5ai2n")
-theme_override_font_sizes/font_size = 14
+theme_override_font_sizes/font_size = 20
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sed tincidunt augue. Pellentesque id felis ut erat molestie posuere et at justo. Fusce sollicitudin eu velit id lacinia. Cras ut odio sollicitudin, semper nibh vel, tincidunt lacus. Etiam vulputate velit in arcu finibus, eu vehicula nisi semper. Sed vitae nunc eget justo tristique laoreet et a diam. Suspendisse condimentum ante nec purus congue vehicula. Pellentesque malesuada maximus magna, a consectetur purus ullamcorper id. Nunc auctor, justo sit amet hendrerit sagittis, tortor sapien mollis tortor, at interdum augue enim pharetra odio. Proin id hendrerit erat. Nam vel nisi non quam varius lacinia. Etiam mollis enim eu diam faucibus, a pretium ex interdum. Quisque vel gravida justo. Mauris lacinia rutrum mattis.
 
 Proin ac nulla eu nunc sagittis cursus sit amet vitae ligula. Maecenas ac viverra arcu, vel tempor diam. Donec lobortis eros vel velit ultricies, id euismod tortor sollicitudin. Etiam et efficitur metus. Pellentesque imperdiet sem scelerisque malesuada auctor. Cras nec eleifend lectus. Nullam id dui pulvinar, scelerisque lectus vitae, congue arcu.

@@ -1399,6 +1399,7 @@ sources/2 = SubResource("TileSetAtlasSource_njsn6")
 size = Vector2(21.0058, 21.9947)
 
 [node name="entrada" type="TileMap"]
+y_sort_enabled = true
 position = Vector2(32, 481)
 rotation = -1.57128
 tile_set = SubResource("TileSet_ugskc")
