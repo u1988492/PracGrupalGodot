@@ -49,14 +49,15 @@ offset_bottom = 488.0
 
 [node name="photosgrid" type="GridContainer" parent="photoscontainer"]
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 50
 metadata/_edit_use_anchors_ = true
 
 [node name="photo1" type="Button" parent="photoscontainer/photosgrid"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 3
+size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("4_x1r12")
 text = "FOTOGRAFIA N. 1"
@@ -64,7 +65,7 @@ text = "FOTOGRAFIA N. 1"
 [node name="photo2" type="Button" parent="photoscontainer/photosgrid"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("4_x1r12")
 text = "FOTOGRAFIA N. 2"
@@ -78,14 +79,12 @@ offset_bottom = 489.0
 
 [node name="lettersgrid" type="GridContainer" parent="letterscontainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
 [node name="letter1" type="Button" parent="letterscontainer/lettersgrid"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_horizontal = 6
+size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("4_x1r12")
 text = "CARTA N. 1"
@@ -93,7 +92,7 @@ text = "CARTA N. 1"
 [node name="letter2" type="Button" parent="letterscontainer/lettersgrid"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("4_x1r12")
 text = "CARTA N. 2"
@@ -101,7 +100,7 @@ text = "CARTA N. 2"
 [node name="letter3" type="Button" parent="letterscontainer/lettersgrid"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("4_x1r12")
 text = "CARTA N. 3"
@@ -109,7 +108,7 @@ text = "CARTA N. 3"
 [node name="letter4" type="Button" parent="letterscontainer/lettersgrid"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("4_x1r12")
 text = "CARTA N. 4"

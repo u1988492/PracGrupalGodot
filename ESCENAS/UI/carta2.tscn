@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6c7ci7047tof"]
+[gd_scene load_steps=4 format=3 uid="uid://cs3ger6cwpo2d"]
 
-[ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="1_akafp"]
-[ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="2_5ai2n"]
+[ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="1_o62c4"]
+[ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="2_r7fpt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcxka"]
 size = Vector2(4.55043, 6.28935)
@@ -37,7 +37,7 @@ theme_override_constants/margin_bottom = 50
 [node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer"]
 position = Vector2(563.5, 323)
 scale = Vector2(12.3864, 10.0678)
-texture = ExtResource("1_akafp")
+texture = ExtResource("1_o62c4")
 region_enabled = true
 region_rect = Rect2(562, 82, 44, 59)
 
@@ -48,7 +48,7 @@ color = Color(0.533333, 0.396078, 0.321569, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer"]
 layout_mode = 2
-theme = ExtResource("2_5ai2n")
+theme = ExtResource("2_r7fpt")
 theme_override_constants/margin_left = 32
 theme_override_constants/margin_top = 32
 theme_override_constants/margin_right = 32
@@ -57,22 +57,22 @@ theme_override_constants/margin_bottom = 32
 [node name="Label" type="Label" parent="Control/MarginContainer/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-text = "Fecha: 15 de marzo de 1924"
+text = "Fecha: 2 de abril de 1924"
 
 [node name="Label2" type="Label" parent="Control/MarginContainer/MarginContainer"]
 y_sort_enabled = true
 custom_minimum_size = Vector2(180, 300)
 layout_mode = 2
 size_flags_vertical = 8
-theme = ExtResource("2_5ai2n")
+theme = ExtResource("2_r7fpt")
 theme_override_font_sizes/font_size = 20
-text = "Querido Jonathan,
+text = "Estimado Jonathan,
 
-Recibí tu carta y confieso que me dejó inquieto. Las luces parpadeantes y los susurros en los pasillos que mencionas no son algo que pueda explicarse fácilmente. Los relatos de Abigail sobre las sombras que se deslizan por su habitación me perturban profundamente. 
+Lamento saber que los sucesos extraños persisten. La aparición del retrato de tu bisabuelo en el salón, después de haber sido destruido en el incendio de 1875, es particularmente desconcertante. He consultado a un historiador local y no hay registro de que el retrato haya sobrevivido. 
 
-¿Estás seguro de que no hay intrusos en la casa? La mansión Heartwood ha visto muchas cosas a lo largo de los años, pero esto parece diferente, casi malévolo. Por favor, revisa las cerraduras y no dejes que los niños se queden solos.
+Esto, junto con los ruidos provenientes del ático, sugiere que algo fuera de nuestro entendimiento está ocurriendo. Te ruego que consideres salir de la mansión por un tiempo. La seguridad de tu familia debe ser tu prioridad.
 
-Con preocupación,
+Con urgencia,
 Henry"
 autowrap_mode = 2
 
@@ -85,6 +85,6 @@ shape = SubResource("RectangleShape2D_lcxka")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
 scale = Vector2(0.352496, 0.508021)
-texture = ExtResource("1_akafp")
+texture = ExtResource("1_o62c4")
 region_enabled = true
 region_rect = Rect2(786, 211, 12, 11)
