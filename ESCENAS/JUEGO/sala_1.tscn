@@ -1319,14 +1319,14 @@ layer_1/tile_data = PackedInt32Array(12, 0, 10, 65554, 524289, 10, 65551, 524289
 script = ExtResource("3_t5vyl")
 
 [node name="detection_to_sala2" type="Area2D" parent="."]
-position = Vector2(198.979, 14)
+position = Vector2(199.974, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala2"]
 position = Vector2(1.46684, -1.5)
 shape = SubResource("RectangleShape2D_4vhk7")
 
 [node name="detection_to_sala3" type="Area2D" parent="."]
-position = Vector2(338.265, 174)
+position = Vector2(342.244, 174)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala3"]
 position = Vector2(16.9132, 7)

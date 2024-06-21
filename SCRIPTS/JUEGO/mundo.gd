@@ -20,6 +20,71 @@ extends Node2D
 
 var current_room = ""
 
+var start_position = ""
+
+var player_start_positions = {
+	"entrada": {
+		"door_to_sala1": Vector2(395.927, 151.192)
+	},
+	"sala1": {
+		"door_to_entrada": Vector2(18.903, 117), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(199.974, 39),
+		"door_to_sala3": Vector2(328.316, 184)
+	},
+	"sala2": {
+		"door_to_sala1": Vector2(50, 100),
+		"door_to_sala4": Vector2(150, 400)
+	},
+	"sala3": {
+		"door_to_sala1": Vector2(200, 200)
+	},
+	"sala4": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala5": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala6": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala7": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala8": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala9": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala10": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"sala11": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+	"final": {
+		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
+		"door_to_sala2": Vector2(150, 400),
+		"door_to_sala3": Vector2(100, 500)
+	},
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	transicion.get_parent().get_node("ColorRect").color.a = 255

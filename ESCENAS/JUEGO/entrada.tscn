@@ -1455,7 +1455,7 @@ layer_1/tile_data = PackedInt32Array(589849, 131072, 1342177293, 327705, 131072,
 script = ExtResource("4_x4osw")
 
 [node name="entrada_detection" type="Area2D" parent="."]
-position = Vector2(402.926, 152.195)
+position = Vector2(417.926, 152.202)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="entrada_detection"]
 position = Vector2(4.00003, 0.00193369)

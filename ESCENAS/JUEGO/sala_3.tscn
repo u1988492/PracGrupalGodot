@@ -4049,3 +4049,5 @@ position = Vector2(62, 220)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala1"]
 position = Vector2(-5, 11.5)
 shape = SubResource("RectangleShape2D_q1myg")
+
+[connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]
