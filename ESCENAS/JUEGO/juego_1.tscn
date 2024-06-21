@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="2_8k013"]
 
 [node name="juego_1" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_85u26")
 
 [node name="Detective" parent="." instance=ExtResource("2_8k013")]
