@@ -3,8 +3,8 @@ extends CharacterBody2D
 const SPEED = 50.0
 var player = null
 var dir = "E"
-var health = 10
-var damage = 1
+var health = 5
+var damage = 0
 
 var chasing = false #true if the player is close enough to be detected by the enemy
 var on_reach = false #true if the player is close enough to be hit
@@ -26,7 +26,6 @@ func enemy():
 
 func enemy_movement(_delta):
 	if chasing:
-		#position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
 			position += ((player.position + Vector2(29,0)) - position)/SPEED
 			dir = "W"
@@ -73,7 +72,7 @@ func attack():
 	if on_reach and not global.enemy_attacking and not cooldown:
 		global.enemy_attacking = true
 		$Timers/AttackTimer.start()
-		$AnimatedSprite2D.play("attack")
+		$AnimatedSprite2D.play("attack_1")
 		$attack.play(0)
 
 func _on_attack_timer_timeout():
@@ -89,17 +88,19 @@ func _on_cooldown_timer_timeout():
 func _on_area_ataque_area_entered(area):
 	if area.has_method("lantern"):
 		on_light = true
+		print("Enemy on light")
 
 func _on_area_ataque_area_exited(area):
 	if area.has_method("lantern"):
 		on_light = false
+		print("Enemy out of light")
 
 func take_damage():
 	if on_light and global.player_attacking and not damage_cooldown:
 		health -= 1
 		damage_cooldown = true
 		$Timers/DamageCooldown.start()
-		$AnimatedSprite2D.play("hit")
+		$AnimatedSprite2D.play("hurt")
 		global.player_attacking = false
 		if health <= 0:
 			dead = true
