@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcy2k6lbxq0fn"]
+[gd_scene load_steps=13 format=3 uid="uid://dcy2k6lbxq0fn"]
 
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="1_itwdg"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_qpbib"]
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="3_2c48g"]
 [ext_resource type="Texture2D" uid="uid://cigxh0jw4uf11" path="res://ASSETS/MAPA/furniture update.png" id="4_4qk2i"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_9.gd" id="5_o12wm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_woohp"]
 texture = ExtResource("1_itwdg")
@@ -4052,6 +4053,12 @@ sources/1 = SubResource("TileSetAtlasSource_2ua2r")
 sources/2 = SubResource("TileSetAtlasSource_bc8a7")
 sources/3 = SubResource("TileSetAtlasSource_6a1bq")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vnrvj"]
+size = Vector2(63, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7xhui"]
+size = Vector2(20, 47)
+
 [node name="sala9" type="TileMap"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_18te8")
@@ -4066,3 +4073,21 @@ layer_1/tile_data = PackedInt32Array(1179651, 720899, 23, 1245187, 720899, 24, 1
 layer_2/name = "level2"
 layer_2/z_index = 2
 layer_2/tile_data = PackedInt32Array(983059, 1835011, 14, 1048595, 1835011, 15, 983060, 1900547, 14, 1048596, 1900547, 15, 1114131, 1835011, 14, 1179667, 1835011, 15, 1114132, 1900547, 14, 1179668, 1900547, 15)
+script = ExtResource("5_o12wm")
+
+[node name="detection_to_sala7" type="Area2D" parent="."]
+position = Vector2(125, 404)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala7"]
+position = Vector2(2.5, 0)
+shape = SubResource("RectangleShape2D_vnrvj")
+
+[node name="detection_to_sala10" type="Area2D" parent="."]
+position = Vector2(472, 83)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala10"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_7xhui")
+
+[connection signal="body_entered" from="detection_to_sala7" to="." method="_on_detection_to_sala_7_body_entered"]
+[connection signal="body_entered" from="detection_to_sala10" to="." method="_on_detection_to_sala_10_body_entered"]

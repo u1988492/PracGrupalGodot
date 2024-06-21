@@ -57,29 +57,22 @@ var player_start_positions = {
 		"door_to_sala9": Vector2(81, 56)
 	},
 	"sala8": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala7": Vector2(42, 199),
+		"door_to_sala11": Vector2(168, -33)
 	},
 	"sala9": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala7": Vector2(128, 379),
+		"door_to_sala10": Vector2(446, 88)
 	},
 	"sala10": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala9": Vector2(33, 150),
+		"door_to_final": Vector2(552, -60)
 	},
 	"sala11": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala8": Vector2(39, 111)
 	},
 	"final": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala10": Vector2(361, 474)
 	},
 }
 

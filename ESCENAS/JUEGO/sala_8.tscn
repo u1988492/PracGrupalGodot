@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ba6cxtobjg4cv"]
+[gd_scene load_steps=13 format=3 uid="uid://ba6cxtobjg4cv"]
 
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="1_kd7ck"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_5l6my"]
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="3_ea303"]
 [ext_resource type="Texture2D" uid="uid://cigxh0jw4uf11" path="res://ASSETS/MAPA/furniture update.png" id="4_ehh74"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_8.gd" id="5_xkpyv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8abt2"]
 texture = ExtResource("1_kd7ck")
@@ -4039,6 +4040,12 @@ sources/1 = SubResource("TileSetAtlasSource_tlx68")
 sources/2 = SubResource("TileSetAtlasSource_m1vn8")
 sources/3 = SubResource("TileSetAtlasSource_g2hwc")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xilym"]
+size = Vector2(20, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_im70g"]
+size = Vector2(20, 30)
+
 [node name="sala8" type="TileMap"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_v5o0u")
@@ -4050,3 +4057,21 @@ layer_1/name = "level1"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(917516, 851968, 5, 917517, 851968, 5, 917518, 851968, 5, 917519, 851968, 5, 917520, 851968, 5, 983056, 851968, 5, 983055, 851968, 5, 983054, 851968, 5, 983053, 851968, 5, 983052, 851968, 5, 1048588, 786432, 6, 1048589, 851968, 6, 1048592, 851968, 6, 1048591, 851968, 6, 1048590, 851968, 6, 917521, 917504, 5, 983057, 917504, 5, 1048593, 917504, 6, 851980, 786432, 1, 851982, 786432, 1, 851984, 786432, 1, 917515, 851968, 268435457, 983051, 851968, 268435458, 983046, 720898, 3, 1048582, 720898, 2, 983047, 720898, 3, 1048583, 720898, 2, 983048, 786434, 3, 1048584, 786434, 2, 1114118, 720898, 3, 1114119, 720898, 3, 1114120, 786434, 3, 983045, 655362, 3, 1048581, 655362, 2, 1114117, 655362, 3, 917509, 655362, 2, 917510, 720898, 2, 917511, 720898, 2, 917512, 786434, 2, 1048579, 393218, 7, 1114115, 393218, 8, 1179651, 393218, 9, -196605, 983043, 23, -131069, 983043, 24, -65533, 983043, 23, 3, 983043, 24, 65539, 983043, 23, 131075, 983043, 24, 196611, 983043, 23, 262147, 983043, 24, 327683, 983043, 23, 393219, 983043, 24, 458755, 983043, 25, 524291, 983043, 26, 393220, 917507, 24, 458756, 917507, 25, 4, 655363, 25, 65540, 655363, 26, -196604, 917507, 23, -131068, 917507, 24, -65532, 917507, 25, 327684, 917507, 23, -393213, 1900547, 16, -327677, 1900547, 17, -458744, 524291, 19, -393208, 524291, 20, -327672, 524291, 21, -458743, 589827, 19, -393207, 589827, 20, -327671, 589827, 21, -458746, 393219, 19, -393210, 393219, 20, -327674, 393219, 21, -458745, 458755, 19, -393209, 458755, 20, -327673, 458755, 21)
+script = ExtResource("5_xkpyv")
+
+[node name="detection_to_sala7" type="Area2D" parent="."]
+position = Vector2(15, 201)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala7"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_xilym")
+
+[node name="detection_to_sala11" type="Area2D" parent="."]
+position = Vector2(193, -34)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala11"]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_im70g")
+
+[connection signal="body_entered" from="detection_to_sala7" to="." method="_on_detection_to_sala_7_body_entered"]
+[connection signal="body_entered" from="detection_to_sala11" to="." method="_on_detection_to_sala_11_body_entered"]
