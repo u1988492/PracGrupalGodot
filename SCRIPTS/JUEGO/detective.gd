@@ -8,6 +8,7 @@ const speed = 150.0 #speed of the player's movement
 var dir = "S" #direction in which the player moves and looks
 var on_range = false #true when an enemy is close enough to hit the player
 var damage_cooldown = false
+var dead = false
 #var inventory := preload("res://SCRIPTS/GAMEMANAGER/inventorymanager.gd").new() #crear inventario
 
 #ajustar valor de la salud que da una poción
@@ -28,15 +29,18 @@ func add_letter(letter_name: String):
 #actualizar salud al tomar poción
 func increaseHealth():
 	global.playerHealth += potionhealth
-	
+
 func _ready():
 	global.playerPositon = self.position
 
 func _physics_process(delta):
-	player_movement(delta)
-	global.playerPositon = self.position
-	take_damage()
-	emit_signal("update_ui")
+	if not dead:
+		player_movement(delta)
+		global.playerPositon = self.position
+		take_damage()
+		emit_signal("update_ui")
+	else:
+		death()
 
 func player():
 	pass #funcion vacia para ser detectado por el enemigo
@@ -137,7 +141,14 @@ func take_damage():
 		$DamageCooldown.start()
 		$AnimationPlayer.play("hit")
 		global.enemy_attacking = false
+		if global.playerPositon <= 0:
+			dead = true
 
 func _on_damage_cooldown_timeout():
 	$DamageCooldown.stop()
 	damage_cooldown = false
+
+func death():
+	$Muerte.play()
+	print("Has muerto")
+	pass

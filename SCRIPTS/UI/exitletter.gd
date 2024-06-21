@@ -1,5 +1,6 @@
 extends Area2D
 
+@export var inventory := preload("res://ESCENAS/UI/inventoryUI.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,4 +13,4 @@ func _process(delta):
 
 
 func _on_input_event(viewport, event, shape_idx):
-	pass # Replace with function body.
+	get_tree().change_scene_to_packed(inventory)

@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-const SPEED = 50.0
+var speed = 75.0
 var player = null
 var dir = "E"
+var maxHealth = 100
 var health = 100
 var damage = 5
 var random
@@ -28,11 +29,11 @@ func enemy():
 func enemy_movement(_delta):
 	if chasing:
 		if (player.position.x - position.x) < 0:
-			position += ((player.position + Vector2(29,0)) - position)/SPEED
+			position += ((player.position + Vector2(29,0)) - position)/speed
 			dir = "W"
 			$AnimatedSprite2D.flip_h = true
 		else:
-			position += ((player.position - Vector2(29,0)) - position)/SPEED
+			position += ((player.position - Vector2(29,0)) - position)/speed
 			dir = "E"
 			$AnimatedSprite2D.flip_h = false
 				
@@ -47,19 +48,21 @@ func play_animation(movement):
 	var animation = $AnimatedSprite2D
 	if movement == 1:
 		if not global.enemy_attacking and not global.player_attacking:
-			animation.play("walk")
+			if not health <= maxHealth/2:
+				animation.play("walk")
+			else:
+				animation.play("fly")
 	elif movement == 0:
 		animation.play("idle")
+
+func _on_detection_timer_timeout():
+	$Timers/DetectionTimer.stop()
+	$AreaDeteccion/CollisionShape2D.disabled = false
 
 func _on_area_deteccion_body_entered(body):
 	if body.has_method("player"):
 		player = body
 		chasing = true
-
-func _on_area_deteccion_body_exited(body):
-	if body.has_method("player"):
-		player = null
-		chasing = false
 
 func _on_area_ataque_body_entered(body):
 	if body.has_method("player"):
@@ -105,6 +108,8 @@ func take_damage():
 		$Timers/DamageCooldown.start()
 		$AnimatedSprite2D.play("hurt")
 		global.player_attacking = false
+		if health <= maxHealth/2:
+			speed = 50.0
 		if health <= 0:
 			dead = true
 
