@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://b2hbx3yxo4jts"]
+[gd_scene load_steps=16 format=3 uid="uid://b2hbx3yxo4jts"]
 
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="1_mva2p"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_w1ygv"]
 [ext_resource type="Texture2D" uid="uid://cigxh0jw4uf11" path="res://ASSETS/MAPA/furniture update.png" id="3_us6km"]
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="4_530fw"]
 [ext_resource type="Texture2D" uid="uid://bjopmgwuooykw" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState2.png" id="5_rpm5o"]
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_7.gd" id="6_08r6r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_os65f"]
 texture = ExtResource("1_mva2p")
@@ -4870,6 +4871,15 @@ sources/2 = SubResource("TileSetAtlasSource_ricwp")
 sources/3 = SubResource("TileSetAtlasSource_crksm")
 sources/4 = SubResource("TileSetAtlasSource_wkunj")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r7pal"]
+size = Vector2(47, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22knm"]
+size = Vector2(20, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o140s"]
+size = Vector2(22, 20)
+
 [node name="sala7" type="TileMap"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_qwfua")
@@ -4881,3 +4891,29 @@ layer_1/name = "level1"
 layer_1/y_sort_enabled = true
 layer_1/z_index = 1
 layer_1/tile_data = PackedInt32Array(7, 917505, 6, 65543, 917505, 7, 131079, 917505, 8, 196615, 917505, 9, 12, 917505, 6, 65548, 917505, 7, 131084, 917505, 8, 196620, 917505, 9, 17, 917505, 6, 65553, 917505, 7, 131089, 917505, 8, 196625, 917505, 9, 22, 917505, 6, 65558, 917505, 7, 131094, 917505, 8, 196630, 917505, 9, 27, 917505, 6, 65563, 917505, 7, 131099, 917505, 8, 196635, 917505, 9, 32, 917505, 6, 65568, 917505, 7, 131104, 917505, 8, 196640, 917505, 9, 37, 917505, 6, 65573, 917505, 7, 131109, 917505, 8, 196645, 917505, 9, 4, 131073, 7, 65540, 131073, 8, 131076, 131073, 9, 5, 196609, 7, 65541, 196609, 8, 131077, 196609, 9, 524309, 393220, 268435468, 524308, 458756, 268435468, 524307, 524292, 268435468, 524306, 589828, 268435468, 524305, 655364, 268435468, 524304, 720900, 268435468, 524303, 786436, 268435468, 589845, 393220, 268435469, 589844, 458756, 268435469, 589843, 524292, 268435469, 589842, 589828, 268435469, 589841, 655364, 268435469, 589840, 720900, 268435469, 589839, 786436, 268435469, 655381, 393220, 268435470, 655380, 458756, 268435470, 655379, 524292, 268435470, 655378, 589828, 268435470, 655377, 655364, 268435470, 655376, 720900, 268435470, 655375, 786436, 268435470, 720912, 720900, 268435471, 720911, 786436, 268435471, 983080, 327684, 268435460, 1048616, 327684, 268435461, 1114152, 327684, 268435462, 917544, 327684, 268435460, 655365, 655364, 2, 720901, 655364, 3, 655366, 720900, 2, 720902, 720900, 3, 655367, 720900, 2, 720903, 720900, 3, 786437, 655364, 2, 851973, 655364, 3, 786438, 720900, 2, 851974, 720900, 3, 786439, 720900, 2, 851975, 720900, 3, 655368, 720900, 2, 720904, 720900, 3, 655369, 720900, 2, 720905, 720900, 3, 655370, 786436, 2, 720906, 786436, 3, 786440, 720900, 2, 851976, 720900, 3, 786441, 720900, 2, 851977, 720900, 3, 786442, 786436, 2, 851978, 786436, 3, 458792, 327684, 268435460, 524328, 327684, 268435461, 589864, 327684, 268435462, 393256, 327684, 268435460, 327720, 327684, 268435460, 262184, 327684, 268435460, 196648, 327684, 268435460, 655363, 4, 12, 720899, 4, 13, 786435, 4, 14, 851971, 4, 15, 655364, 65540, 12, 720900, 65540, 13, 786436, 65540, 14, 851972, 65540, 15, 655372, 4, 268435468, 655371, 65540, 268435468, 720908, 4, 268435469, 720907, 65540, 268435469, 786444, 4, 268435470, 786443, 65540, 268435470, 851980, 4, 268435471, 851979, 65540, 268435471, 917510, 65540, 10, 983046, 65540, 11, 917511, 131076, 10, 983047, 131076, 11, 917512, 196612, 10, 983048, 196612, 11, 917513, 262148, 10, 983049, 262148, 11, 917515, 393220, 7, 983051, 393220, 8, 1048587, 393220, 9, 917522, 65539, 2, 851987, 524292, 0, 917523, 65539, 2, 983059, 65539, 2, 917524, 65539, 2, 983060, 65539, 2, 851989, 524292, 0, 917525, 131075, 2, 983061, 131075, 2, 917526, 589828, 268435456, 983062, 589828, 268435457, 917520, 589828, 0, 983056, 589828, 1, 851985, 524292, 0, 917521, 3, 2, 983057, 3, 2, 1048593, 3, 3, 983058, 65539, 2, 1048594, 65539, 3, 1048595, 65539, 3, 1048596, 65539, 3, 1048597, 131075, 3, 327710, 655364, 4, 393246, 655364, 5, 458782, 655364, 5, 524318, 655364, 6, 327711, 720900, 4, 393247, 720900, 5, 458783, 720900, 5, 524319, 720900, 6, 327712, 720900, 4, 393248, 720900, 5, 458784, 720900, 5, 524320, 720900, 6, 524321, 720900, 6, 458785, 720900, 5, 393249, 720900, 5, 327713, 720900, 4, 458786, 720900, 5, 524322, 720900, 6, 327714, 720900, 4, 393250, 720900, 5, 327716, 786436, 4, 393252, 786436, 5, 458788, 786436, 5, 524324, 786436, 6, 327715, 720900, 4, 393251, 720900, 5, 458787, 720900, 5, 524323, 720900, 6, 65565, 589828, 7, 131101, 589828, 8, 196637, 589828, 9, 65566, 655364, 7, 131102, 655364, 8, 196638, 655364, 9, 393244, 720900, 7, 458780, 720900, 8, 524316, 720900, 9, 393245, 786436, 7, 458781, 786436, 8, 524317, 786436, 9, 589855, 720900, 10, 655391, 720900, 11, 589856, 786436, 10, 655392, 786436, 11)
+script = ExtResource("6_08r6r")
+
+[node name="detection_to_sala5" type="Area2D" parent="."]
+position = Vector2(424, 319)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala5"]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_r7pal")
+
+[node name="detection_to_sala8" type="Area2D" parent="."]
+position = Vector2(689, 186)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala8"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_22knm")
+
+[node name="detection_to_sala9" type="Area2D" parent="."]
+position = Vector2(80, 20)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala9"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_o140s")
+
+[connection signal="body_entered" from="detection_to_sala5" to="." method="_on_detection_to_sala_5_body_entered"]
+[connection signal="body_entered" from="detection_to_sala8" to="." method="_on_detection_to_sala_8_body_entered"]
+[connection signal="body_entered" from="detection_to_sala9" to="." method="_on_detection_to_sala_9_body_entered"]

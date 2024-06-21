@@ -52,9 +52,9 @@ var player_start_positions = {
 		"door_to_sala4": Vector2(44, 192)
 	},
 	"sala7": {
-		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
-		"door_to_sala2": Vector2(150, 400),
-		"door_to_sala3": Vector2(100, 500)
+		"door_to_sala5": Vector2(423, 294),
+		"door_to_sala8": Vector2(662, 190),
+		"door_to_sala9": Vector2(81, 56)
 	},
 	"sala8": {
 		"door_to_entrada": Vector2(200, 300), # Ajusta las posiciones según las necesidades
