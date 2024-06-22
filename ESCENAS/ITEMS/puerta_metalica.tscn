@@ -1,22 +1,22 @@
-[gd_scene load_steps=9 format=3 uid="uid://cjpndbahplgho"]
+[gd_scene load_steps=9 format=3 uid="uid://d4b65pgjaoryi"]
 
-[ext_resource type="Script" path="res://SCRIPTS/ITEMS/puerta.gd" id="1_0ef4e"]
-[ext_resource type="Texture2D" uid="uid://b5a36v5xs70u3" path="res://ASSETS/ITEMS/puerta cerrada.png" id="1_mkpux"]
-[ext_resource type="AudioStream" uid="uid://cqueihhgsd2y6" path="res://ASSETS/SFX/puerta.mp3" id="3_xp831"]
+[ext_resource type="Script" path="res://SCRIPTS/ITEMS/puerta.gd" id="1_f57v8"]
+[ext_resource type="Texture2D" uid="uid://b5sd23l3ig6x4" path="res://ASSETS/ITEMS/puerta_metalica.png" id="1_m1vkg"]
+[ext_resource type="AudioStream" uid="uid://cuxdlgkbnbffq" path="res://ASSETS/SFX/metal-door.mp3" id="3_c14c6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g5oj"]
-size = Vector2(32, 46)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0gnv"]
+size = Vector2(48, 56)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cb4ir"]
-size = Vector2(32, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amu36"]
+size = Vector2(48, 20)
 
-[sub_resource type="Animation" id="Animation_bbeux"]
+[sub_resource type="Animation" id="Animation_504cw"]
 resource_name = "open"
 length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:visible")
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -28,7 +28,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/path = NodePath("CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -40,7 +40,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:playing")
+tracks/2/path = NodePath("open:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -52,7 +52,7 @@ tracks/2/keys = {
 tracks/3/type = "method"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("..")
+tracks/3/path = NodePath(".")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -64,12 +64,12 @@ tracks/3/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_fdxjh"]
+[sub_resource type="Animation" id="Animation_du2mh"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("..:visible")
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -81,7 +81,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../CollisionShape2D:disabled")
+tracks/1/path = NodePath("CollisionShape2D:disabled")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -93,7 +93,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath(".:playing")
+tracks/2/path = NodePath("open:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -103,40 +103,38 @@ tracks/2/keys = {
 "values": [false]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_s6d6q"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7p1ok"]
 _data = {
-"RESET": SubResource("Animation_fdxjh"),
-"open": SubResource("Animation_bbeux")
+"RESET": SubResource("Animation_du2mh"),
+"open": SubResource("Animation_504cw")
 }
 
-[node name="Puerta" type="StaticBody2D"]
-z_index = 1
-y_sort_enabled = true
-script = ExtResource("1_0ef4e")
+[node name="puerta_metalica" type="StaticBody2D"]
+position = Vector2(0, -29)
+script = ExtResource("1_f57v8")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -23)
-texture = ExtResource("1_mkpux")
+texture = ExtResource("1_m1vkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
-position = Vector2(0, -23)
-shape = SubResource("RectangleShape2D_0g5oj")
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_v0gnv")
 
 [node name="OpenDoor" type="Area2D" parent="."]
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OpenDoor"]
-shape = SubResource("RectangleShape2D_cb4ir")
+position = Vector2(0, 29)
+shape = SubResource("RectangleShape2D_amu36")
 
 [node name="open" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("3_xp831")
+stream = ExtResource("3_c14c6")
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../open")
 libraries = {
-"": SubResource("AnimationLibrary_s6d6q")
+"": SubResource("AnimationLibrary_7p1ok")
 }
 
 [connection signal="body_entered" from="OpenDoor" to="." method="_on_open_door_body_entered"]

@@ -153,9 +153,7 @@ func death():
 	$Muerte.play()
 
 	game_over_screen()
-	print("Has muerto")
 	pass
-
 
 func game_over_screen():
 	transicion.play("fadeoutlong")

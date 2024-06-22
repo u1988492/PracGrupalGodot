@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://dcy2k6lbxq0fn"]
+[gd_scene load_steps=14 format=3 uid="uid://dcy2k6lbxq0fn"]
 
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="1_itwdg"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_qpbib"]
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="3_2c48g"]
 [ext_resource type="Texture2D" uid="uid://cigxh0jw4uf11" path="res://ASSETS/MAPA/furniture update.png" id="4_4qk2i"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_9.gd" id="5_o12wm"]
+[ext_resource type="PackedScene" uid="uid://61cjuaw010xj" path="res://ESCENAS/ITEMS/llave.tscn" id="6_21byi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_woohp"]
 texture = ExtResource("1_itwdg")
@@ -4090,6 +4091,9 @@ position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_7xhui")
 
 [node name="items" type="Node2D" parent="."]
+
+[node name="Llave" parent="items" instance=ExtResource("6_21byi")]
+position = Vector2(201, 128)
 
 [node name="enemigos" type="Node2D" parent="."]
 
