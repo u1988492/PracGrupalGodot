@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dogl245hvshe"]
+[gd_scene load_steps=12 format=3 uid="uid://dogl245hvshe"]
 
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="1_all8g"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_tcc13"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="3_iwcns"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_11.gd" id="4_ofkml"]
+[ext_resource type="PackedScene" uid="uid://ds2ae5vnwbelw" path="res://ESCENAS/ITEMS/carta.tscn" id="6_8lh3c"]
 [ext_resource type="PackedScene" uid="uid://61cjuaw010xj" path="res://ESCENAS/ITEMS/llave.tscn" id="6_aj7vs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71iyj"]
@@ -2308,6 +2309,10 @@ shape = SubResource("RectangleShape2D_4l80p")
 
 [node name="Llave" parent="items" instance=ExtResource("6_aj7vs")]
 position = Vector2(452, 220)
+
+[node name="Carta" parent="items" instance=ExtResource("6_8lh3c")]
+position = Vector2(343, 82)
+carta_numero = 3
 
 [node name="enemigos" type="Node2D" parent="."]
 

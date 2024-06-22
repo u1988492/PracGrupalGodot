@@ -11,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_plpo4")
 script = ExtResource("1_wv6r7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -49,26 +50,17 @@ offset_bottom = 488.0
 
 [node name="photosgrid" type="GridContainer" parent="photoscontainer"]
 layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 50
 metadata/_edit_use_anchors_ = true
 
-[node name="photo1" type="Button" parent="photoscontainer/photosgrid" groups=["photo"]]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 6
-size_flags_stretch_ratio = 1.09
-theme = ExtResource("3_plpo4")
-text = "FOTOGRAFIA N. 1"
-
-[node name="photo2" type="Button" parent="photoscontainer/photosgrid" groups=["photo"]]
+[node name="Label" type="Label" parent="photoscontainer/photosgrid"]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 6
-size_flags_stretch_ratio = 1.09
-theme = ExtResource("3_plpo4")
-text = "FOTOGRAFIA N. 2"
+text = "Selecciona una carta para leerla. 
+Escape pare cerrarla."
 
 [node name="letterscontainer" type="MarginContainer" parent="."]
 layout_mode = 0
@@ -116,8 +108,6 @@ size_flags_stretch_ratio = 1.09
 theme = ExtResource("3_plpo4")
 text = "CARTA N. 4"
 
-[connection signal="pressed" from="photoscontainer/photosgrid/photo1" to="." method="_on_photo_1_pressed"]
-[connection signal="pressed" from="photoscontainer/photosgrid/photo2" to="." method="_on_photo_2_pressed"]
 [connection signal="pressed" from="letterscontainer/lettersgrid/letter1" to="." method="_on_letter_1_pressed"]
 [connection signal="pressed" from="letterscontainer/lettersgrid/letter2" to="." method="_on_letter_2_pressed"]
 [connection signal="pressed" from="letterscontainer/lettersgrid/letter3" to="." method="_on_letter_3_pressed"]
