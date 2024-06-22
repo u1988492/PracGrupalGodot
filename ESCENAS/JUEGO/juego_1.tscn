@@ -51,11 +51,12 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="InventoryUi" parent="UI/Control" instance=ExtResource("8_eradh")]
+[node name="Gameover" parent="UI/Control" instance=ExtResource("9_bufv3")]
 visible = false
 layout_mode = 1
 
-[node name="Gameover" parent="UI/Control" instance=ExtResource("9_bufv3")]
+[node name="InventoryUi" parent="UI/Control" instance=ExtResource("8_eradh")]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 

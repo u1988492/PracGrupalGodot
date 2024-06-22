@@ -1,7 +1,5 @@
 extends Control
 
-var player: Node
-
 var n_letters = 4
 var letters_array = [false, false, false, false]
 
@@ -13,8 +11,8 @@ var letters_array = [false, false, false, false]
 
 
 func _ready():
-	get_tree().set_group("letter", "visible", false)
-
+	for i in range(n_letters):
+		$letterscontainer/lettersgrid.get_child(i).visible = false
 
 func _input(event):
 	if event.is_action_pressed("inventario"):
@@ -23,26 +21,8 @@ func _input(event):
 			update_inventory_display()
 
 func update_inventory_display():
-	pass
-	#var photos = player.inventory.photos
-	#var letters = player.inventory.letters
-
-	#for i in range(2):
-		#var photo_label = $photoscontainer/photosgrid.get_child(i)
-		#if i < photos.size():
-			#photo_label.text = photos[i]
-			#photo_label.visible = true
-		#else:
-			#photo_label.visible = false
-
-	#for i in range(4):
-		#var letter_label = $letterscontainer/lettersgrid.get_child(i)
-		#if i < letters.size():
-			#letter_label.text = letters[i]
-			#letter_label.visible = true
-		#else:
-			#letter_label.visible = false
-
+	for i in range(n_letters):
+		$letterscontainer/lettersgrid.get_child(i).visible = letters_array[i]
 
 func _on_photo_1_pressed():
 	pass
