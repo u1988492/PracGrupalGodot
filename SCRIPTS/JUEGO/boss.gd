@@ -3,10 +3,11 @@ extends CharacterBody2D
 var speed = 75.0
 var player = null
 var dir = "E"
-var maxHealth = 100
-var health = 100
+var maxHealth = 50
+var health = 50
 var damage = 5
 var random
+@onready var transicion = $transicion/fadeanim
 
 var chasing = false #true if the player is close enough to be detected by the enemy
 var on_reach = false #true if the player is close enough to be hit
@@ -103,7 +104,7 @@ func _on_area_ataque_area_exited(area):
 
 func take_damage():
 	if on_light and global.player_attacking and not damage_cooldown:
-		health -= 1
+		health -= damage
 		damage_cooldown = true
 		$Timers/DamageCooldown.start()
 		$AnimatedSprite2D.play("hurt")
@@ -120,3 +121,9 @@ func _on_damage_cooldown_timeout():
 func death():
 	if dead:
 		$AnimationPlayer.play("death")
+		win_screen()
+
+func win_screen():
+	transicion.play("fadeoutlong")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://ESCENAS/UI/win.tscn")
