@@ -4914,6 +4914,10 @@ position = Vector2(80, 28)
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_o140s")
 
+[node name="items" type="Node2D" parent="."]
+
+[node name="enemigos" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="detection_to_sala5" to="." method="_on_detection_to_sala_5_body_entered"]
 [connection signal="body_entered" from="detection_to_sala8" to="." method="_on_detection_to_sala_8_body_entered"]
 [connection signal="body_entered" from="detection_to_sala9" to="." method="_on_detection_to_sala_9_body_entered"]

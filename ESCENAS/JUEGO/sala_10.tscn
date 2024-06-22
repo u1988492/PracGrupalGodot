@@ -2273,5 +2273,9 @@ position = Vector2(551, -102)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_d7ukk")
 
+[node name="items" type="Node2D" parent="."]
+
+[node name="enemigos" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="detection_to_sala9" to="." method="_on_detection_to_sala_9_body_entered"]
 [connection signal="body_entered" from="detection_to_final" to="." method="_on_detection_to_final_body_entered"]

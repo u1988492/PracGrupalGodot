@@ -1,9 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://dogl245hvshe"]
+[gd_scene load_steps=12 format=3 uid="uid://dogl245hvshe"]
 
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="1_all8g"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_tcc13"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="3_iwcns"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_11.gd" id="4_ofkml"]
+[ext_resource type="PackedScene" uid="uid://xbuklh1kcx1o" path="res://ESCENAS/ITEMS/carta4.tscn" id="5_33uqw"]
+[ext_resource type="PackedScene" uid="uid://61cjuaw010xj" path="res://ESCENAS/ITEMS/llave.tscn" id="6_aj7vs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71iyj"]
 texture = ExtResource("1_all8g")
@@ -2302,5 +2304,15 @@ position = Vector2(-3, 112)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala8"]
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_4l80p")
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="Carta" parent="items" instance=ExtResource("5_33uqw")]
+position = Vector2(313, 78)
+
+[node name="Llave" parent="items" instance=ExtResource("6_aj7vs")]
+position = Vector2(452, 220)
+
+[node name="enemigos" type="Node2D" parent="."]
 
 [connection signal="body_entered" from="detection_to_sala8" to="." method="_on_detection_to_sala_8_body_entered"]
