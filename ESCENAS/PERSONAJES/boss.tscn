@@ -1,10 +1,11 @@
-[gd_scene load_steps=77 format=3 uid="uid://btsuq8ebwykst"]
+[gd_scene load_steps=78 format=3 uid="uid://btsuq8ebwykst"]
 
 [ext_resource type="Texture2D" uid="uid://da3jik8if5ee3" path="res://ASSETS/PERSONAJES/boss/cthulu_192x112_SpriteSheet.png" id="1_0ca8d"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/boss.gd" id="1_c5il3"]
 [ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_j76r5"]
 [ext_resource type="AudioStream" uid="uid://da2by1d1rq13a" path="res://ASSETS/SFX/monster attack.mp3" id="2_xsptd"]
 [ext_resource type="AudioStream" uid="uid://by7ytd1t3xy57" path="res://ASSETS/SFX/monster_death.mp3" id="3_xa1k6"]
+[ext_resource type="AudioStream" uid="uid://byc4pu73110s8" path="res://ASSETS/SFX/monster_roar.mp3" id="6_gdff5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r32l"]
 radius = 274.007
@@ -738,6 +739,11 @@ stream = ExtResource("2_xsptd")
 [node name="death" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -11.5)
 stream = ExtResource("3_xa1k6")
+
+[node name="roar" type="AudioStreamPlayer2D" parent="."]
+position = Vector2(0, -11.5)
+stream = ExtResource("6_gdff5")
+autoplay = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
