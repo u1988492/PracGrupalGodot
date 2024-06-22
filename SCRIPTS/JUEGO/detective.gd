@@ -3,19 +3,11 @@ class_name Player
 
 signal update_ui
 
-<<<<<<< HEAD
 @export var speed:float = 150.0 #speed of the player's movement
 @export var dir = "S" #direction in which the player moves and looks
 @export var on_range = false #true when an enemy is close enough to hit the player
 @export var damage_cooldown = false
-var dying = false
-=======
-const speed = 150.0 #speed of the player's movement
-var dir = "S" #direction in which the player moves and looks
-var on_range = false #true when an enemy is close enough to hit the player
-var damage_cooldown = false
-var dead = false
->>>>>>> aaab486e58eaf89da028b3d1bb1679a9ae5b65dd
+@export var dead = false
 #var inventory := preload("res://SCRIPTS/GAMEMANAGER/inventorymanager.gd").new() #crear inventario
 
 
@@ -149,7 +141,7 @@ func take_damage():
 		$DamageCooldown.start()
 		$AnimationPlayer.play("hit")
 		global.enemy_attacking = false
-		if global.playerPositon <= 0:
+		if global.playerHealth <= 0:
 			dead = true
 
 func _on_damage_cooldown_timeout():
