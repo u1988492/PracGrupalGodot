@@ -4089,5 +4089,9 @@ position = Vector2(482, 83)
 position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_7xhui")
 
+[node name="items" type="Node2D" parent="."]
+
+[node name="enemigos" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="detection_to_sala7" to="." method="_on_detection_to_sala_7_body_entered"]
 [connection signal="body_entered" from="detection_to_sala10" to="." method="_on_detection_to_sala_10_body_entered"]
