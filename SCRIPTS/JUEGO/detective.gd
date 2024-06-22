@@ -18,9 +18,9 @@ var dead = false
 
 
 #añadir items al inventario cuando se hayan recogido
-func add_photo(photo_name: String):
-	#inventory.add_photo(photo_name)
-	pass
+#func add_photo(photo_name: String):
+#	inventory.add_photo(photo_name)
+#	pass
 
 func add_letter(letter_index: int):
 	if letter_index >= 0 and letter_index < inventory.n_letters:

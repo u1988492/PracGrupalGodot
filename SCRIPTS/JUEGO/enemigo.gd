@@ -39,11 +39,11 @@ func enemy_movement(_delta):
 	if chasing:
 		#position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
-			position += (player.position  - position)/SPEED
+			position += ((player.position + Vector2(14,0)) - position)/SPEED
 			dir = "W"
 			$AnimatedSprite2D.flip_h = true
 		else:
-			position += (player.position - position)/SPEED
+			position += ((player.position - Vector2(14,0)) - position)/SPEED
 			dir = "E"
 			$AnimatedSprite2D.flip_h = false
 				

@@ -512,34 +512,34 @@ _data = {
 y_sort_enabled = true
 position = Vector2(0, -20)
 collision_layer = 3
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_75kjg")
 
 [node name="AreaDeteccion" type="Area2D" parent="."]
-position = Vector2(0, 25)
+position = Vector2(0, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
 position = Vector2(0, -45)
 shape = SubResource("CircleShape2D_1bcam")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
-position = Vector2(0, 25)
+position = Vector2(0, 18)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
 position = Vector2(0, -44)
 shape = SubResource("CapsuleShape2D_saogs")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-1, -11)
-polygon = PackedVector2Array(-13, -1, -8, -5, 8, -5, 14, -1, 9, 3, -8, 3)
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
 y_sort_enabled = true
-position = Vector2(0, -18)
+position = Vector2(0, -25)
 sprite_frames = SubResource("SpriteFrames_rf4ub")
 animation = &"idle"
 autoplay = "idle"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-1, 13)
+polygon = PackedVector2Array(-13, -1, -8, -5, 8, -5, 14, -1, 9, 3, -8, 3)
 
 [node name="Timers" type="Node" parent="."]
 
