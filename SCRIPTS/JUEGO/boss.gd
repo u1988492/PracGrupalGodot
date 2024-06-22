@@ -3,8 +3,8 @@ extends CharacterBody2D
 var speed = 75.0
 var player = null
 var dir = "E"
-var maxHealth = 50
-var health = 50
+var maxHealth = 100
+var health = 100
 var damage = 5
 var random
 @onready var transicion = $transicion/fadeanim
