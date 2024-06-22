@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://borafmrq1kcnp"]
+
+[ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_85u26"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_6acry"]
+[ext_resource type="PackedScene" uid="uid://b1gtyfiojsvao" path="res://ESCENAS/PERSONAJES/detective.tscn" id="2_8k013"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/ui.gd" id="4_pv2mj"]
+[ext_resource type="PackedScene" uid="uid://8gogt4q6mif3" path="res://ESCENAS/UI/gameui.tscn" id="5_xvw2c"]
+[ext_resource type="PackedScene" uid="uid://ctodhsp4jsjxo" path="res://ESCENAS/UI/MainMenu.tscn" id="6_ir2na"]
+[ext_resource type="PackedScene" uid="uid://b770udfckm26p" path="res://ESCENAS/UI/pausemenu.tscn" id="7_3wgul"]
+[ext_resource type="PackedScene" uid="uid://daykbydh2gq8m" path="res://ESCENAS/UI/inventoryUI.tscn" id="8_eradh"]
+[ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="9_2nh0p"]
+[ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="10_g64ji"]
+[ext_resource type="Script" path="res://SCRIPTS/GAMEMANAGER/saveloader.gd" id="11_tcq81"]
+
+[node name="juego_1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_85u26")
+
+[node name="transicion" parent="." instance=ExtResource("2_6acry")]
+
+[node name="Detective" parent="." instance=ExtResource("2_8k013")]
+unique_name_in_owner = true
+z_index = -1
+position = Vector2(101, 108)
+scale = Vector2(0.5, 0.5)
+
+[node name="Camera2D" type="Camera2D" parent="Detective"]
+zoom = Vector2(3, 3)
+
+[node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("4_pv2mj")
+
+[node name="Control" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="gameui" parent="UI/Control" instance=ExtResource("5_xvw2c")]
+layout_mode = 1
+
+[node name="MainMenu" parent="UI/Control" instance=ExtResource("6_ir2na")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+
+[node name="pausemenu" parent="UI/Control" instance=ExtResource("7_3wgul")]
+visible = false
+layout_mode = 1
+
+[node name="InventoryUi" parent="UI/Control" instance=ExtResource("8_eradh")]
+visible = false
+layout_mode = 1
+
+[node name="bgmusic" type="AudioStreamPlayer2D" parent="UI/Control"]
+stream = ExtResource("9_2nh0p")
+autoplay = true
+bus = &"MUSIC"
+
+[node name="tormenta" type="AudioStreamPlayer2D" parent="UI/Control"]
+stream = ExtResource("10_g64ji")
+autoplay = true
+bus = &"SFX"
+
+[node name="Utilities" type="Node" parent="."]
+
+[node name="SaveLoad" type="Node" parent="Utilities"]
+unique_name_in_owner = true
+script = ExtResource("11_tcq81")
+
+[connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]

@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://daykbydh2gq8m"]
+
+[ext_resource type="Script" path="res://SCRIPTS/UI/inventoryUI.gd" id="1_0ex31"]
+[ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="2_cbvx1"]
+[ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="4_x1r12"]
+
+[node name="InventoryUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ex31")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 325)
+scale = Vector2(11.3854, 12.6875)
+texture = ExtResource("2_cbvx1")
+region_enabled = true
+region_rect = Rect2(16, 32, 96, 48)
+
+[node name="letterscontainer" type="GridContainer" parent="Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.9234
+offset_top = -22.9787
+offset_right = -56.0766
+offset_bottom = -34.9787
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="photoscontainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 119.0
+offset_top = 33.0
+offset_right = 506.0
+offset_bottom = 488.0
+
+[node name="photosgrid" type="GridContainer" parent="photoscontainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 50
+metadata/_edit_use_anchors_ = true
+
+[node name="photo1" type="Button" parent="photoscontainer/photosgrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.09
+theme = ExtResource("4_x1r12")
+text = "FOTOGRAFIA N. 1"
+
+[node name="photo2" type="Button" parent="photoscontainer/photosgrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.09
+theme = ExtResource("4_x1r12")
+text = "FOTOGRAFIA N. 2"
+
+[node name="letterscontainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 642.0
+offset_top = 34.0
+offset_right = 1029.0
+offset_bottom = 489.0
+
+[node name="lettersgrid" type="GridContainer" parent="letterscontainer"]
+layout_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="letter1" type="Button" parent="letterscontainer/lettersgrid"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.09
+theme = ExtResource("4_x1r12")
+text = "CARTA N. 1"
+
+[node name="letter2" type="Button" parent="letterscontainer/lettersgrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.09
+theme = ExtResource("4_x1r12")
+text = "CARTA N. 2"
+
+[node name="letter3" type="Button" parent="letterscontainer/lettersgrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.09
+theme = ExtResource("4_x1r12")
+text = "CARTA N. 3"
+
+[node name="letter4" type="Button" parent="letterscontainer/lettersgrid"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+size_flags_stretch_ratio = 1.09
+theme = ExtResource("4_x1r12")
+text = "CARTA N. 4"
+
+[connection signal="pressed" from="photoscontainer/photosgrid/photo1" to="." method="_on_photo_1_pressed"]
+[connection signal="pressed" from="photoscontainer/photosgrid/photo2" to="." method="_on_photo_2_pressed"]
+[connection signal="pressed" from="letterscontainer/lettersgrid/letter1" to="." method="_on_letter_1_pressed"]
+[connection signal="pressed" from="letterscontainer/lettersgrid/letter2" to="." method="_on_letter_2_pressed"]
+[connection signal="pressed" from="letterscontainer/lettersgrid/letter3" to="." method="_on_letter_3_pressed"]
+[connection signal="pressed" from="letterscontainer/lettersgrid/letter4" to="." method="_on_letter_4_pressed"]
