@@ -1,11 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://c6c7ci7047tof"]
+[gd_scene load_steps=4 format=3 uid="uid://c6c7ci7047tof"]
 
 [ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="1_akafp"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/cartaui.gd" id="1_my503"]
 [ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="2_5ai2n"]
-[ext_resource type="Script" path="res://SCRIPTS/UI/exitletter.gd" id="3_x377t"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcxka"]
-size = Vector2(6.83023, 8.51256)
 
 [node name="Carta1" type="Control"]
 layout_mode = 3
@@ -14,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_my503")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -76,21 +74,3 @@ Recibí tu carta y confieso que me dejó inquieto. Las luces parpadeantes y los 
 Con preocupación,
 Henry"
 autowrap_mode = 2
-
-[node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]
-position = Vector2(467, 12)
-scale = Vector2(-5.41709, 3.9941)
-script = ExtResource("3_x377t")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
-position = Vector2(-0.0923004, -9.53674e-07)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_lcxka")
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
-scale = Vector2(0.352496, 0.508021)
-texture = ExtResource("1_akafp")
-region_enabled = true
-region_rect = Rect2(786, 211, 12, 11)
-
-[connection signal="input_event" from="Control/MarginContainer/MarginContainer/Area2D" to="Control/MarginContainer/MarginContainer/Area2D" method="_on_input_event"]

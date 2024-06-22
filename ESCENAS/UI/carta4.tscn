@@ -1,10 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://cj5xav8ywy6dw"]
 
+[ext_resource type="Script" path="res://SCRIPTS/UI/cartaui.gd" id="1_jgfxl"]
 [ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="1_kuq76"]
 [ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="2_78prr"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcxka"]
-size = Vector2(4.55043, 6.28935)
 
 [node name="Carta1" type="Control"]
 layout_mode = 3
@@ -13,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jgfxl")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -77,16 +76,3 @@ Huye, Jonathan. La casa Heartwood debe ser abandonada y sellada para siempre.
 Con desesperación,
 Henry"
 autowrap_mode = 2
-
-[node name="Area2D" type="Area2D" parent="Control/MarginContainer/MarginContainer"]
-position = Vector2(467, 12)
-scale = Vector2(-5.41709, 3.9941)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
-shape = SubResource("RectangleShape2D_lcxka")
-
-[node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
-scale = Vector2(0.352496, 0.508021)
-texture = ExtResource("1_kuq76")
-region_enabled = true
-region_rect = Rect2(786, 211, 12, 11)
