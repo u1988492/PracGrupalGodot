@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b4ekvc7h8ymyp"]
+[gd_scene load_steps=17 format=3 uid="uid://b4ekvc7h8ymyp"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_7n0dy"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_7d7ys"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cigxh0jw4uf11" path="res://ASSETS/MAPA/furniture update.png" id="4_07jtk"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_4.gd" id="5_k303j"]
 [ext_resource type="PackedScene" uid="uid://ds2ae5vnwbelw" path="res://ESCENAS/ITEMS/carta.tscn" id="6_13gr2"]
+[ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="7_3a6qh"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="8_niv87"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1g6x8"]
 texture = ExtResource("1_7n0dy")
@@ -4031,7 +4033,21 @@ shape = SubResource("RectangleShape2D_cb16p")
 position = Vector2(198, 98)
 carta_numero = 1
 
+[node name="Pocion" parent="items" instance=ExtResource("8_niv87")]
+position = Vector2(96, 347)
+
+[node name="Pocion2" parent="items" instance=ExtResource("8_niv87")]
+position = Vector2(520, 79)
+
 [node name="enemigos" type="Node2D" parent="."]
+
+[node name="Esqueleto" parent="enemigos" instance=ExtResource("7_3a6qh")]
+position = Vector2(190, 182)
+scale = Vector2(0.5, 0.5)
+
+[node name="Esqueleto2" parent="enemigos" instance=ExtResource("7_3a6qh")]
+position = Vector2(445, 184)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="detection_to_sala5" to="." method="_on_detection_to_sala_5_body_entered"]
 [connection signal="body_entered" from="detection_to_sala6" to="." method="_on_detection_to_sala_6_body_entered"]

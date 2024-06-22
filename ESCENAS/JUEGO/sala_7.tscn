@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2hbx3yxo4jts"]
+[gd_scene load_steps=20 format=3 uid="uid://b2hbx3yxo4jts"]
 
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="1_mva2p"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_w1ygv"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://bjopmgwuooykw" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState2.png" id="5_rpm5o"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_7.gd" id="6_08r6r"]
 [ext_resource type="PackedScene" uid="uid://cjpndbahplgho" path="res://ESCENAS/ITEMS/puerta.tscn" id="7_t5h2o"]
+[ext_resource type="PackedScene" uid="uid://bcwpqcyjiody5" path="res://ESCENAS/PERSONAJES/fantasma.tscn" id="8_juva5"]
+[ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="9_bs6ww"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="10_wq5gr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_os65f"]
 texture = ExtResource("1_mva2p")
@@ -4915,12 +4918,30 @@ position = Vector2(80, 28)
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_o140s")
 
+[node name="Puerta" parent="." instance=ExtResource("7_t5h2o")]
+position = Vector2(80, 47)
+
 [node name="items" type="Node2D" parent="."]
+
+[node name="Pocion" parent="items" instance=ExtResource("10_wq5gr")]
+position = Vector2(62, 267)
+
+[node name="Pocion2" parent="items" instance=ExtResource("10_wq5gr")]
+position = Vector2(503, 52)
 
 [node name="enemigos" type="Node2D" parent="."]
 
-[node name="Puerta" parent="." instance=ExtResource("7_t5h2o")]
-position = Vector2(80, 47)
+[node name="Fantasma" parent="enemigos" instance=ExtResource("8_juva5")]
+position = Vector2(160, 78)
+scale = Vector2(0.5, 0.5)
+
+[node name="Esqueleto" parent="enemigos" instance=ExtResource("9_bs6ww")]
+position = Vector2(548, 187)
+scale = Vector2(0.5, 0.5)
+
+[node name="Esqueleto2" parent="enemigos" instance=ExtResource("9_bs6ww")]
+position = Vector2(130, 184)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="detection_to_sala5" to="." method="_on_detection_to_sala_5_body_entered"]
 [connection signal="body_entered" from="detection_to_sala8" to="." method="_on_detection_to_sala_8_body_entered"]

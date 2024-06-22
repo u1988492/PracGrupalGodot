@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0s20v2vmbdfu"]
+[gd_scene load_steps=17 format=3 uid="uid://d0s20v2vmbdfu"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_jmkt5"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_mujda"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="3_f5ahf"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_5.gd" id="5_g64il"]
 [ext_resource type="PackedScene" uid="uid://d4b65pgjaoryi" path="res://ESCENAS/ITEMS/puerta_metalica.tscn" id="6_cl6lg"]
+[ext_resource type="PackedScene" uid="uid://timy8dluulhj" path="res://ESCENAS/PERSONAJES/murcielago.tscn" id="7_hvyd2"]
+[ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="8_s218b"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="9_yb2em"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dv14n"]
 texture = ExtResource("1_jmkt5")
@@ -4100,12 +4103,30 @@ position = Vector2(343, 33)
 position = Vector2(1.5, 0)
 shape = SubResource("RectangleShape2D_7mmdu")
 
+[node name="puerta_metalica" parent="." instance=ExtResource("6_cl6lg")]
+position = Vector2(344, 56)
+
 [node name="items" type="Node2D" parent="."]
+
+[node name="Pocion" parent="items" instance=ExtResource("9_yb2em")]
+position = Vector2(88, 96)
+
+[node name="Pocion2" parent="items" instance=ExtResource("9_yb2em")]
+position = Vector2(91, 413)
 
 [node name="enemigos" type="Node2D" parent="."]
 
-[node name="puerta_metalica" parent="." instance=ExtResource("6_cl6lg")]
-position = Vector2(344, 56)
+[node name="Murcielago" parent="enemigos" instance=ExtResource("7_hvyd2")]
+position = Vector2(281, 111)
+scale = Vector2(0.5, 0.5)
+
+[node name="Murcielago2" parent="enemigos" instance=ExtResource("7_hvyd2")]
+position = Vector2(410, 111)
+scale = Vector2(0.5, 0.5)
+
+[node name="Esqueleto" parent="enemigos" instance=ExtResource("8_s218b")]
+position = Vector2(213, 326)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="detection_to_sala4" to="." method="_on_detection_to_sala_4_body_entered"]
 [connection signal="body_entered" from="detection_to_sala7" to="." method="_on_detection_to_sala_7_body_entered"]

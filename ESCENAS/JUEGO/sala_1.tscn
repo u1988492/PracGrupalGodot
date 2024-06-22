@@ -1347,7 +1347,7 @@ shape = SubResource("RectangleShape2D_o3ycb")
 [node name="items" type="Node2D" parent="."]
 
 [node name="Pocion" parent="items" instance=ExtResource("4_r30wo")]
-position = Vector2(233.801, 198)
+position = Vector2(183.061, 127)
 
 [node name="enemies" type="Node2D" parent="."]
 

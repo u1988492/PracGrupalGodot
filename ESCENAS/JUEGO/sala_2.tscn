@@ -3741,23 +3741,22 @@ position = Vector2(298, 452)
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_srxwe")
 
+[node name="Puerta" parent="." instance=ExtResource("8_mc7t1")]
+position = Vector2(279, 111)
+
 [node name="items" type="Node2D" parent="."]
 
 [node name="Pocion" parent="items" instance=ExtResource("6_wp6i5")]
-position = Vector2(359, 361)
+position = Vector2(157, 379)
 
 [node name="Pocion2" parent="items" instance=ExtResource("6_wp6i5")]
-position = Vector2(395, 190)
+position = Vector2(400, 131)
 
 [node name="enemigos" type="Node2D" parent="."]
 
 [node name="Esqueleto" parent="enemigos" instance=ExtResource("7_itr48")]
 position = Vector2(247, 227)
 scale = Vector2(0.5, 0.5)
-collision_mask = 3
-
-[node name="Puerta" parent="." instance=ExtResource("8_mc7t1")]
-position = Vector2(279, 111)
 
 [connection signal="body_entered" from="detection_to_sala4" to="." method="_on_detection_to_sala_4_body_entered"]
 [connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]

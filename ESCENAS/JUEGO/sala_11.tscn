@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dogl245hvshe"]
+[gd_scene load_steps=14 format=3 uid="uid://dogl245hvshe"]
 
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="1_all8g"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_tcc13"]
@@ -6,6 +6,8 @@
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_11.gd" id="4_ofkml"]
 [ext_resource type="PackedScene" uid="uid://ds2ae5vnwbelw" path="res://ESCENAS/ITEMS/carta.tscn" id="6_8lh3c"]
 [ext_resource type="PackedScene" uid="uid://61cjuaw010xj" path="res://ESCENAS/ITEMS/llave.tscn" id="6_aj7vs"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="7_kw310"]
+[ext_resource type="PackedScene" uid="uid://bcwpqcyjiody5" path="res://ESCENAS/PERSONAJES/fantasma.tscn" id="7_mbkv1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_71iyj"]
 texture = ExtResource("1_all8g")
@@ -2314,6 +2316,20 @@ position = Vector2(452, 220)
 position = Vector2(343, 82)
 carta_numero = 3
 
+[node name="Pocion" parent="items" instance=ExtResource("7_kw310")]
+position = Vector2(267, 221)
+
+[node name="Pocion2" parent="items" instance=ExtResource("7_kw310")]
+position = Vector2(282, 224)
+
 [node name="enemigos" type="Node2D" parent="."]
+
+[node name="Fantasma" parent="enemigos" instance=ExtResource("7_mbkv1")]
+position = Vector2(132, 136)
+scale = Vector2(0.5, 0.5)
+
+[node name="Fantasma2" parent="enemigos" instance=ExtResource("7_mbkv1")]
+position = Vector2(355, 134)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="detection_to_sala8" to="." method="_on_detection_to_sala_8_body_entered"]

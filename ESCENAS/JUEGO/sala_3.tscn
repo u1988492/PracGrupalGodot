@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy21g0g1hprek"]
+[gd_scene load_steps=17 format=3 uid="uid://cy21g0g1hprek"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_s104n"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_wek6v"]
@@ -7,6 +7,9 @@
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_3.gd" id="5_npaiw"]
 [ext_resource type="PackedScene" uid="uid://61cjuaw010xj" path="res://ESCENAS/ITEMS/llave.tscn" id="6_mru7w"]
 [ext_resource type="PackedScene" uid="uid://ds2ae5vnwbelw" path="res://ESCENAS/ITEMS/carta.tscn" id="7_au67m"]
+[ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="8_8027w"]
+[ext_resource type="PackedScene" uid="uid://timy8dluulhj" path="res://ESCENAS/PERSONAJES/murcielago.tscn" id="9_ov3ug"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="10_g7vb5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_exoro"]
 texture = ExtResource("1_s104n")
@@ -4060,6 +4063,17 @@ position = Vector2(176, 85)
 [node name="Carta" parent="items" instance=ExtResource("7_au67m")]
 position = Vector2(279, 335)
 
+[node name="Pocion" parent="items" instance=ExtResource("10_g7vb5")]
+position = Vector2(295, 151)
+
 [node name="enemigos" type="Node2D" parent="."]
+
+[node name="Esqueleto" parent="enemigos" instance=ExtResource("8_8027w")]
+position = Vector2(149, 122)
+scale = Vector2(0.5, 0.5)
+
+[node name="Murcielago" parent="enemigos" instance=ExtResource("9_ov3ug")]
+position = Vector2(311, 257)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]

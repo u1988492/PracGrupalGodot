@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://bpqw4l4iotabp"]
+[gd_scene load_steps=13 format=3 uid="uid://bpqw4l4iotabp"]
 
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="1_lxnew"]
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="2_5rw87"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="3_ncbdj"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_10.gd" id="4_fxw1c"]
 [ext_resource type="PackedScene" uid="uid://d4b65pgjaoryi" path="res://ESCENAS/ITEMS/puerta_metalica.tscn" id="5_dqf5t"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="6_mi76p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_va8pu"]
 texture = ExtResource("1_lxnew")
@@ -2274,12 +2275,22 @@ position = Vector2(551, -102)
 position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_d7ukk")
 
-[node name="items" type="Node2D" parent="."]
-
-[node name="enemigos" type="Node2D" parent="."]
-
 [node name="puerta_metalica" parent="." instance=ExtResource("5_dqf5t")]
 position = Vector2(552, -59)
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="Pocion" parent="items" instance=ExtResource("6_mi76p")]
+position = Vector2(276, 39)
+
+[node name="Pocion2" parent="items" instance=ExtResource("6_mi76p")]
+position = Vector2(295, 31)
+
+[node name="Pocion3" parent="items" instance=ExtResource("6_mi76p")]
+position = Vector2(534, 173)
+
+[node name="Pocion4" parent="items" instance=ExtResource("6_mi76p")]
+position = Vector2(517, 165)
 
 [connection signal="body_entered" from="detection_to_sala9" to="." method="_on_detection_to_sala_9_body_entered"]
 [connection signal="body_entered" from="detection_to_final" to="." method="_on_detection_to_final_body_entered"]
