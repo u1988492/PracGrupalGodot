@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://by7ytd1t3xy57" path="res://ASSETS/SFX/monster_death.mp3" id="3_xa1k6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3r32l"]
-radius = 140.602
+radius = 274.007
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_21u31"]
 radius = 39.0
@@ -685,12 +685,14 @@ collision_mask = 2
 script = ExtResource("1_c5il3")
 
 [node name="AreaDeteccion" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -11.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaDeteccion"]
 shape = SubResource("CircleShape2D_3r32l")
 
 [node name="AreaAtaque" type="Area2D" parent="."]
+visible = false
 position = Vector2(0, -11.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
@@ -711,6 +713,11 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="Timers" type="Node" parent="."]
+
+[node name="DetectionTimer" type="Timer" parent="Timers"]
+wait_time = 0.5
+one_shot = true
+autostart = true
 
 [node name="AttackTimer" type="Timer" parent="Timers"]
 wait_time = 0.7
@@ -739,6 +746,7 @@ libraries = {
 [connection signal="area_exited" from="AreaAtaque" to="." method="_on_area_ataque_area_exited"]
 [connection signal="body_entered" from="AreaAtaque" to="." method="_on_area_ataque_body_entered"]
 [connection signal="body_exited" from="AreaAtaque" to="." method="_on_area_ataque_body_exited"]
+[connection signal="timeout" from="Timers/DetectionTimer" to="." method="_on_detection_timer_timeout"]
 [connection signal="timeout" from="Timers/AttackTimer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="." method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/DamageCooldown" to="." method="_on_damage_cooldown_timeout"]

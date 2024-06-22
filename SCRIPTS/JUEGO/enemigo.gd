@@ -14,13 +14,13 @@ var damage_cooldown = false #true if the enemy is on cooldown after receiving da
 var dead = false #true if the enemy's health drops down to 0
 
 func _ready():
-	if name == "Murcielago":
+	if self.has_node("Murcielago"):
 		health = 50
 		SPEED = 35.0
-	elif name == "Esqueleto":
+	elif self.has_node("Esqueleto"):
 		health = 70
 		SPEED = 75.0
-	elif name == "Fantasma":
+	elif self.has_node("Fantasma"):
 		health = 100
 		SPEED = 35.0
 
