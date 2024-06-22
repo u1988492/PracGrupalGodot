@@ -1,10 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://b64rqbvijttqr"]
+[gd_scene load_steps=15 format=3 uid="uid://b64rqbvijttqr"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_eafst"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_gxpq8"]
 [ext_resource type="Texture2D" uid="uid://cigxh0jw4uf11" path="res://ASSETS/MAPA/furniture update.png" id="3_0vyic"]
 [ext_resource type="Texture2D" uid="uid://0xftueu1a7rn" path="res://ASSETS/MAPA/TopDownHouse_FurnitureState1.png" id="4_hse8y"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_2.gd" id="5_gmf73"]
+[ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="6_wp6i5"]
+[ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="7_itr48"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cvop"]
 texture = ExtResource("1_eafst")
@@ -3736,7 +3738,7 @@ size = Vector2(23, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srxwe"]
 size = Vector2(47, 20)
 
-[node name="sala2" type="TileMap" groups=["room"]]
+[node name="sala2" type="TileMap"]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_56jdf")
 format = 2
@@ -3765,6 +3767,20 @@ position = Vector2(298, 452)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detection_to_sala1"]
 position = Vector2(-1.5, 0)
 shape = SubResource("RectangleShape2D_srxwe")
+
+[node name="items" type="Node2D" parent="."]
+
+[node name="Pocion2" parent="items" instance=ExtResource("6_wp6i5")]
+position = Vector2(395, 190)
+
+[node name="Pocion" parent="items" instance=ExtResource("6_wp6i5")]
+position = Vector2(359, 361)
+
+[node name="enemigos" type="Node2D" parent="."]
+
+[node name="Esqueleto" parent="enemigos" instance=ExtResource("7_itr48")]
+position = Vector2(247, 227)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="body_entered" from="detection_to_sala4" to="." method="_on_detection_to_sala_4_body_entered"]
 [connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]

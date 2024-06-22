@@ -1,7 +1,8 @@
-[gd_scene load_steps=61 format=3 uid="uid://b1gtyfiojsvao"]
+[gd_scene load_steps=62 format=3 uid="uid://b1gtyfiojsvao"]
 
 [ext_resource type="Texture2D" uid="uid://cg14j2sim7hyl" path="res://ASSETS/PERSONAJES/detective.png" id="1_i2wod"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
+[ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_vb35s"]
 [ext_resource type="AudioStream" uid="uid://dao2xku2sx5cj" path="res://ASSETS/SFX/caminar.mp3" id="3_8cb4r"]
 [ext_resource type="AudioStream" uid="uid://lehj7nn2w7x0" path="res://ASSETS/SFX/daño.mp3" id="4_kb7mj"]
 [ext_resource type="PackedScene" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
@@ -460,6 +461,9 @@ position = Vector2(0, -20)
 collision_layer = 7
 collision_mask = 3
 script = ExtResource("1_x5qnp")
+
+[node name="transicion" parent="." instance=ExtResource("2_vb35s")]
+visible = false
 
 [node name="AreaAtaque" type="Area2D" parent="."]
 position = Vector2(0.769229, -15.3846)

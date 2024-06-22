@@ -1,8 +1,6 @@
 extends CharacterBody2D
 
-class_name Player
-
-signal update_ui
+class_name Player 
 
 const speed = 150.0 #speed of the player's movement
 var dir = "S" #direction in which the player moves and looks
@@ -10,6 +8,7 @@ var on_range = false #true when an enemy is close enough to hit the player
 var damage_cooldown = false
 var dead = false
 #var inventory := preload("res://SCRIPTS/GAMEMANAGER/inventorymanager.gd").new() #crear inventario
+@onready var transicion = $transicion/fadeanim
 
 #ajustar valor de la salud que da una poción
 @export var damage = 10
@@ -38,7 +37,6 @@ func _physics_process(delta):
 		player_movement(delta)
 		global.playerPositon = self.position
 		take_damage()
-		emit_signal("update_ui")
 	else:
 		death()
 
@@ -150,5 +148,13 @@ func _on_damage_cooldown_timeout():
 
 func death():
 	$Muerte.play()
+
+	game_over_screen()
 	print("Has muerto")
 	pass
+
+
+func game_over_screen():
+	transicion.play("fadeoutlong")
+	await get_tree().create_timer(1.5).timeout
+	get_tree().change_scene_to_file("res://ESCENAS/UI/gameover.tscn")

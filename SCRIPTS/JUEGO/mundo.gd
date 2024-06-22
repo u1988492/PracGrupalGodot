@@ -210,3 +210,4 @@ func set_camera_limits(room_name):
 		camera.limit_bottom = limits.bottom
 	else:
 		print("No hay límites de cámara definidos para: ", room_name)
+
