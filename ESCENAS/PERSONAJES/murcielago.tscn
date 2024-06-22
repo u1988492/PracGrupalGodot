@@ -11,9 +11,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1bcam"]
 radius = 166.0
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_saogs"]
-radius = 19.0
-height = 38.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpsak"]
+radius = 30.0
+height = 82.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2a5lu"]
 atlas = ExtResource("1_42j5s")
@@ -378,7 +378,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../AreaAtaque/CollisionShape2D:disabled")
+tracks/3/path = NodePath("../CollisionPolygon2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -390,22 +390,10 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../CollisionPolygon2D:disabled")
+tracks/4/path = NodePath("../death:playing")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../death:playing")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -454,7 +442,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../AreaAtaque/CollisionShape2D:disabled")
+tracks/3/path = NodePath("../CollisionPolygon2D:disabled")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -463,25 +451,13 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
-tracks/4/type = "value"
+tracks/4/type = "method"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../CollisionPolygon2D:disabled")
+tracks/4/path = NodePath("..")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/5/type = "method"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("..")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
 "times": PackedFloat32Array(1.6),
 "transitions": PackedFloat32Array(1),
 "values": [{
@@ -489,13 +465,13 @@ tracks/5/keys = {
 "method": &"queue_free"
 }]
 }
-tracks/6/type = "value"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../death:playing")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../death:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -525,9 +501,9 @@ shape = SubResource("CircleShape2D_1bcam")
 [node name="AreaAtaque" type="Area2D" parent="."]
 position = Vector2(0, 18)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaAtaque"]
-position = Vector2(0, -44)
-shape = SubResource("CapsuleShape2D_saogs")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AreaAtaque"]
+position = Vector2(0, -37)
+shape = SubResource("CapsuleShape2D_bpsak")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 2
