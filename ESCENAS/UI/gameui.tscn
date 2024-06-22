@@ -1,8 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://8gogt4q6mif3"]
+[gd_scene load_steps=9 format=3 uid="uid://8gogt4q6mif3"]
 
 [ext_resource type="Script" path="res://SCRIPTS/UI/gameui.gd" id="1_nrpoj"]
 [ext_resource type="Texture2D" uid="uid://cn4plmbr65tdo" path="res://ASSETS/ITEMS/libreta.png" id="1_ymexq"]
-[ext_resource type="Texture2D" uid="uid://r8r2p5erwiep" path="res://ASSETS/ITEMS/key-white.png" id="2_rfn3c"]
 [ext_resource type="Theme" uid="uid://bd5bdhqljmove" path="res://ASSETS/THEMES/deafaulttheme.tres" id="3_6x18i"]
 [ext_resource type="Texture2D" uid="uid://cj23n5gduko5" path="res://ASSETS/THEMES/avatar detective.jpeg" id="5_eglyp"]
 
@@ -52,24 +51,6 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_1423j")
 position = Vector2(26, 21)
 scale = Vector2(1.53846, 1.53846)
 texture = ExtResource("1_ymexq")
-region_rect = Rect2(10, 4, 13, 28)
-
-[node name="llave" type="Panel" parent="barra"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 171.0
-offset_top = -48.0
-offset_right = 219.0
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_eek76")
-
-[node name="Sprite2D" type="Sprite2D" parent="barra/llave"]
-position = Vector2(23, 24)
-scale = Vector2(1.53846, 1.53846)
-texture = ExtResource("2_rfn3c")
-region_enabled = true
 region_rect = Rect2(10, 4, 13, 28)
 
 [node name="linterna" type="Panel" parent="barra"]
