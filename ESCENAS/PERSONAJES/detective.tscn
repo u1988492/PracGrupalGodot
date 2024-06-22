@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/detective.gd" id="1_x5qnp"]
 [ext_resource type="AudioStream" uid="uid://dao2xku2sx5cj" path="res://ASSETS/SFX/caminar.mp3" id="3_8cb4r"]
 [ext_resource type="AudioStream" uid="uid://lehj7nn2w7x0" path="res://ASSETS/SFX/daño.mp3" id="4_kb7mj"]
-[ext_resource type="PackedScene" uid="uid://p4wdnrq75djh" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
+[ext_resource type="PackedScene" path="res://ESCENAS/ITEMS/linterna.tscn" id="5_hby86"]
 [ext_resource type="AudioStream" uid="uid://ciyfx07h8gnwr" path="res://ASSETS/SFX/detective_muerte.mp3" id="6_07vda"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7t2pt"]
@@ -417,6 +417,9 @@ tracks/1/keys = {
 "values": [false]
 }
 
+[sub_resource type="Animation" id="Animation_fdqeq"]
+resource_name = "death"
+
 [sub_resource type="Animation" id="Animation_hdmvv"]
 resource_name = "hit"
 tracks/0/type = "value"
@@ -443,9 +446,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [true]
 }
-
-[sub_resource type="Animation" id="Animation_fdqeq"]
-resource_name = "death"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nvi0p"]
 _data = {

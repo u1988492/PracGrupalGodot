@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://daykbydh2gq8m"]
 
-[ext_resource type="Script" path="res://SCRIPTS/UI/inventoryUI.gd" id="1_0ex31"]
-[ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="2_cbvx1"]
-[ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="4_x1r12"]
+[ext_resource type="Script" path="res://SCRIPTS/UI/inventoryUI.gd" id="1_wv6r7"]
+[ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="2_j0ism"]
+[ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="3_plpo4"]
 
 [node name="InventoryUi" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_0ex31")
+script = ExtResource("1_wv6r7")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -25,7 +25,7 @@ color = Color(0, 0, 0, 1)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(576, 325)
 scale = Vector2(11.3854, 12.6875)
-texture = ExtResource("2_cbvx1")
+texture = ExtResource("2_j0ism")
 region_enabled = true
 region_rect = Rect2(16, 32, 96, 48)
 
@@ -59,7 +59,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
-theme = ExtResource("4_x1r12")
+theme = ExtResource("3_plpo4")
 text = "FOTOGRAFIA N. 1"
 
 [node name="photo2" type="Button" parent="photoscontainer/photosgrid"]
@@ -67,7 +67,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
-theme = ExtResource("4_x1r12")
+theme = ExtResource("3_plpo4")
 text = "FOTOGRAFIA N. 2"
 
 [node name="letterscontainer" type="MarginContainer" parent="."]
@@ -86,7 +86,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
-theme = ExtResource("4_x1r12")
+theme = ExtResource("3_plpo4")
 text = "CARTA N. 1"
 
 [node name="letter2" type="Button" parent="letterscontainer/lettersgrid"]
@@ -94,7 +94,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
-theme = ExtResource("4_x1r12")
+theme = ExtResource("3_plpo4")
 text = "CARTA N. 2"
 
 [node name="letter3" type="Button" parent="letterscontainer/lettersgrid"]
@@ -102,7 +102,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
-theme = ExtResource("4_x1r12")
+theme = ExtResource("3_plpo4")
 text = "CARTA N. 3"
 
 [node name="letter4" type="Button" parent="letterscontainer/lettersgrid"]
@@ -110,7 +110,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
-theme = ExtResource("4_x1r12")
+theme = ExtResource("3_plpo4")
 text = "CARTA N. 4"
 
 [connection signal="pressed" from="photoscontainer/photosgrid/photo1" to="." method="_on_photo_1_pressed"]
