@@ -3,7 +3,7 @@ extends Control
 var player: Node
 
 var n_letters = 4
-var letters_array = []
+var letters_array = [false, false, false, false]
 
 
 @export var c1 := load("res://ESCENAS/UI/carta1.tscn")
@@ -12,11 +12,9 @@ var letters_array = []
 @export var c4:= load("res://ESCENAS/UI/carta4.tscn")
 
 
-func create_inventory():
-	pass
-
 func _ready():
-	pass
+	get_tree().set_group("letter", "visible", false)
+
 
 func _input(event):
 	if event.is_action_pressed("inventario"):

@@ -81,7 +81,7 @@ offset_bottom = 489.0
 layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="letter1" type="Button" parent="letterscontainer/lettersgrid"]
+[node name="letter1" type="Button" parent="letterscontainer/lettersgrid" groups=["letter"]]
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
@@ -89,7 +89,7 @@ size_flags_stretch_ratio = 1.09
 theme = ExtResource("3_plpo4")
 text = "CARTA N. 1"
 
-[node name="letter2" type="Button" parent="letterscontainer/lettersgrid"]
+[node name="letter2" type="Button" parent="letterscontainer/lettersgrid" groups=["letter"]]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -97,7 +97,7 @@ size_flags_stretch_ratio = 1.09
 theme = ExtResource("3_plpo4")
 text = "CARTA N. 2"
 
-[node name="letter3" type="Button" parent="letterscontainer/lettersgrid"]
+[node name="letter3" type="Button" parent="letterscontainer/lettersgrid" groups=["letter"]]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
@@ -105,7 +105,7 @@ size_flags_stretch_ratio = 1.09
 theme = ExtResource("3_plpo4")
 text = "CARTA N. 3"
 
-[node name="letter4" type="Button" parent="letterscontainer/lettersgrid"]
+[node name="letter4" type="Button" parent="letterscontainer/lettersgrid" groups=["letter"]]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 6
