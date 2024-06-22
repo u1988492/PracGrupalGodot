@@ -508,7 +508,7 @@ _data = {
 "death": SubResource("Animation_ntjny")
 }
 
-[node name="Murcielago" type="CharacterBody2D"]
+[node name="Murcielago" type="CharacterBody2D" groups=["enemy", "game_events"]]
 y_sort_enabled = true
 position = Vector2(0, -20)
 collision_layer = 3

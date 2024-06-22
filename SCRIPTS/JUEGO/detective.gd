@@ -141,7 +141,7 @@ func take_damage():
 		$DamageCooldown.start()
 		$AnimationPlayer.play("hit")
 		global.enemy_attacking = false
-		if global.playerPositon <= 0:
+		if global.playerHealth <= 0:
 			dead = true
 
 func _on_damage_cooldown_timeout():

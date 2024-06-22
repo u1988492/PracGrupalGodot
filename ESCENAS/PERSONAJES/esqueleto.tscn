@@ -494,7 +494,7 @@ _data = {
 "death": SubResource("Animation_le4p4")
 }
 
-[node name="Esqueleto" type="CharacterBody2D"]
+[node name="Esqueleto" type="CharacterBody2D" groups=["enemy", "game_events"]]
 y_sort_enabled = true
 position = Vector2(0, -20)
 collision_layer = 3
