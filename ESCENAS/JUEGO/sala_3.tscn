@@ -4030,7 +4030,7 @@ sources/3 = SubResource("TileSetAtlasSource_2urhd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1myg"]
 size = Vector2(22, 45)
 
-[node name="sala3" type="TileMap"]
+[node name="sala3" type="TileMap" groups=["room"]]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_sb64e")
 format = 2

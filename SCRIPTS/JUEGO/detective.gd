@@ -1,14 +1,15 @@
 extends CharacterBody2D
-
 class_name Player
 
 signal update_ui
 
-const speed = 150.0 #speed of the player's movement
-var dir = "S" #direction in which the player moves and looks
-var on_range = false #true when an enemy is close enough to hit the player
-var damage_cooldown = false
+@export var speed:float = 150.0 #speed of the player's movement
+@export var dir = "S" #direction in which the player moves and looks
+@export var on_range = false #true when an enemy is close enough to hit the player
+@export var damage_cooldown = false
+var dying = false
 #var inventory := preload("res://SCRIPTS/GAMEMANAGER/inventorymanager.gd").new() #crear inventario
+
 
 #ajustar valor de la salud que da una poción
 @export var damage = 10

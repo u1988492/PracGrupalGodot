@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://borafmrq1kcnp"]
+[gd_scene load_steps=13 format=3 uid="uid://borafmrq1kcnp"]
 
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/mundo.gd" id="1_85u26"]
 [ext_resource type="PackedScene" uid="uid://dcefhpdqp3klm" path="res://ESCENAS/UI/transicion.tscn" id="2_6acry"]
@@ -11,6 +11,11 @@
 [ext_resource type="AudioStream" uid="uid://bf7q2fqrsv7l8" path="res://ASSETS/SFX/bgmusic.mp3" id="9_2nh0p"]
 [ext_resource type="AudioStream" uid="uid://24d3xv0syrv5" path="res://ASSETS/SFX/tormenta.mp3" id="10_g64ji"]
 [ext_resource type="Script" path="res://SCRIPTS/GAMEMANAGER/saveloader.gd" id="11_tcq81"]
+
+[sub_resource type="GDScript" id="GDScript_30qca"]
+script/source = "extends Button
+
+"
 
 [node name="juego_1" type="Node2D"]
 y_sort_enabled = true
@@ -40,6 +45,25 @@ grow_vertical = 2
 
 [node name="gameui" parent="UI/Control" instance=ExtResource("5_xvw2c")]
 layout_mode = 1
+script = null
+
+[node name="save" type="Button" parent="UI/Control/gameui"]
+layout_mode = 0
+offset_left = 285.0
+offset_top = 519.0
+offset_right = 375.0
+offset_bottom = 550.0
+text = "save game
+"
+
+[node name="load" type="Button" parent="UI/Control/gameui"]
+layout_mode = 0
+offset_left = 292.0
+offset_top = 566.0
+offset_right = 381.0
+offset_bottom = 597.0
+text = "load game"
+script = SubResource("GDScript_30qca")
 
 [node name="MainMenu" parent="UI/Control" instance=ExtResource("6_ir2na")]
 unique_name_in_owner = true
@@ -70,4 +94,6 @@ bus = &"SFX"
 unique_name_in_owner = true
 script = ExtResource("11_tcq81")
 
+[connection signal="button_down" from="UI/Control/gameui/save" to="." method="_on_save_button_down"]
+[connection signal="button_down" from="UI/Control/gameui/load" to="." method="_on_load_button_down"]
 [connection signal="start_game" from="UI/Control/MainMenu" to="UI" method="_on_main_menu_start_game"]

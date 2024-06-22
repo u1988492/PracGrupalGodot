@@ -1471,7 +1471,7 @@ sources/2 = SubResource("TileSetAtlasSource_njsn6")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gwcy"]
 size = Vector2(21.0058, 21.9947)
 
-[node name="entrada" type="TileMap"]
+[node name="entrada" type="TileMap" groups=["room"]]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_ugskc")
 format = 2

@@ -3736,7 +3736,7 @@ size = Vector2(23, 27)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_srxwe"]
 size = Vector2(47, 20)
 
-[node name="sala2" type="TileMap"]
+[node name="sala2" type="TileMap" groups=["room"]]
 y_sort_enabled = true
 tile_set = SubResource("TileSet_56jdf")
 format = 2

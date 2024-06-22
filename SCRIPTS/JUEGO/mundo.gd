@@ -3,6 +3,8 @@ extends Node2D
 @onready var transicion = $transicion/fadeanim
 @onready var player = $Detective
 @onready var camera = player.get_node("Camera2D")
+@onready var save_load = %SaveLoad
+@onready var main = $"."
 
 @export var room_scenes = {
 	"entrada": preload("res://ESCENAS/JUEGO/entrada.tscn"),
@@ -166,6 +168,8 @@ func _ready():
 	current_room = "entrada" # Empieza en la sala "entrada"
 	load_room(current_room)
 
+
+#cargar una sala nueva al entrar por una puerta
 func load_room(room_name):
 	# Eliminar la escena actual si existe
 	if has_node("CurrentRoom"):
@@ -184,6 +188,7 @@ func load_room(room_name):
 	# Ajustar los límites de la cámara
 	set_camera_limits(room_name)
 
+#cambiar de sala al acceder por una puerta
 func change_room(next_room, door):
 	if room_scenes.has(next_room):
 		current_room = next_room
@@ -192,6 +197,7 @@ func change_room(next_room, door):
 	else:
 		print("La sala no existe: ", next_room)
 
+#trasladar jugador a la posición correspondiente al entrar a sala nueva
 func move_player_to_start(room_name, door):
 	if player_start_positions.has(room_name):
 		if player_start_positions[room_name].has(door):
@@ -201,6 +207,7 @@ func move_player_to_start(room_name, door):
 	else:
 		print("No hay una posición de inicio definida para: ", room_name)
 
+#límites de la cámara respecto al mapa
 func set_camera_limits(room_name):
 	if camera_limits.has(room_name):
 		var limits = camera_limits[room_name]
@@ -210,3 +217,21 @@ func set_camera_limits(room_name):
 		camera.limit_bottom = limits.bottom
 	else:
 		print("No hay límites de cámara definidos para: ", room_name)
+		
+
+func get_current_room_path():
+	var node = get_tree().get_nodes_in_group("room")
+	return node.scene_file_path
+	push_error("no hay nivel cargado")
+	return "res://invalid.tscn"
+
+#cuando se presiona botón de guardar partida
+func _on_save_button_down():
+	print("Save game")
+	save_load.save_game()
+
+
+#cuando se presiona botón de cargar partida
+func _on_load_button_down():
+	print("load game")
+	save_load.load_game()

@@ -1306,7 +1306,7 @@ size = Vector2(29.8979, 51)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o3ycb"]
 size = Vector2(20, 45)
 
-[node name="sala1" type="TileMap"]
+[node name="sala1" type="TileMap" groups=["room"]]
 y_sort_enabled = true
 position = Vector2(0, -1)
 scale = Vector2(1.00513, 1)

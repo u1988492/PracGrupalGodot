@@ -1,5 +1,6 @@
 extends TileMap
 
+
 @export var next_room = "sala1"
 @export var next_door = "door_to_sala3"
  
