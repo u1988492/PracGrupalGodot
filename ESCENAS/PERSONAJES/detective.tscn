@@ -458,8 +458,8 @@ _data = {
 [node name="Detective" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(0, -20)
-collision_layer = 7
-collision_mask = 3
+collision_layer = 15
+collision_mask = 11
 script = ExtResource("1_x5qnp")
 
 [node name="transicion" parent="." instance=ExtResource("2_vb35s")]
