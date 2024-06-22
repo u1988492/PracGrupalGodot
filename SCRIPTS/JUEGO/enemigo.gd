@@ -39,11 +39,11 @@ func enemy_movement(_delta):
 	if chasing:
 		#position += (player.position - position)/SPEED
 		if (player.position.x - position.x) < 0:
-			position += ((player.position + Vector2(29,0)) - position)/SPEED
+			position += (player.position  - position)/SPEED
 			dir = "W"
 			$AnimatedSprite2D.flip_h = true
 		else:
-			position += ((player.position - Vector2(29,0)) - position)/SPEED
+			position += (player.position - position)/SPEED
 			dir = "E"
 			$AnimatedSprite2D.flip_h = false
 				
@@ -75,6 +75,7 @@ func _on_area_deteccion_body_exited(body):
 func _on_area_ataque_body_entered(body):
 	if body.has_method("player"):
 		on_reach = true
+		print("Enemy on reach")
 
 func _on_area_ataque_body_exited(body):
 	if body.has_method("player"):
