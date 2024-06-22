@@ -6,10 +6,10 @@ var n_letters = 4
 var letters_array = []
 
 
-@export var c1 := preload("res://ESCENAS/UI/carta1.tscn")
-@export var c2:= preload("res://ESCENAS/UI/carta2.tscn")
-@export var c3:= preload("res://ESCENAS/UI/carta3.tscn")
-@export var c4:= preload("res://ESCENAS/UI/carta4.tscn")
+@export var c1 := load("res://ESCENAS/UI/carta1.tscn")
+@export var c2:= load("res://ESCENAS/UI/carta2.tscn")
+@export var c3:= load("res://ESCENAS/UI/carta3.tscn")
+@export var c4:= load("res://ESCENAS/UI/carta4.tscn")
 
 
 func create_inventory():

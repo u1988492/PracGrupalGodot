@@ -5,19 +5,19 @@ extends Node2D
 @onready var camera = player.get_node("Camera2D")
 
 @export var room_scenes = {
-	"entrada": preload("res://ESCENAS/JUEGO/entrada.tscn"),
-	"sala1": preload("res://ESCENAS/JUEGO/sala_1.tscn"),
-	"sala2": preload("res://ESCENAS/JUEGO/sala_2.tscn"),
-	"sala3": preload("res://ESCENAS/JUEGO/sala_3.tscn"),
-	"sala4": preload("res://ESCENAS/JUEGO/sala_4.tscn"),
-	"sala5": preload("res://ESCENAS/JUEGO/sala_5.tscn"),
-	"sala6": preload("res://ESCENAS/JUEGO/sala_6.tscn"),
-	"sala7": preload("res://ESCENAS/JUEGO/sala_7.tscn"),
-	"sala8": preload("res://ESCENAS/JUEGO/sala_8.tscn"),
-	"sala9": preload("res://ESCENAS/JUEGO/sala_9.tscn"),
-	"sala10": preload("res://ESCENAS/JUEGO/sala_10.tscn"),
-	"sala11": preload("res://ESCENAS/JUEGO/sala_11.tscn"),
-	"final": preload("res://ESCENAS/JUEGO/final.tscn")
+	"entrada": load("res://ESCENAS/JUEGO/entrada.tscn"),
+	"sala1": load("res://ESCENAS/JUEGO/sala_1.tscn"),
+	"sala2": load("res://ESCENAS/JUEGO/sala_2.tscn"),
+	"sala3": load("res://ESCENAS/JUEGO/sala_3.tscn"),
+	"sala4": load("res://ESCENAS/JUEGO/sala_4.tscn"),
+	"sala5": load("res://ESCENAS/JUEGO/sala_5.tscn"),
+	"sala6": load("res://ESCENAS/JUEGO/sala_6.tscn"),
+	"sala7": load("res://ESCENAS/JUEGO/sala_7.tscn"),
+	"sala8": load("res://ESCENAS/JUEGO/sala_8.tscn"),
+	"sala9": load("res://ESCENAS/JUEGO/sala_9.tscn"),
+	"sala10": load("res://ESCENAS/JUEGO/sala_10.tscn"),
+	"sala11": load("res://ESCENAS/JUEGO/sala_11.tscn"),
+	"final": load("res://ESCENAS/JUEGO/final.tscn")
 }
 
 var current_room = ""
