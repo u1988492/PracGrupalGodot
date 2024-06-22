@@ -1,8 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://daykbydh2gq8m"]
+[gd_scene load_steps=8 format=3 uid="uid://daykbydh2gq8m"]
 
 [ext_resource type="Script" path="res://SCRIPTS/UI/inventoryUI.gd" id="1_wv6r7"]
 [ext_resource type="Texture2D" uid="uid://d4x8tlomrkwc" path="res://ASSETS/THEMES/UI assets pack 2/UI assets pack 2/UI books & more.png" id="2_j0ism"]
 [ext_resource type="Theme" uid="uid://ca3e1cyw075e4" path="res://ASSETS/THEMES/letter.tres" id="3_plpo4"]
+[ext_resource type="PackedScene" uid="uid://c6c7ci7047tof" path="res://ESCENAS/UI/carta1.tscn" id="4_vgyob"]
+[ext_resource type="PackedScene" uid="uid://cs3ger6cwpo2d" path="res://ESCENAS/UI/carta2.tscn" id="5_6jk37"]
+[ext_resource type="PackedScene" uid="uid://c7thhcu6trsvv" path="res://ESCENAS/UI/carta3.tscn" id="6_byy1p"]
+[ext_resource type="PackedScene" uid="uid://cj5xav8ywy6dw" path="res://ESCENAS/UI/carta4.tscn" id="7_qi0xa"]
 
 [node name="InventoryUi" type="Control"]
 layout_mode = 3
@@ -107,6 +111,20 @@ size_flags_vertical = 6
 size_flags_stretch_ratio = 1.09
 theme = ExtResource("3_plpo4")
 text = "CARTA N. 4"
+
+[node name="Cartas" type="Node" parent="."]
+
+[node name="Carta1" parent="Cartas" instance=ExtResource("4_vgyob")]
+visible = false
+
+[node name="Carta2" parent="Cartas" instance=ExtResource("5_6jk37")]
+visible = false
+
+[node name="Carta3" parent="Cartas" instance=ExtResource("6_byy1p")]
+visible = false
+
+[node name="Carta4" parent="Cartas" instance=ExtResource("7_qi0xa")]
+visible = false
 
 [connection signal="pressed" from="letterscontainer/lettersgrid/letter1" to="." method="_on_letter_1_pressed"]
 [connection signal="pressed" from="letterscontainer/lettersgrid/letter2" to="." method="_on_letter_2_pressed"]

@@ -2261,6 +2261,7 @@ shape = SubResource("RectangleShape2D_28rak")
 [node name="enemigos" type="Node2D" parent="."]
 
 [node name="Boss" parent="enemigos" instance=ExtResource("5_m6fgf")]
-position = Vector2(359, 281)
+position = Vector2(363, 331)
+scale = Vector2(1.2, 1.2)
 
 [connection signal="body_entered" from="detection_to_sala10" to="." method="_on_detection_to_sala_10_body_entered"]
