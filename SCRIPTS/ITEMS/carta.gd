@@ -14,4 +14,3 @@ func _on_body_entered(body):
 	print("Has recogido una carta")
 	body.add_letter(carta_numero)
 	$AnimationPlayer.play("recoger")
-	queue_free() 
