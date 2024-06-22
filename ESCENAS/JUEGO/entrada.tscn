@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp6tnthhjtam8"]
+[gd_scene load_steps=11 format=3 uid="uid://bp6tnthhjtam8"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_2u67s"]
 [ext_resource type="Texture2D" uid="uid://p2c244cgma7p" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Green Woods/Assets/Tiles.png" id="2_4dimi"]
 [ext_resource type="Texture2D" uid="uid://kuny0ixan2ds" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Green Woods/Assets/Props.png" id="3_i8bm1"]
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/entrada.gd" id="4_x4osw"]
+[ext_resource type="PackedScene" uid="uid://ds2ae5vnwbelw" path="res://ESCENAS/ITEMS/carta.tscn" id="5_24wyf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_elnuw"]
 texture = ExtResource("1_2u67s")
@@ -1494,5 +1495,20 @@ shape = SubResource("RectangleShape2D_7gwcy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(528, 125)
+
+[node name="Carta" parent="." instance=ExtResource("5_24wyf")]
+position = Vector2(218, 204)
+
+[node name="Carta2" parent="." instance=ExtResource("5_24wyf")]
+position = Vector2(363, 234)
+carta_numero = 1
+
+[node name="Carta3" parent="." instance=ExtResource("5_24wyf")]
+position = Vector2(367, 158)
+carta_numero = 2
+
+[node name="Carta4" parent="." instance=ExtResource("5_24wyf")]
+position = Vector2(137, 118)
+carta_numero = 3
 
 [connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]

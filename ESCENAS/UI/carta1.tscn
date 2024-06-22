@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/UI/exitletter.gd" id="3_x377t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcxka"]
-size = Vector2(4.55043, 6.28935)
+size = Vector2(6.83023, 8.51256)
 
 [node name="Carta1" type="Control"]
 layout_mode = 3
@@ -83,6 +83,8 @@ scale = Vector2(-5.41709, 3.9941)
 script = ExtResource("3_x377t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Control/MarginContainer/MarginContainer/Area2D"]
+position = Vector2(-0.0923004, -9.53674e-07)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_lcxka")
 
 [node name="Sprite2D" type="Sprite2D" parent="Control/MarginContainer/MarginContainer/Area2D"]

@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var carta_numero: String
+@export var carta_numero: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -10,6 +10,8 @@ func _ready():
 func _process(_delta):
 	pass
 
-func _on_body_entered(_body):
+func _on_body_entered(body):
 	print("Has recogido una carta")
+	body.add_letter(carta_numero)
 	$AnimationPlayer.play("recoger")
+	queue_free() 

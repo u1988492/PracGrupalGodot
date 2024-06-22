@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var inventory := preload("res://ESCENAS/UI/inventoryUI.tscn")
+@export var inventory := load("res://ESCENAS/UI/inventoryUI.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

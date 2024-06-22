@@ -7,7 +7,6 @@ var dir = "S" #direction in which the player moves and looks
 var on_range = false #true when an enemy is close enough to hit the player
 var damage_cooldown = false
 var dead = false
-#var inventory := preload("res://SCRIPTS/GAMEMANAGER/inventorymanager.gd").new() #crear inventario
 @onready var transicion = $transicion/fadeanim
 
 #ajustar valor de la salud que da una poción
@@ -15,15 +14,19 @@ var dead = false
 @export var potionhealth = 15
 
 @export var has_key = false
+@onready var inventory = %InventoryUi
+
 
 #añadir items al inventario cuando se hayan recogido
 func add_photo(photo_name: String):
 	#inventory.add_photo(photo_name)
 	pass
 
-func add_letter(letter_name: String):
-	#inventory.add_letter(letter_name)
-	pass
+func add_letter(letter_index: int):
+	if letter_index >= 0 and letter_index < inventory.n_letters:
+		print(letter_index)
+		inventory.letters_array[letter_index] = true
+		inventory.update_inventory_display()
 
 #actualizar salud al tomar poción
 func increaseHealth():
