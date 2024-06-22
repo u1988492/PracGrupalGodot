@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b64rqbvijttqr"]
+[gd_scene load_steps=16 format=3 uid="uid://b64rqbvijttqr"]
 
 [ext_resource type="Texture2D" uid="uid://dv2u5a0dqfn1v" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Tiles.png" id="1_eafst"]
 [ext_resource type="Texture2D" uid="uid://dvyx6f1ipqr08" path="res://ASSETS/MAPA/Pixel Crawler/Environment/Dungeon Prison/Assets/Props.png" id="2_gxpq8"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://SCRIPTS/JUEGO/salas/sala_2.gd" id="5_gmf73"]
 [ext_resource type="PackedScene" uid="uid://2fj3ab58pqih" path="res://ESCENAS/ITEMS/pocion.tscn" id="6_wp6i5"]
 [ext_resource type="PackedScene" uid="uid://c8l3uj2o28isq" path="res://ESCENAS/PERSONAJES/esqueleto.tscn" id="7_itr48"]
+[ext_resource type="PackedScene" uid="uid://cjpndbahplgho" path="res://ESCENAS/ITEMS/puerta.tscn" id="8_mc7t1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8cvop"]
 texture = ExtResource("1_eafst")
@@ -3753,6 +3754,9 @@ position = Vector2(395, 190)
 [node name="Esqueleto" parent="enemigos" instance=ExtResource("7_itr48")]
 position = Vector2(247, 227)
 scale = Vector2(0.5, 0.5)
+
+[node name="Puerta" parent="." instance=ExtResource("8_mc7t1")]
+position = Vector2(279, 111)
 
 [connection signal="body_entered" from="detection_to_sala4" to="." method="_on_detection_to_sala_4_body_entered"]
 [connection signal="body_entered" from="detection_to_sala1" to="." method="_on_detection_to_sala_1_body_entered"]

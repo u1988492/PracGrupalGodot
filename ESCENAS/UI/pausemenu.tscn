@@ -105,38 +105,19 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Exit")
 focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_right = NodePath("../Save")
-focus_neighbor_bottom = NodePath("../Save")
-focus_next = NodePath("../Save")
 focus_previous = NodePath("../Exit")
 text = "REANUDAR PARTIDA"
-
-[node name="Save" type="Button" parent="MarginContainer/VBoxContainer/buttons"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Exit")
-focus_neighbor_top = NodePath("../Play")
-focus_neighbor_right = NodePath("../Exit")
-focus_neighbor_bottom = NodePath("../Exit")
-focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Play")
-text = "GUARDAR PARTIDA"
 
 [node name="Exit" type="Button" parent="MarginContainer/VBoxContainer/buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Save")
-focus_neighbor_top = NodePath("../Save")
 focus_neighbor_right = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Play")
 focus_next = NodePath("../Play")
-focus_previous = NodePath("../Save")
 text = "VOLVER AL MENU"
 
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/sliders/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/sliders/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/Save" to="." method="_on_save_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/buttons/Exit" to="." method="_on_exit_pressed"]

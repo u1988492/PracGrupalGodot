@@ -14,10 +14,6 @@ func _on_play_pressed():
 	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://ESCENAS/JUEGO/juego_1.tscn")
 
-
-func _on_load_pressed():
-	Saveloader.load_game()
-
 func _on_exit_pressed():
 	get_tree().quit()
 

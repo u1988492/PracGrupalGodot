@@ -80,40 +80,20 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 focus_neighbor_left = NodePath("../Exit")
 focus_neighbor_top = NodePath("../Exit")
-focus_neighbor_right = NodePath("../Load")
-focus_neighbor_bottom = NodePath("../Load")
-focus_next = NodePath("../Load")
 focus_previous = NodePath("../Exit")
 theme_override_font_sizes/font_size = 24
 text = "JUGAR"
-
-[node name="Load" type="Button" parent="Control/MarginContainer/VBoxContainer/botones"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Exit")
-focus_neighbor_top = NodePath("../Play")
-focus_neighbor_right = NodePath("../Exit")
-focus_neighbor_bottom = NodePath("../Exit")
-focus_next = NodePath("../Exit")
-focus_previous = NodePath("../Play")
-theme_override_font_sizes/font_size = 24
-text = "CARGAR PARTIDA"
 
 [node name="Exit" type="Button" parent="Control/MarginContainer/VBoxContainer/botones"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-focus_neighbor_left = NodePath("../Load")
-focus_neighbor_top = NodePath("../Load")
 focus_neighbor_right = NodePath("../Play")
 focus_neighbor_bottom = NodePath("../Play")
 focus_next = NodePath("../Play")
-focus_previous = NodePath("../Load")
 theme_override_font_sizes/font_size = 24
 text = "SALIR"
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/botones/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Control/MarginContainer/VBoxContainer/botones/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="Control/MarginContainer/VBoxContainer/botones/Exit" to="." method="_on_exit_pressed"]

@@ -29,8 +29,8 @@ func focus_button():
 func _on_play_pressed():
 	visible = !visible
 
-func _on_save_pressed():
-	savemanager.save_game()
+#func _on_save_pressed():
+#	savemanager.save_game()
 
 
 func _on_exit_pressed():
